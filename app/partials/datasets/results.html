@@ -4,6 +4,10 @@
         <span>Nivel de Gobierno:</span>
         <span class="filter-item">{{ government }} <button class="btn-dismiss" ng-click="clearGov()">x</button></span>
     </span>
+    <span ng-show="category">
+        <span>Categoría:</span>
+        <span class="filter-item">{{ category }} <button class="btn-dismiss" ng-click="clearCat()">x</button></span>
+    </span>
 </p>
 <table class="data" ng-show="!searching">
     <thead>

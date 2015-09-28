@@ -97,6 +97,11 @@ define( function () {
             government  = '';
             retrieve();
         });
+        $scope.$on( 'CATEGORY_CLEAR', function () {
+            $location.search( 'categoria', null );
+            category    = '';
+            retrieve();
+        });
 
         retrieve();
     };
