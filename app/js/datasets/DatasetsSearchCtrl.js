@@ -3,7 +3,8 @@
 define( function () {
     return function ( $scope, $location, Ckan ) {
         Ckan.setModel( 'datasets' );
-        var query       = '',
+        var category    = '',
+            query       = '',
             government  = '',
             search      = $location.search(),
             skip        = 0,
@@ -21,6 +22,10 @@ define( function () {
                     $( '#item-' + government ).addClass( 'active' );
                     query       += '+vocab_gov_types:(' + government.charAt( 0 ).toUpperCase() + government.slice( 1 ) + ')';
                 }
+
+                if ( category ) {
+                    query       += '+tags:' + category.charAt( 0 ).toUpperCase() + category.slice( 1 );
+                }
             },
             retrieve    = function () {
                 setQuery();
@@ -29,6 +34,10 @@ define( function () {
 
         if ( search.q ) {
             $scope.keyword  = decodeURIComponent( search.q );
+        }
+        if ( search.categoria ) {
+            category    = search.category;
+            $scope.$emit( 'CATEGORY_FILTER', category );
         }
         if ( search.gob ) {
             government  = search.gob;
@@ -68,7 +77,18 @@ define( function () {
             retrieve();
         });
         $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
+            government  = filter;
             $location.search( 'gob', filter );
+            retrieve();
+        });
+        $scope.$on( 'CATEGORY_FILTER', function ( e, filter ) {
+            if ( filter == 'all' ) {
+                category    = '';
+                $location.search( 'categoria', null );
+            } else {
+                category    = filter;
+                $location.search( 'categoria', filter );
+            }
             retrieve();
         });
         $scope.$on( 'GOVERNMENT_CLEAR', function () {
