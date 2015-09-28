@@ -4,6 +4,7 @@ define( function () {
     return function ( $scope, $location, Ckan ) {
         Ckan.setModel( 'datasets' );
         var query       = '',
+            government  = '',
             search      = $location.search(),
             skip        = 0,
             setQuery    = function () {
@@ -15,6 +16,11 @@ define( function () {
                 } else {
                     query       = '';
                 }
+
+                if ( government ) {
+                    $( '#item-' + government ).addClass( 'active' );
+                    query       += '+vocab_gov_types:(' + government.charAt( 0 ).toUpperCase() + government.slice( 1 ) + ')';
+                }
             },
             retrieve    = function () {
                 setQuery();
@@ -23,6 +29,10 @@ define( function () {
 
         if ( search.q ) {
             $scope.keyword  = decodeURIComponent( search.q );
+        }
+        if ( search.gob ) {
+            government  = search.gob;
+            $scope.$emit( 'GOVERNMENT_FILTER', government );
         }
         if ( search.page ) {
             skip        = ( search.page - 1 ) * 10;
@@ -55,6 +65,16 @@ define( function () {
             }
 
             skip        = ( page - 1 ) * 10;
+            retrieve();
+        });
+        $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
+            $location.search( 'gob', filter );
+            retrieve();
+        });
+        $scope.$on( 'GOVERNMENT_CLEAR', function () {
+            $( '.gov-filter' ).removeClass( 'active' );
+            $location.search( 'gob', null );
+            government  = '';
             retrieve();
         });
 

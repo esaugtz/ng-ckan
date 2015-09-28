@@ -4,6 +4,11 @@ define( function () {
     return function ( $scope, $state, $stateParams, Model ) {
         var paginating              = false;
         $scope.searching            = true;
+        $scope.government           = '';
+        $scope.clearGov             = function () {
+            $scope.government   = '';
+            $scope.$emit( 'GOVERNMENT_CLEAR' );
+        };
         $scope.paginate             = function () {
             paginating  = true;
             $scope.$emit( 'PAGE_UPDATED', $scope.page );
@@ -36,6 +41,22 @@ define( function () {
             $scope.total        = Model.getTotal();
             if ( $stateParams.page && !paginating ) {
                 $scope.page     = $stateParams.page;
+            }
+        });
+        $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
+            switch ( filter ) {
+                case 'federal' :
+                    $scope.government  = 'Federal';
+                    break;
+                case 'estatal' :
+                    $scope.government  = 'Estatal';
+                    break;
+                case 'municipal' :
+                    $scope.government  = 'Municipal';
+                    break;
+                case 'autonomos' :
+                    $scope.government  = 'Organismos Autónomos'
+                    break;
             }
         });
     };
