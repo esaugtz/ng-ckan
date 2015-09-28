@@ -18,6 +18,7 @@ define( function () {
                 }
 
                 if ( government ) {
+                    $( '#item-' + government ).addClass( 'active' );
                     query       += '+vocab_gov_types:(' + government.charAt( 0 ).toUpperCase() + government.slice( 1 ) + ')';
                 }
             },
@@ -31,7 +32,7 @@ define( function () {
         }
         if ( search.gob ) {
             government  = search.gob;
-            $scope.emit( 'GOVERNMENT_FILTER', government );
+            $scope.$emit( 'GOVERNMENT_FILTER', government );
         }
         if ( search.page ) {
             skip        = ( search.page - 1 ) * 10;
@@ -67,25 +68,11 @@ define( function () {
             retrieve();
         });
         $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
-            switch ( filter ) {
-                case 'federal' :
-                    government  = 'Federal';
-                    break;
-                case 'estatal' :
-                    government  = 'Estatal';
-                    break;
-                case 'municipal' :
-                    government  = 'Municipal';
-                    break;
-                case 'autonomos' :
-                    government  = 'Autonomos'
-                    break;
-            }
-
-            $location.search( 'gob', government );
+            $location.search( 'gob', filter );
             retrieve();
         });
         $scope.$on( 'GOVERNMENT_CLEAR', function () {
+            $( '.gov-filter' ).removeClass( 'active' );
             $location.search( 'gob', null );
             government  = '';
             retrieve();
