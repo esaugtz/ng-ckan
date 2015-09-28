@@ -19,11 +19,15 @@ define( function () {
                 }
 
                 if ( government ) {
+                    $( '.gov-filter' ).removeClass( 'active' );
                     $( '#item-' + government ).addClass( 'active' );
                     query       += '+vocab_gov_types:(' + government.charAt( 0 ).toUpperCase() + government.slice( 1 ) + ')';
                 }
 
                 if ( category ) {
+                    var item    = ( category.indexOf( ' ' ) != -1 ) ? category.substring( 0, category.indexOf( ' ' ) ) : category;
+                    $( '.category-filter' ).removeClass( 'active' );
+                    $( '#item-' + item ).addClass( 'active' );
                     query       += '+tags:' + category.charAt( 0 ).toUpperCase() + category.slice( 1 );
                 }
             },
@@ -98,6 +102,8 @@ define( function () {
             retrieve();
         });
         $scope.$on( 'CATEGORY_CLEAR', function () {
+            $( '.category-filter' ).removeClass( 'active' );
+            $( '#item-all' ).addClass( 'active' );
             $location.search( 'categoria', null );
             category    = '';
             retrieve();
