@@ -4,6 +4,7 @@ define( function () {
     return function ( $scope, $location, Ckan ) {
         Ckan.setModel( 'datasets' );
         var query       = '',
+            government  = '',
             search      = $location.search(),
             skip        = 0,
             setQuery    = function () {
@@ -15,6 +16,10 @@ define( function () {
                 } else {
                     query       = '';
                 }
+
+                if ( government ) {
+                    query       += '+vocab_gov_types:(' + government + ')';
+                }
             },
             retrieve    = function () {
                 setQuery();
@@ -23,6 +28,9 @@ define( function () {
 
         if ( search.q ) {
             $scope.keyword  = decodeURIComponent( search.q );
+        }
+        if ( search.gob ) {
+            government  = search.gob;
         }
         if ( search.page ) {
             skip        = ( search.page - 1 ) * 10;
@@ -55,6 +63,25 @@ define( function () {
             }
 
             skip        = ( page - 1 ) * 10;
+            retrieve();
+        });
+        $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
+            switch ( filter ) {
+                case 'federal' :
+                    government  = 'Federal';
+                    break;
+                case 'state' :
+                    government  = 'Estatal';
+                    break;
+                case 'municipal' :
+                    government  = 'Municipal';
+                    break;
+                case 'independent' :
+                    government  = 'Autonomos'
+                    break;
+            }
+
+            $location.search( 'gob', government );
             retrieve();
         });
 

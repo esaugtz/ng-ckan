@@ -16,7 +16,8 @@ define( function () {
                 url             : '/conjuntos?page',
                 views           : {
                     'datasets-sidebar'  : {
-                        templateUrl     : 'partials/datasets/filters.html'
+                        templateUrl     : 'partials/datasets/filters.html',
+                        controller      : 'FiltersCtrl'
                     },
                     'datasets-content'  : {
                         templateUrl     : 'partials/datasets/results.html',
