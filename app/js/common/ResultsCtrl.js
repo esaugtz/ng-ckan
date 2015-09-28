@@ -4,7 +4,12 @@ define( function () {
     return function ( $scope, $state, $stateParams, Model ) {
         var paginating              = false;
         $scope.searching            = true;
+        $scope.category             = '';
         $scope.government           = '';
+        $scope.clearCat             = function () {
+            $scope.category     = '';
+            $scope.$emit( 'CATEGORY_CLEAR' );
+        };
         $scope.clearGov             = function () {
             $scope.government   = '';
             $scope.$emit( 'GOVERNMENT_CLEAR' );
@@ -57,6 +62,13 @@ define( function () {
                 case 'autonomos' :
                     $scope.government  = 'Organismos Autónomos'
                     break;
+            }
+        });
+        $scope.$on( 'CATEGORY_FILTER', function ( e, filter ) {
+            if ( filter == 'all' ) {
+                $scope.category     = '';
+            } else {
+                $scope.category     = filter.charAt( 0 ).toUpperCase() + filter.slice( 1 );
             }
         });
     };
