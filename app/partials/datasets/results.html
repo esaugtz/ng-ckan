@@ -1,4 +1,5 @@
 <p ng-show="searching">Buscando...</p>
+<p ng-show="!searching && empty">No hay resultados</p>
 <p class="filters-list">
     <span ng-show="government">
         <span>Nivel de Gobierno:</span>
@@ -9,7 +10,7 @@
         <span class="filter-item">{{ category }} <button class="btn-dismiss" ng-click="clearCat()">x</button></span>
     </span>
 </p>
-<table class="data" ng-show="!searching">
+<table class="data" ng-show="!searching && !empty">
     <thead>
         <tr>
             <th><span class="glyphicon glyphicon-chevron-down"></span>Nombre</th>

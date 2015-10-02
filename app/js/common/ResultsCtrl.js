@@ -3,6 +3,7 @@
 define( function () {
     return function ( $scope, $state, $stateParams, Model ) {
         var paginating              = false;
+        $scope.empty                = true;
         $scope.searching            = true;
         $scope.category             = '';
         $scope.government           = '';
@@ -46,6 +47,12 @@ define( function () {
             $scope.total        = Model.getTotal() - 10;
             if ( $stateParams.page && !paginating ) {
                 $scope.page     = $stateParams.page;
+            }
+
+            if ( $scope.results.length == 0 ) {
+                $scope.empty    = true;
+            } else {
+                $scope.empty    = false;
             }
         });
         $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
