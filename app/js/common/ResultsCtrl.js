@@ -67,7 +67,7 @@ define( function () {
                     $scope.government  = 'Municipal';
                     break;
                 case 'autonomos' :
-                    $scope.government  = 'Organismos Autónomos'
+                    $scope.government  = 'Organismos Autónomos';
                     break;
             }
         });
