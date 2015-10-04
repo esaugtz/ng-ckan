@@ -51,6 +51,50 @@ describe( 'App', function () {
         element( by.css( '[ng-click="clearSearch()"]' ) ).click();
     });
 
+    it ( 'should filter the datasets by category', function () {
+        element( by.css( '#item-seguridad a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearCat()"]' ) ).count() ).toBe( 1 );
+    });
+
+    it ( 'should clear the category filter previously set', function () {
+        element( by.css( '[ng-click="clearCat()"]' ) ).click();
+    });
+
+    it ( 'should filter the datasets by category', function () {
+        element( by.css( '#item-economia a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearCat()"]' ) ).count() ).toBe( 1 );
+
+        element( by.css( '#item-all a' ) ).click();
+    });
+
+    it ( 'should filter datasets from the URL', function () {
+        browser.get( '/#/conjuntos?categoria=seguridad y justicia&gob=estatal' );
+    });
+
+    it ( 'should filter the datasets by government level', function () {
+        element( by.css( '#item-federal a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
+
+        element( by.css( '#item-estatal a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
+
+        element( by.css( '#item-municipal a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
+
+        element( by.css( '#item-autonomos a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
+    });
+
+    it ( 'should clear the government filter previously set', function () {
+        element( by.css( '[ng-click="clearGov()"]' ) ).click();
+    });
+
     it ( 'should navigate to the datasets details state', function () {
         element.all( by.css( '#datasets-content table > tbody > tr' ) ).first().click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/conjuntos' );
