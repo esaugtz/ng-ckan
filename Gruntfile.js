@@ -87,6 +87,25 @@ module.exports  = function ( grunt ) {
                     cwd     : '.',
                     src     : 'bower_components/requirejs/require.js',
                     dest    : '<%= config.dist %>'
+                }, {
+                    expand  : true,
+                    cwd     : '.',
+                    src     : [
+                        'bower_components/polymer/polymer.html',
+                        'bower_components/polymer/polymer-mini.html',
+                        'bower_components/polymer/polymer-micro.html'
+                    ],
+                    dest    : '<%= config.dist %>'
+                }, {
+                    expand  : true,
+                    cwd     : '.',
+                    src     : 'bower_components/dgm-navbar/dgm-navbar.html',
+                    dest    : '<%= config.dist %>'
+                }, {
+                    expand  : true,
+                    cwd     : '.',
+                    src     : 'bower_components/dgm-footer/dgm-footer.html',
+                    dest    : '<%= config.dist %>'
                 }]
             }
         },
