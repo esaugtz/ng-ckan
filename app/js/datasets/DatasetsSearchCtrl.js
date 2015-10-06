@@ -28,7 +28,7 @@ define( function () {
                     var item    = category.indexOf( ' ' ) != -1 ? category.substring( 0, category.indexOf( ' ' ) ) : category;
                     $( '.category-filter' ).removeClass( 'active' );
                     $( '#item-' + item ).addClass( 'active' );
-                    query       += '+tags:' + category.charAt( 0 ).toUpperCase() + category.slice( 1 );
+                    query       += '+tags:' + category.replace( / /g, '-' );
                 }
             },
             retrieve    = function () {
