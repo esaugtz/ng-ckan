@@ -54,6 +54,48 @@ define( function () {
             } else {
                 $scope.empty    = false;
             }
+
+            if ( Model._querying == 'datasets' ) {
+                for ( var i = 0; i < $scope.results.length; i++ ) {
+                    for ( var j = 0; j < $scope.results[i].tags.length; j++ ) {
+                        switch ( $scope.results[i].tags[j].name ) {
+                            case 'salud' :
+                                $scope.results[i].section   = 'health';
+                                break;
+                            case 'geoespacial' :
+                                $scope.results[i].section   = 'geospatial';
+                                break;
+                            case 'seguridad-y-justicia' :
+                                $scope.results[i].section   = 'security';
+                                break;
+                            case 'energia-y-medio-ambiente' :
+                                $scope.results[i].section   = 'energy';
+                                break;
+                            case 'educacion' :
+                                $scope.results[i].section   = 'education';
+                                break;
+                            case 'economia' :
+                                $scope.results[i].section   = 'economy';
+                                break;
+                            case 'cultura-y-turismo' :
+                                $scope.results[i].section   = 'culture';
+                                break;
+                            case 'finanzas-y-contrataciones' :
+                                $scope.results[i].section   = 'finance';
+                                break;
+                            case 'infraestructura' :
+                                $scope.results[i].section   = 'infrastructure';
+                                break;
+                            case 'desarrollo-sostenible' :
+                                $scope.results[i].section   = 'development';
+                                break;
+                            case 'gobiernos-locales' :
+                                $scope.results[i].section   = 'government';
+                                break;
+                        }
+                    }
+                }
+            }
         });
         $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
             switch ( filter ) {
