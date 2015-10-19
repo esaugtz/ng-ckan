@@ -30,6 +30,6 @@
         </tr>
     </tbody>
 </table>
-<p class="text-center">
+<p class="text-center" ng-show="!searching && !empty">
     <pagination class="pagination-sm" max-size="10" boundary-links="true" rotate="true" total-items="total" items-per-page="limit" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-model="page" ng-change="paginate()"></pagination>
 </p>
