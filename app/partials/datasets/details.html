@@ -1,10 +1,11 @@
 <div id="search-header" class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
             <h1>Datos</h1>
+            <p class="hidden-lg hidden-md navigation-links"><a ui-sref="datasets.results">Conjuntos</a>|<a ui-sref="organizations.results">Instituciones</a>|<a ui-sref="groups.results">Grupos</a></p>
             <p>{{ dataset.num_resources }} resultados</p>
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
             <form class="form search-form">
                 <div class="form-group">
                     <input type="text" name="keyword" id="filter-keyword" class="form-control" placeholder="Buscar" ng-model="filter">
