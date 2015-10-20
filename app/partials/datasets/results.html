@@ -11,7 +11,7 @@
     </span>
 </p>
 <table class="data" ng-show="!searching && !empty">
-    <thead>
+    <thead class="hidden-sm hidden-xs">
         <tr>
             <th><span class="glyphicon glyphicon-chevron-down"></span>Nombre</th>
             <th width="20%"><span class="glyphicon glyphicon-chevron-down"></span>Dependencia</th>
@@ -21,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="dataset in results" ng-click="selectDataset( dataset.name )">
+        <tr ng-repeat="dataset in results" ng-click="selectDataset( dataset.name )" class="hidden-sm hidden-xs">
             <td>{{ dataset.title }}</td>
             <td>
                 <span ng-if="dataset.organization">{{ dataset.organization.title }}</span>
@@ -32,6 +32,13 @@
             <td class="ic-dataset">
                 <img ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png">
                 <img src="img/ic-dataset.png">
+            </td>
+        </tr>
+        <tr ng-repeat="dataset in results" ng-click="selectDataset( dataset.name )" class="hidden-lg hidden-md">
+            <td>
+                <p><strong>{{ dataset.title }}</strong></p>
+                <p><span ng-if="dataset.organization">{{ dataset.organization.title }}</span><span ng-if="!dataset.organization && dataset.groups.length > 0">{{ dataset.groups[0].display_name }}</span></p>
+                <p><span class="label" data-format="csv">CSV</span><span class="label" data-format="klm">KLM</span><img class="dataset-icon" src="img/ic-dataset.png"><img class="dataset-icon" ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png"></p>
             </td>
         </tr>
     </tbody>
