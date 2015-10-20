@@ -29,7 +29,10 @@
             </td>
             <td>{{ dataset.metadata_modified | date : 'dd/MMM/yyyy' }}</td>
             <td><span class="label" data-format="csv">CSV</span><span class="label" data-format="klm">KLM</span></td>
-            <td class="ic-dataset"><img src="img/ic-dataset.png"></td>
+            <td class="ic-dataset">
+                <img ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png">
+                <img src="img/ic-dataset.png">
+            </td>
         </tr>
     </tbody>
 </table>
