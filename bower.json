@@ -11,8 +11,8 @@
         "angular-resource"      : "^1.4.0",
         "angular-ui-router"     : "^0.2.15",
         "bootstrap"             : "^3.3.5",
-        "dgm-footer"            : "mxabierto/dgm-footer#^0.0.1",
-        "dgm-navbar"            : "mxabierto/dgm-navbar#^0.0.3",
+        "dgm-footer"            : "mxabierto/dgm-footer#^0.0.2",
+        "dgm-navbar"            : "mxabierto/dgm-navbar#^0.0.5",
         "requirejs"             : "^2.1.18"
     },
     "overrides"         : {
