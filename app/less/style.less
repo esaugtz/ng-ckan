@@ -117,7 +117,7 @@ header                                      { padding-top: 20px; }
 .organization-details .organization-image,
 .dataset-details .organization-image        { height: 170px; margin-bottom: 30px; padding: 15px; background-color: #eee; }
 .dataset-details .organization-image > img  { vertical-align: middle; }
-.dataset-details h1                         { margin-bottom: 30px; }
+.dataset-details h1                         { margin-top: 0; margin-bottom: 30px; }
 .dataset-details h4                         { margin: 20px 0; font-size: 14px; font-weight: 700; color: #474747; }
 .dataset-details h5                         { margin: 30px 0; text-transform: uppercase; }
 .dataset-details ul                         { padding-left: 0; list-style: none; overflow: hidden; }
@@ -127,6 +127,7 @@ header                                      { padding-top: 20px; }
 .dataset-details .dataset-tags > li         { margin-right: 10px; margin-bottom: 10px; padding: 5px 10px; float: left; background-color: #0c9; color: #fff; }
 .dataset-details .table > tbody > tr > td   { font-size: 12px; }
 table.data > tbody > tr                     { cursor: pointer; }
+@media (max-width: 991px)                   { .dataset-details h1 { font-size: 14px; line-height: 20px; margin-bottom: 20px; } .dataset-details .dataset-resources li a { font-size: 12px; } }
 
 /*********************************
     ORGANIZATIONS STYLES
