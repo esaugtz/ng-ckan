@@ -21,6 +21,8 @@ define( function () {
                     'margin-top'    : ( $( '.organization-image' ).height() - $( this ).height() ) / 2
                 });
             });
+
+            $( '.breadcrumb li:last-child span' ).html( $scope.dataset.title );
         });
     };
 });

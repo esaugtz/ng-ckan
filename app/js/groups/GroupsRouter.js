@@ -10,6 +10,9 @@ define( function () {
                         templateUrl     : 'partials/datasets/search.html',
                         controller      : 'GroupsSearchCtrl'
                     }
+                },
+                data            : {
+                    breadcrumbProxy     : 'groups.results'
                 }
             })
             .state( 'groups.results', {
@@ -23,7 +26,10 @@ define( function () {
                         controller      : 'GroupsResultsCtrl'
                     }
                 },
-                reloadOnSearch  : false
+                reloadOnSearch  : false,
+                data            : {
+                    displayName         : 'Grupos'
+                }
             })
             .state( 'groups.details', {
                 url             : '/grupos/:id?page',
@@ -32,6 +38,9 @@ define( function () {
                         templateUrl     : 'partials/groups/details.html',
                         controller      : 'GroupsDetailsCtrl'
                     }
+                },
+                data            : {
+                    displayName         : 'Grupo'
                 }
             });
     };
