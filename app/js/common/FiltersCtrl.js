@@ -10,5 +10,9 @@ define( function () {
             $event.preventDefault();
             $rootScope.$broadcast( 'GOVERNMENT_FILTER', filter );
         };
+        $scope.formatFilter     = function ( $event, format ) {
+            $event.preventDefault();
+            $rootScope.$broadcast( 'FORMAT_FILTER', format );
+        };
     };
 });
