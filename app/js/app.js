@@ -9,6 +9,7 @@ define( function ( require ) {
     require( 'organizations/OrganizationsModule' );
 
     var app             = angular.module( 'ngCkan', [
+            'angularUtils.directives.uiBreadcrumbs',
             'ngResource',
             'ui.bootstrap.pagination',
             'ui.bootstrap.tpls',
