@@ -58,6 +58,8 @@ define( function () {
                     }
                 }
             }
+
+            $( '.breadcrumb li:last-child span' ).html( $scope.organization.title );
         });
     };
 });
