@@ -4,6 +4,7 @@ define( function () {
     return function ( $scope, $location, Ckan ) {
         Ckan.setModel( 'datasets' );
         var category    = '',
+            format      = '',
             query       = '',
             government  = '',
             search      = $location.search(),
@@ -30,6 +31,10 @@ define( function () {
                     $( '#item-' + item ).addClass( 'active' );
                     query       += '+tags:' + category.replace( / /g, '-' );
                 }
+
+                if ( format ) {
+                    query       += '+res_format:' + format;
+                }
             },
             retrieve    = function () {
                 setQuery();
@@ -42,6 +47,10 @@ define( function () {
         if ( search.categoria ) {
             category    = search.category;
             $scope.$emit( 'CATEGORY_FILTER', category );
+        }
+        if ( search.formato ) {
+            format      = search.formato;
+            $scope.$emit( 'FORMAT_FILTER', format );
         }
         if ( search.gob ) {
             government  = search.gob;
@@ -93,6 +102,11 @@ define( function () {
                 category    = filter;
                 $location.search( 'categoria', filter );
             }
+            retrieve();
+        });
+        $scope.$on( 'FORMAT_FILTER', function ( e, filter ) {
+            format  = filter;
+            $location.search( 'formato', filter );
             retrieve();
         });
         $scope.$on( 'GOVERNMENT_CLEAR', function () {
