@@ -10,6 +10,9 @@ define( function () {
                         templateUrl     : 'partials/datasets/search.html',
                         controller      : 'OrganizationsSearchCtrl'
                     }
+                },
+                data            : {
+                    breadcrumbProxy     : 'organizations.results'
                 }
             })
             .state( 'organizations.results', {
@@ -23,7 +26,10 @@ define( function () {
                         controller      : 'OrganizationsResultsCtrl'
                     }
                 },
-                reloadOnSearch  : false
+                reloadOnSearch  : false,
+                data            : {
+                    displayName : 'Instituciones'
+                }
             })
             .state( 'organizations.details', {
                 url             : '/instituciones/:id?page',
@@ -32,6 +38,9 @@ define( function () {
                         templateUrl     : 'partials/organizations/details.html',
                         controller      : 'OrganizationsDetailsCtrl'
                     }
+                },
+                data            : {
+                    displayName : 'Institución'
                 }
             });
     };

@@ -10,6 +10,9 @@ define( function () {
                         templateUrl     : 'partials/datasets/search.html',
                         controller      : 'DatasetsSearchCtrl'
                     }
+                },
+                data            : {
+                    breadcrumbProxy     : 'datasets.results'
                 }
             })
             .state( 'datasets.results', {
@@ -24,7 +27,10 @@ define( function () {
                         controller      : 'DatasetsResultsCtrl'
                     }
                 },
-                reloadOnSearch  : false
+                reloadOnSearch  : false,
+                data            : {
+                    displayName : 'Todos los datos'
+                }
             })
             .state( 'datasets.details', {
                 url             : '/conjuntos/:id?page',
@@ -33,6 +39,9 @@ define( function () {
                         templateUrl     : 'partials/datasets/details.html',
                         controller      : 'DatasetsDetailsCtrl'
                     }
+                },
+                data            : {
+                    displayName : 'Conjunto de datos'
                 }
             });
     };
