@@ -32,6 +32,7 @@
             <ul class="dataset-resources">
                 <li ng-repeat="resource in dataset.resources | filter:filter">
                     <a href="{{ resource.url }}">{{ resource.name }}<span class="hidden-sm hidden-xs">Descargar</span></a>
+                    <p>{{ resource.description | limitTo : 60 }}...</p>
                 </li>
             </ul>
             <ul class="dataset-tags">
