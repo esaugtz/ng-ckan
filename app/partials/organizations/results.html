@@ -3,6 +3,7 @@
     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6" ng-repeat="organization in results">
         <div class="organization-item" ng-click="selectOrganization( organization.name )">
             <img ng-src="https://raw.githubusercontent.com/mxabierto/assets/master/img/logos/{{ organization.name }}.png" alt="{{ organization.display_name }}">
+            <p>{{ organization.packages }} recursos de datos</p>
         </div>
     </div>
 </div>
