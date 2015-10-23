@@ -11,6 +11,10 @@ define( function () {
             $scope.category     = '';
             $scope.$emit( 'CATEGORY_CLEAR' );
         };
+        $scope.clearFormat          = function () {
+            $scope.format   = '';
+            $scope.$emit( 'FORMAT_CLEAR' );
+        };
         $scope.clearGov             = function () {
             $scope.government   = '';
             $scope.$emit( 'GOVERNMENT_CLEAR' );
@@ -118,6 +122,13 @@ define( function () {
                 $scope.category     = '';
             } else {
                 $scope.category     = filter.charAt( 0 ).toUpperCase() + filter.slice( 1 );
+            }
+        });
+        $scope.$on( 'FORMAT_FILTER', function ( e, filter ) {
+            if ( filter == 'all' ) {
+                $scope.format       = '';
+            } else {
+                $scope.format       = filter.toUpperCase();
             }
         });
     };

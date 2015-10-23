@@ -9,6 +9,10 @@
         <span>Categoría:</span>
         <span class="filter-item">{{ category }} <button class="btn-dismiss" ng-click="clearCat()">x</button></span>
     </span>
+    <span ng-show="format">
+        <span>Formato:</span>
+        <span class="filter-item">{{ format }} <button class="btn-dismiss" ng-click="clearFormat()">x</button></span>
+    </span>
 </p>
 <table class="data" ng-show="!searching && !empty">
     <thead class="hidden-sm hidden-xs">

@@ -122,6 +122,12 @@ define( function () {
             category    = '';
             retrieve();
         });
+        $scope.$on( 'FORMAT_CLEAR', function () {
+            $( '.format-filter' ).removeClass( 'active' );
+            $location.search( 'formato', null );
+            format  = '';
+            retrieve();
+        });
 
         retrieve();
     };
