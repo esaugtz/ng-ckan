@@ -61,7 +61,7 @@ define( function () {
         if ( search.page ) {
             skip        = ( search.page - 1 ) * 10;
         }
-        $scope.query.order  = ( search.orden ) ? decodeURIComponent( search.orden ) : 'score desc, metadata_modified desc';
+        $scope.query.order  = search.orden ? decodeURIComponent( search.orden ) : 'score desc, metadata_modified desc';
 
         $scope.clearSearch  = function () {
             $scope.keyword  = '';
@@ -79,9 +79,9 @@ define( function () {
         };
         $scope.sort         = function () {
             if ( $scope.query.order != 'score desc, metadata_modified desc' ) {
-                $location.search( "orden", encodeURIComponent( $scope.query.order ) );
+                $location.search( 'orden', encodeURIComponent( $scope.query.order ) );
             } else {
-                $location.search( "orden", null );
+                $location.search( 'orden', null );
             }
             retrieve();
         };
