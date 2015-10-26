@@ -131,5 +131,8 @@ define( function () {
                 $scope.format       = filter.toUpperCase();
             }
         });
+        $scope.$on( 'ORGANIZATIONS_FILTER', function ( e, filter ) {
+            $scope.filter           = filter;
+        });
     };
 });

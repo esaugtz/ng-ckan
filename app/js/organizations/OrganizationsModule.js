@@ -14,5 +14,5 @@ define( function ( require ) {
 
     OrganizationsModule.controller( 'OrganizationsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', ResultsCtrl ] );
 
-    OrganizationsModule.controller( 'OrganizationsSearchCtrl', [ '$scope', '$location', 'CkanService', OrganizationsSearchCtrl ] );
+    OrganizationsModule.controller( 'OrganizationsSearchCtrl', [ '$rootScope', '$scope', '$location', 'CkanService', OrganizationsSearchCtrl ] );
 });
