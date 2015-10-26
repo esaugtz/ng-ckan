@@ -134,5 +134,8 @@ define( function () {
         $scope.$on( 'ORGANIZATIONS_FILTER', function ( e, filter ) {
             $scope.filter           = filter;
         });
+        $scope.$on( 'GROUPS_FILTER', function ( e, filter ) {
+            $scope.filter           = filter;
+        });
     };
 });
