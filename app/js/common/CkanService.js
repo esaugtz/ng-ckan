@@ -125,13 +125,14 @@ define( function () {
                     });
             },
 
-            datasets        : function ( q, skip ) {
+            datasets        : function ( q, order, skip ) {
                 $rootScope.$broadcast( events.DATASETS_QUERYING );
                 return this._resource.datasets({
                         action  : 'package_search',
                         q       : q,
                         rows    : 10,
-                        start   : skip
+                        start   : skip,
+                        sort    : order
                     },
                     function ( data ) {
                         while( !data.$resolved ) {

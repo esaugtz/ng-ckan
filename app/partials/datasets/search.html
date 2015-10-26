@@ -19,13 +19,19 @@
         </div>
         <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
             <form class="form">
-                <div class="form-group">
+                <div class="form-group" ng-if="$state.is( 'datasets.results' )">
+                    <select name="sort" class="form-control" ng-model="query.order" ng-change="sort()">
+                        <option value="score desc, metadata_modified desc">Ordenar por Relevancia</option>
+                        <option value="title_string asc">Ordenar por Nombre Ascendente</option>
+                        <option value="title_string desc">Ordenar por Nombre Descendente</option>
+                        <option value="metadata_modified desc">Ordenar por Última Modificación</option>
+                        <option value="views_recent desc">Ordenar por Popularidad</option>
+                    </select>
+                </div>
+                <div class="form-group" ng-if="!$state.is( 'datasets.results' )">
                     <select name="sort" class="form-control">
-                        <option value="">Ordenar por Relevancia</option>
-                        <option value="title_string+asc">Ordenar por Nombre Ascendente</option>
-                        <option value="title_string+desc">Ordenar por Nombre Descendente</option>
-                        <option value="metadata_modified+desc">Ordenar por Última Modificación</option>
-                        <option value="views_recent+desc">Ordenar por Popularidad</option>
+                        <option value="">Ordenar por Nombre Ascendente</option>
+                        <option value="desc">Ordenar por Nombre Descendente</option>
                     </select>
                 </div>
             </form>

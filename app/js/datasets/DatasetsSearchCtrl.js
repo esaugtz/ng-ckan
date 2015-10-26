@@ -38,8 +38,10 @@ define( function () {
             },
             retrieve    = function () {
                 setQuery();
-                Ckan.datasets( query, skip );
+                Ckan.datasets( query, $scope.query.order, skip );
             };
+
+        $scope.query    = {};
 
         if ( search.q ) {
             $scope.keyword  = decodeURIComponent( search.q );
@@ -59,6 +61,7 @@ define( function () {
         if ( search.page ) {
             skip        = ( search.page - 1 ) * 10;
         }
+        $scope.query.order  = ( search.orden ) ? decodeURIComponent( search.orden ) : 'score desc, metadata_modified desc';
 
         $scope.clearSearch  = function () {
             $scope.keyword  = '';
@@ -72,6 +75,14 @@ define( function () {
                 $location.search( 'q', null );
             }
 
+            retrieve();
+        };
+        $scope.sort         = function () {
+            if ( $scope.query.order != 'score desc, metadata_modified desc' ) {
+                $location.search( "orden", encodeURIComponent( $scope.query.order ) );
+            } else {
+                $location.search( "orden", null );
+            }
             retrieve();
         };
         $scope.$on( Ckan.getEvent( 'QUERY' ), function () {
