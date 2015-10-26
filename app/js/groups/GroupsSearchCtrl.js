@@ -9,16 +9,13 @@ define( function () {
 
         $scope.clearSearch  = function () {
             $scope.keyword  = '';
-            $rootScope.$broadcast( 'GROUPS_FILTER', '' );
         };
 
         $scope.$on( Ckan.getEvent( 'QUERY' ), function () {
             $scope.count    = Ckan.getTotal();
         });
         $scope.$watch( 'keyword', function ( value ) {
-            if ( value ) {
-                $rootScope.$broadcast( 'GROUPS_FILTER', value );
-            }
+            $rootScope.$broadcast( 'GROUPS_FILTER', value );
         });
 
         retrieve();
