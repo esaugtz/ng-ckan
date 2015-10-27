@@ -8,7 +8,8 @@
         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
             <form class="form search-form">
                 <div class="form-group">
-                    <input type="text" name="keyword" id="filter-keyword" class="form-control" placeholder="Buscar" ng-model="filter">
+                    <label for="keyword" id="keyword-label" class="sr-only">Búsqueda</label>
+                    <input type="text" name="keyword" id="filter-keyword" class="form-control" placeholder="Buscar" ng-model="filter" aria-labelledby="keyword-label">
                     <span class="glyphicon glyphicon-remove" ng-click="clear()"></span>
                 </div>
             </form>
