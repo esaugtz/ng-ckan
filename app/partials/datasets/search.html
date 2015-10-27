@@ -12,7 +12,8 @@
         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
             <form class="form search-form" ng-submit="search()">
                 <div class="form-group">
-                    <input type="text" name="keyword" id="search-keyword" class="form-control" placeholder="Buscar" ng-model="keyword">
+                    <label for="keyword" id="keyword-label" class="sr-only">Búsqueda</label>
+                    <input type="text" name="keyword" id="search-keyword" class="form-control" placeholder="Buscar" ng-model="keyword" aria-labelledby="keyword-label">
                     <span class="glyphicon glyphicon-remove" ng-click="clearSearch()"></span>
                 </div>
             </form>
