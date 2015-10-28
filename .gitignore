@@ -1,12 +1,14 @@
 .DS_Store
+npm-debug.log
+
 node_modules
+bower_components
+app/css
 dist
 .tmp
-.sass-cache
-bower_components
 .grunt
 
-# Coverall specifi files
+# Code coverage specific files
 instrumented
 test/coverage
 test/reports

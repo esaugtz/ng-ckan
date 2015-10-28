@@ -1,0 +1,191 @@
+@import url( '../../bower_components/bootstrap/less/bootstrap.less' );
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+/*********************************
+    GENERAL STYLES
+*********************************/
+html, body                                  { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.6em; font-family: "Open Sans"; color: #595959; }
+img                                         { max-width: 100%; }
+.btn                                        { padding: 10px; border: none; border-radius: 0; }
+.btn-default                                { background-color: #9b9b9b; color: #fff; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+#datasets-container                         { display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display :flex; }
+.filters-list                               { margin-top: 20px; }
+.filters-list .btn-dismiss                  { background: none; border: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 21px; text-shadow: 0 1px 0 #fff; opacity: 0.2; line-height: 1; cursor: pointer; padding: 0; }
+.filter-item                                { background-color: #eee; padding: 5px; padding-left: 10px; font-weight: 400; }
+a                                           { color: #0c9; cursor: pointer; }
+a:hover                                     { color: #0c9; font-weight: bold; text-decoration: none; }
+
+/*********************************
+    FONT STYLES
+*********************************/
+h1                                          { font-size: 24px; font-weight: 700; color: #595959; }
+a, a:active, a:hover, a:focus               { outline: 0; border: none; text-decoration: none; }
+a:hover                                     { text-decoration: none; }
+.label                                      { font-size: 12px; font-weight: 700; color: #fff; text-transform: uppercase; border-radius: 0; }
+.label[data-format="csv"],
+.label[data-format="CSV"]                   { background-color: #ffd100; }
+.label[data-format="kml"],
+.label[data-format="KML"]                   { background-color: #474747; }
+.label[data-format="json"],
+.label[data-format="JSON"]                  { background-color: #33ffd1; }
+.label[data-format="pdf"],
+.label[data-format="PDF"]                   { background-color: #ff2200; }
+.label[data-format="arcgis"],
+.label[data-format="ARCGIS"]                { background-color: #d100FF; }
+.label[data-format="xlsx"],
+.label[data-format="xls"],
+.label[data-format="excel"],
+.label[data-format="vnd.ms-excel"],
+.label[data-format="EXCEL"],
+.label[data-format="VND.MS-EXCEL"],
+.label[data-format="XLS"],
+.label[data-format="XLSX"]                  { background-color: #00d100; }
+.label[data-format="xml"],
+.label[data-format="XML"]                   { background-color: #0000d1; }
+.label[data-format="oracle"],
+.label[data-format="ORACLE"]                { background-color: #55bada; }
+.label[data-format="shp"],
+.label[data-format="SHP"]                   { background-color: #bada55; }
+.label[data-format="kmz"],
+.label[data-format="KMZ"]                   { background-color: #55adab; }
+.label[data-format="zip"],
+.label[data-format="ZIP"]                   { background-color: #001dff; }
+
+/*********************************
+    FORM STYLES
+*********************************/
+.form-control                               { border-radius: 0; border: none; color: #a1a1a1; }
+
+/*********************************
+    BREADCRUMB STYLES
+*********************************/
+.breadcrumb                                 { margin-bottom: 0; background-color: transparent; }
+.breadcrumb a                               { font-size: 12px; cursor: pointer; }
+.breadcrumb span                            { font-size: 12px; }
+.breadcrumb .home-item                      { display: inline-block; width: 15px; height: 13px; background: url(../img/ic-home.png) no-repeat 50% 50%; background-size: contain; position: relative; top: 3px; text-indent: -9999px; }
+
+/*********************************
+    PAGINATION STYLES
+*********************************/
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus          { background-color: #0c9; border-color: #0c9; }
+.pagination > li > a,
+.pagination > li > span,
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus               { color: #0c9; font-weight: 300; }
+
+/*********************************
+    TABS STYLES
+*********************************/
+.nav-tabs                                   { border: none; }
+.nav-tabs > li                              { margin-bottom: 0; border-bottom: 5px solid #474747; }
+.nav-tabs > li.active,
+.nav-tabs > li:hover                        { border-bottom-color: #00d2a9; }
+.nav-tabs > li > a                          { font-size: 14px; font-weight: 700; color: #595959; border: none; border-radius: 0; }
+.nav-tabs > li:hover > a,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus             { color: #00d2a9; border: none; background-color: transparent; }
+
+/*********************************
+    TABLES STYLES
+*********************************/
+table                                       { width: 100%; }
+table > thead > tr > th                     { font-size: 11px; font-weight: 700; color: #595959; }
+table > thead > tr > th > .glyphicon        { color: #d8d8d8; margin-right: 5px; position: relative; top: 2px; }
+table.data                                  { margin-top: -10px; border-spacing: 0 20px; border-collapse: separate; }
+table.data > tbody > tr > td                { padding: 10px 15px; background-color: #eee; font-size: 11px; font-weight: 300; color: #595959; }
+table.data > tbody > tr > td.ic-dataset     { background-color: #d7d7d7; text-align: center; vertical-align: bottom; }
+table.data > tbody > tr > td.ic-dataset img { display: block; width: 20px; margin: 0 auto 10px; }
+table.data > tbody > tr > td.ic-dataset img:last-child  { margin-bottom: 0; }
+
+/*********************************
+    HEADER STYLES
+*********************************/
+header                                      { padding-top: 20px; }
+
+/*********************************
+    SUBSCRIBE SECTION STYLES
+*********************************/
+#subscribe                                  { padding: 30px 0; background-color: #eee; }
+#subscribe p                                { margin-bottom: 0; line-height: 37.15px; }
+#subscribe a                                { color: #595959; font-weight: 700; }
+#subscribe .form                            { overflow: hidden; }
+#subscribe .form > .form-group              { width: 80%; margin-bottom: 0; float: left; }
+#subscribe .form > .form-group > input      { height: 37.15px; font-size: 14px; font-weight: 300; color: #ababab; border-radius: 0; border: none; }
+#subscribe .form > button                   { float: left; width: 20%; }
+
+/*********************************
+    SEARCH SECTION STYLES
+*********************************/
+.search-form .form-group                    { position: relative; }
+.search-form .form-group .glyphicon         { cursor: pointer; position: absolute; right: 10px; top: 10px; }
+#search-header                              { padding-top: 30px; padding-bottom: 30px; background-color: #eee; }
+#search-header h1                           { margin-top: 0; margin-bottom: 20px; }
+#search-header p                            { margin-bottom: 0; }
+#search-header .navigation-links            { margin-bottom: 10px; }
+@media (max-width: 991px)                   { #search-header h1 { margin-bottom: 5px; } #search-header p { margin-bottom: 20px; } .dataset-icon { width: 20px; float: right; } .dataset-icon:last-child { margin-right: 15px; } }
+#datasets-container                         { position: relative; overflow: hidden; }
+#datasets-content                           { padding: 30px; }
+#datasets-content table > tbody > tr        { cursor: pointer; }
+#datasets-sidebar                           { padding-top: 20px; padding-bottom: 20px; background-color: #474747; }
+#datasets-sidebar > h3,
+#datasets-sidebar > h4                      { margin-top: 0; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; color: #7c7c7c; }
+#datasets-sidebar > h3                      { font-weight: 700; }
+#datasets-sidebar > h4                      { margin-bottom: 30px; font-weight: 400; }
+#datasets-sidebar ul                        { margin-bottom: 30px; list-style: none; padding-left: 0; }
+#datasets-sidebar ul > li                   { height: auto; line-height: 18px; padding-top: 6px; padding-bottom: 6px; }
+#datasets-sidebar ul > li.icon-item         { margin: 15px 0; padding-left: 50px; background-size: 21px; background-position: 5px 50%; background-repeat: no-repeat; }
+#datasets-sidebar ul > li > a               { font-size: 13px; font-weight: 400; color: #7c7c7c; }
+#datasets-sidebar ul > li.active > a,
+#datasets-sidebar ul > li:hover > a         { color: #00d2a9; }
+#datasets-sidebar ul > li.filter-all                { background-image: url(../img/ic-all.png); }
+#datasets-sidebar ul > li.filter-health             { background-image: url(../img/ic-health.png); }
+#datasets-sidebar ul > li.filter-geospatial         { background-image: url(../img/ic-geospatial.png); }
+#datasets-sidebar ul > li.filter-security           { background-image: url(../img/ic-security.png); }
+#datasets-sidebar ul > li.filter-energy             { background-image: url(../img/ic-energy.png); }
+#datasets-sidebar ul > li.filter-education          { background-image: url(../img/ic-education.png); }
+#datasets-sidebar ul > li.filter-economy            { background-image: url(../img/ic-economy.png); }
+#datasets-sidebar ul > li.filter-culture            { background-image: url(../img/ic-culture.png); }
+#datasets-sidebar ul > li.filter-finance            { background-image: url(../img/ic-finance.png); }
+#datasets-sidebar ul > li.filter-infrastructure     { background-image: url(../img/ic-infrastructure.png); }
+#datasets-sidebar ul > li.filter-development        { background-image: url(../img/ic-development.png); }
+#datasets-sidebar ul > li.filter-government         { background-image: url(../img/ic-government.png); }
+#datasets-sidebar ul > li.filter-others             { background-image: url(../img/ic-others.png); }
+
+/*********************************
+    DATASETS SECTION STYLES
+*********************************/
+.dataset-details,
+.organization-details                       { margin-top: 50px; padding-bottom: 50px; }
+.organization-details .organization-image,
+.dataset-details .organization-image        { height: 170px; margin-bottom: 30px; padding: 15px; background-color: #eee; }
+.dataset-details .organization-image > img  { vertical-align: middle; }
+.dataset-details h1                         { margin-top: 0; margin-bottom: 30px; }
+.dataset-details h4                         { margin: 20px 0; font-size: 14px; font-weight: 700; color: #474747; }
+.dataset-details h5                         { margin: 30px 0; text-transform: uppercase; }
+.dataset-details ul                         { padding-left: 0; list-style: none; overflow: hidden; }
+.dataset-details .dataset-resources > li    { background-color: #eee; margin-bottom: 30px; padding: 20px; position: relative; }
+.dataset-details .dataset-resources li a    { display: block; font-size: 14px; font-weight: 600; color: #474747; overflow: hidden; }
+.dataset-details .dataset-resources span    { padding: 20px; line-height: 56px; background-color: #d8d8d8; position: absolute; right: 0; top: 0; bottom: 0; }
+.dataset-details .dataset-tags > li         { margin-right: 10px; margin-bottom: 10px; padding: 5px 10px; float: left; background-color: #0c9; color: #fff; }
+.dataset-details .table > tbody > tr > td   { font-size: 12px; }
+table.data > tbody > tr                     { cursor: pointer; }
+@media (max-width: 991px)                   { .dataset-details h1 { font-size: 14px; line-height: 20px; margin-bottom: 20px; } .dataset-details .dataset-resources li a { font-size: 12px; } }
+
+/*********************************
+    ORGANIZATIONS STYLES
+*********************************/
+.organization-item,
+.group-item                                 { height: 225px; margin-bottom: 20px; background-color: #eee; text-align: center; cursor: pointer; position: relative; }
+.group-item img                             { margin-bottom: 10px; padding-top: 10px; max-height: 65%;  }
+.organization-item p,
+.group-item p                               { margin-bottom: 0; padding-bottom: 10px; background-color: #d9d9d9; color: #828282; font-size: 13px; line-height: 18px; position: absolute; bottom: 0; left: 0; right: 0; }
+.organization-item p strong                 { padding-bottom: 5px; font-size: 10px; }
+@media (max-width: 991px)                   { .organization-item, .group-item { height: 150px; } }

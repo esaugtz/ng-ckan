@@ -1,261 +1,60 @@
-<!doctype html>
-<html class="no-js dgm-site">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="ngCkanApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <div class="site-header">
-      <header class="site-header-bottom" role="banner" aria-label="Encabezado del sitio">
-        <div class="main-container">
-          <div class="cols-12">
-            <div class="col col-12">
-              <div class="col-inner">
-                <a class="site-brand" href="http://datos.gob.mx/" title="Ir a la página de inicio de DATOS.GOB.MX">
-                  <img src="http://datos.gob.mx/assets/svg/logo-dgm-white.svg" alt="DATOS.GOB.MX" role="presentation">
-                </a>
-                <div class="nav-burguer" aria-hidden="true"><span></span></div>
-                <ul class="site-navigation" aria-label="Navegación principal" role="navigation">
-                  <li>
-                    <a class="page-link active" href="http://datos.gob.mx/catalogo" title="Ir al conjunto de datos" aria-label="Ir al catalogo de datos">Datos</a>
-                  </li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/historias/">Historias</a>
-                  </li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/apps/">Apps</a>
-                  </li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/herramientas/">Herramientas</a>
-                  </li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/avances/">Avances</a>
-                  </li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/acerca/">Acerca</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </div>
-
-    <main id="main-content" tabindex="-1" role="main" aria-label="Contenido principal">
-      <div class="datasets">
-        <section class="datasets-navbar">
-          <div class="main-container">
-            <div class="cols-12">
-              <div class="col col-12">
-                <div class="col-inner">
-                  <ul class="datasets-breadcrumbs hidden">
-                    <li>
-                      <a ng-href="#/conjuntos">
-                        <img src="http://datos.gob.mx/assets/svg/icon-home-green-small.svg" alt="Inicio" role="presentation">
-                      </a>
-                    </li>
-                    <li>
-                      <span class="divider">/ </span>
-                      <a ng-href="#/instituciones">Instituciones</a>
-                    </li>
-                    <li>
-                      <span class="divider">/ </span>
-                      <a ng-href="#/instituciones/pemex">PEMEX</a>
-                    </li>
-                  </ul>
-                  <ul class="nav-list">
-                    <li class="active"><a ng-href="#/conjuntos">Conjuntos de datos</a></li>
-                    <li><a ng-href="#/instituciones">Instituciones</a></li>
-                    <li><a ng-href="#/grupos">Grupos</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div ng-view=""></div>
-      </div>
-    </main>
-
-    <footer class="site-footer" role="contentinfo" aria-label="Pie de página del sitio">
-      <div class="main-container">
-        <div class="cols-12">
-          <div class="col col-3">
-            <div class="col-inner">
-              <div class="footer-section">
-                <ul class="open-knowledge-list" aria-label="Enlaces legales" role="navigation"> 
-                  <li class="footer-libre-">
-                    <a href="http://datos.gob.mx/libreusomx" title="Libre Uso MX">
-                      <i class="i libre-uso-white"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://opendefinition.org/" target="_blank">
-                      <img alt="Este material es de Conocimiento Abierto" src="http://assets.okfn.org/images/ok_buttons/ok_80x15_blue.png" style="margin-top: 5px;">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/mxabierto/dgm" title="Repositorio GitHub" target="_blank">
-                      <img src="http://datos.gob.mx/assets/svg/icon-octocat.svg" alt="Github">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col col-3">
-            <div class="col-inner">
-              <div class="footer-section">
-                <a href="http://datos.gob.mx/catalogo" class="footer-section-title">Datos</a>
-                <ul class="section-links-list">
-                  <li><a href="http://datos.gob.mx/acerca/">Acerca de</a></li>
-                  <li><a href="http://adela.datos.gob.mx/">ADELA</a></li>
-                  <li><a href="http://datos.gob.mx/guia">Guía de implementación</a></li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/terminos-y-condiciones">Términos y condiciones</a>
-                  </li>
-                  <li>
-                    <a class="page-link" href="http://datos.gob.mx/privacidad">Aviso de Privacidad</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col col-2">
-            <div class="col-inner">
-              <div class="footer-section">
-                <a href="http://datos.gob.mx/historias/" class="footer-section-title">Historias</a>
-                <ul class="section-links-list">            
-                  <li>
-                    <a href="http://datos.gob.mx/historias/salud/" aria-hidden="true" tabindex="-1">Salud</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/historias/geografia/" aria-hidden="true" tabindex="-1">Geografia</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/historias/seguridad/" aria-hidden="true" tabindex="-1">Seguridad</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/historias/medio-ambiente/" aria-hidden="true" tabindex="-1">Ambiente</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/historias/educacion/" aria-hidden="true" tabindex="-1">Educación</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/historias/economia/" aria-hidden="true" tabindex="-1">Economia</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/historias/otras/" aria-hidden="true" tabindex="-1">Otras</a>  
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col col-2">
-            <div class="col-inner">
-              <div class="footer-section">
-                <a href="http://datos.gob.mx/apps/" class="footer-section-title">Apps</a>
-                <ul class="section-links-list">
-                  <li>
-                    <a href="http://datos.gob.mx/apps/movil/" aria-hidden="true" tabindex="-1">Movil</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/apps/web/" aria-hidden="true" tabindex="-1">Web</a>  
-                  </li>
-                </ul>
-              </div>
-              <div class="footer-section">
-                <a href="http://datos.gob.mx/herramientas/" class="footer-section-title">Herramientas</a>
-              </div>
-              <div class="footer-section">
-                <a href="http://foro.datos.gob.mx/" class="footer-section-title" target="_blank">Foro</a>
-              </div>
-            </div>
-          </div>
-          <div class="col col-2">
-            <div class="col-inner">
-              <div class="footer-section">
-                <a href="http://datos.gob.mx/avances/" class="footer-section-title">Avances</a>
-                <ul class="section-links-list">                    
-                  <li>
-                    <a href="http://datos.gob.mx/avances/eventos/" tabindex="-1">Eventos</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/avances/noticias/" tabindex="-1">Noticias</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/avances/politica/" tabindex="-1">Política</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/avances/consejo-consultivo/" tabindex="-1">Consejo Consultivo</a>  
-                  </li>
-                  <li>
-                    <a href="http://datos.gob.mx/avances/documentos/" tabindex="-1">Documentos</a>  
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-i18n/angular-locale_es-mx.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-ui-bootstrap-pagination/pagination.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/datasets.js"></script>
-        <script src="scripts/controllers/resources.js"></script>
-        <script src="scripts/controllers/organizations.js"></script>
-        <script src="scripts/controllers/organization.js"></script>
-        <script src="scripts/controllers/groups.js"></script>
-        <script src="scripts/controllers/group.js"></script>
-        <script src="scripts/services/ckanservice.js"></script>
-        <script src="scripts/directives/govtypesmenu.js"></script>
-        <script src="scripts/filters/formats.js"></script>
-        <script src="scripts/filters/capitalize.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Catálogo de Datos Abiertos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- build:css(.) css/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
         <!-- endbuild -->
-</body>
+        <!-- build:css(.tmp) css/style.css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- endbuild -->
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
+        <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
+    </head>
+    <body>
+        <dgm-navbar></dgm-navbar>
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div id="breadcrumb">
+                        <ui-breadcrumbs displayname-property="data.displayName" template-url="partials/breadcrumb.html" abstract-proxy-property="data.breadcrumbProxy"></ui-breadcrumbs>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+                    <ul class="nav nav-tabs">
+                        <li id="item-datasets" role="presentation" class="active"><a ui-sref="datasets.results">Todos los datos</a></li>
+                        <li id="item-organizations" role="presentation"><a ui-sref="organizations.results">Instituciones</a></li>
+                        <li id="item-groups" role="presentation"><a ui-sref="groups.results">Grupos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section id="search">
+            <div ui-view="search-container"></div>
+        </section>
+        <dgm-footer></dgm-footer>
+        <!-- build:js(.) js/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-i18n/angular-locale_es-mx.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+        <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+    </body>
 </html>

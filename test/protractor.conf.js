@@ -1,21 +1,17 @@
-exports.config = {
-  allScriptsTimeout: 11000,
+'use strict';
 
-  seleniumAddress: 'http://localhost:4444/wd/hub',
-
-  specs: [
-    'test/e2e/*.js'
-  ],
-
-  capabilities: {
-    'browserName': 'firefox'
-  },
-
-  baseUrl: 'http://localhost:9001/',
-
-  framework: 'jasmine',
-
-  jasmineNodeOpts: {
-    defaultTimeoutInterval: 100000
-  }
+exports.config  = {
+    allScriptsTimeout   : 100000,
+    baseUrl             : 'http://localhost:9001/',
+    capabilities        : {
+        'browserName'   : 'firefox'
+    },
+    framework           : 'jasmine',
+    jasmineNodeOpts     : {
+        defaultTimeoutInterval  : 100000
+    },
+    seleniumAddress     : 'http://localhost:4444/wd/hub',
+    specs               : [
+        'test/e2e/*.js'
+    ]
 };

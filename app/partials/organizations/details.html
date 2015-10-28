@@ -1,0 +1,69 @@
+<div id="search-header" class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <h1>Instituciones</h1>
+            <p class="hidden-lg hidden-md navigation-links"><a ui-sref="datasets.results">Conjuntos</a>|<a ui-sref="organizations.results">Instituciones</a>|<a ui-sref="groups.results">Grupos</a></p>
+            <p>{{ organization.package_count }} resultados</p>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <form class="form search-form">
+                <div class="form-group">
+                    <label for="keyword" id="keyword-label" class="sr-only">Búsqueda</label>
+                    <input type="text" name="keyword" id="filter-keyword" class="form-control" placeholder="Buscar" ng-model="filter.title" aria-labelledby="keyword-label">
+                    <span class="glyphicon glyphicon-remove" ng-click="clear()"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-fluid organization-details">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1">
+            <div class="organization-image">
+                <img ng-src="https://raw.githubusercontent.com/mxabierto/assets/master/img/logos/{{ organization.name }}.png" alt="{{ organization.display_name }}">
+            </div>
+            <div class="hidden-sm hidden-xs">
+                <h3>{{ organization.display_name }}</h3>
+                <p>{{ organization.description }}</p>
+                <p><strong>{{ organization.package_count }} recursos de datos</strong></p>
+            </div>
+        </div>
+        <div class="col-sm-7 col-xs-7 hidden-lg hidden-md">
+            <h1>{{ organization.display_name }}</h1>
+            <p>{{ organization.description }}</p>
+            <p><strong>{{ organization.package_count }} recursos de datos</strong></p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <table class="data">
+                <thead class="hidden-sm hidden-xs">
+                    <tr>
+                        <th>Nombre</th>
+                        <th width="20%">Dependencia</th>
+                        <th width="15%">Fecha</th>
+                        <th width="10%">Formato</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="dataset in organization.packages | filter:filter" ng-click="selectDataset( dataset.name )" class="hidden-sm hidden-xs">
+                        <td>{{ dataset.title }}</td>
+                        <td>{{ dataset.organization.title }}</td>
+                        <td>{{ dataset.metadata_modified | date : 'dd/MMM/yyyy' }}</td>
+                        <td><span class="label" data-format="{{ dataset.resources[0].format | noSpace }}">{{ dataset.resources[0].format }}</span></td>
+                        <td class="ic-dataset">
+                            <img ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png" alt="{{ dataset.title }}">
+                            <img src="img/ic-dataset.png" alt="{{ dataset.title }}">
+                        </td>
+                    </tr>
+                    <tr ng-repeat="dataset in organization.packages" ng-click="selectDataset( dataset.name )" class="hidden-lg hidden-md">
+                        <td>
+                            <p><strong>{{ dataset.title }}</strong></p>
+                            <p><span ng-if="dataset.organization">{{ dataset.organization.title }}</span><span ng-if="!dataset.organization && dataset.groups.length > 0">{{ dataset.groups[0].display_name }}</span></p>
+                            <p><span class="label" data-format="csv">CSV</span><span class="label" data-format="klm">KLM</span><img class="dataset-icon" src="img/ic-dataset.png"><img class="dataset-icon" ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png"></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

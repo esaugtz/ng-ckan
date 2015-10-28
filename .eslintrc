@@ -1,0 +1,29 @@
+{
+    "env"       : {
+        "browser"   : 1
+    },
+    "globals"   : {
+        "angular"   : 1,
+        "define"    : 1,
+        "L"         : 1,
+        "module"    : 1,
+        "require"   : 1,
+        "saveAs"    : 1,
+        "$"         : 1
+    },
+    "rules"     : {
+        "eol-last"              : 0,
+        "eqeqeq"                : 0,
+        "global-strict"         : 0,
+        "key-spacing"           : 0,
+        "no-multi-spaces"       : 0,
+        "no-underscore-dangle"  : 0,
+        "camelcase"             : [ 2, {
+            "properties"        : "never"
+        }],
+        "curly"                 : [ 2, "multi-line" ],
+        "no-extra-parens"       : [ 2, "all" ],
+        "quotes"                : [ 2, "single" ],
+        "strict"                : [ 2, "global" ],
+    }
+}

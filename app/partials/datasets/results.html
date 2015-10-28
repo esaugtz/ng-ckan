@@ -1,0 +1,53 @@
+<p ng-show="searching">Buscando...</p>
+<p ng-show="!searching && empty">No hay resultados</p>
+<p class="filters-list">
+    <span ng-show="government">
+        <span>Nivel de Gobierno:</span>
+        <span class="filter-item">{{ government }} <button class="btn-dismiss" ng-click="clearGov()">x</button></span>
+    </span>
+    <span ng-show="category">
+        <span>Categoría:</span>
+        <span class="filter-item">{{ category }} <button class="btn-dismiss" ng-click="clearCat()">x</button></span>
+    </span>
+    <span ng-show="format">
+        <span>Formato:</span>
+        <span class="filter-item">{{ format }} <button class="btn-dismiss" ng-click="clearFormat()">x</button></span>
+    </span>
+</p>
+<table class="data" ng-show="!searching && !empty">
+    <thead class="hidden-sm hidden-xs">
+        <tr>
+            <th>Nombre</th>
+            <th width="20%">Dependencia</th>
+            <th width="15%">Fecha</th>
+            <th width="10%">Formato</th>
+            <th width="10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="dataset in results" ng-click="selectDataset( dataset.name )" class="hidden-sm hidden-xs">
+            <td>{{ dataset.title }}</td>
+            <td>
+                <span ng-if="dataset.organization">{{ dataset.organization.title }}</span>
+                <span ng-if="!dataset.organization && dataset.groups.length > 0">{{ dataset.groups[0].display_name }}</span>
+            </td>
+            <td>{{ dataset.metadata_modified | date : 'dd/MMM/yyyy' }}</td>
+            <td><span class="label" data-format="{{ dataset.resources[0].format | noSpace }}">{{ dataset.resources[0].format }}</span></td>
+            <td class="ic-dataset">
+                <img ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png" alt="{{ dataset.title }}">
+                <img src="img/ic-dataset.png" alt="{{ dataset.title }}">
+            </td>
+        </tr>
+        <tr ng-repeat="dataset in results" ng-click="selectDataset( dataset.name )" class="hidden-lg hidden-md">
+            <td>
+                <p><strong>{{ dataset.title }}</strong></p>
+                <p><span ng-if="dataset.organization">{{ dataset.organization.title }}</span><span ng-if="!dataset.organization && dataset.groups.length > 0">{{ dataset.groups[0].display_name }}</span></p>
+                <p><span class="label" data-format="csv">CSV</span><span class="label" data-format="klm">KLM</span><img class="dataset-icon" src="img/ic-dataset.png"><img class="dataset-icon" ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png"></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="text-center" ng-show="!searching && !empty">
+    <pagination class="pagination-sm hidden-sm hidden-xs" max-size="10" boundary-links="true" rotate="true" total-items="total" items-per-page="limit" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-model="page" ng-change="paginate()"></pagination>
+    <pagination class="pagination-sm hidden-lg hidden-md" max-size="4" boundary-links="true" rotate="true" total-items="total" items-per-page="limit" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-model="page" ng-change="paginate()"></pagination>
+</p>
