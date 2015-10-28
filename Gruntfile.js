@@ -107,6 +107,17 @@ module.exports  = function ( grunt ) {
                     src     : 'bower_components/dgm-footer/dgm-footer.html',
                     dest    : '<%= config.dist %>'
                 }]
+            },
+            altdist : {
+                files   : [{
+                    expand  : true,
+                    dot     : true,
+                    cwd     : '<%= config.app %>',
+                    dest    : '<%= config.dist %>',
+                    src     : [
+                        'img/ic-*.png'
+                    ]
+                }]
             }
         },
         coveralls               : {
@@ -369,7 +380,8 @@ module.exports  = function ( grunt ) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'copy:altdist',
     ]);
     grunt.registerTask( 'publish', [
         'build',
