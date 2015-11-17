@@ -32,7 +32,7 @@
                 <span ng-if="!dataset.organization && dataset.groups.length > 0">{{ dataset.groups[0].display_name }}</span>
             </td>
             <td>{{ dataset.metadata_modified | date : 'dd/MMM/yyyy' }}</td>
-            <td><span class="label" data-format="{{ dataset.resources[0].format | noSpace }}">{{ dataset.resources[0].format }}</span></td>
+            <td><span ng-if="dataset.resources[0].format == 'CSV' || dataset.resources[0].format == 'JSON' || dataset.resources[0].format == 'SHP' || dataset.resources[0].format == 'KML' || dataset.resources[0].format == 'XSLX' || dataset.resources[0].format == 'GEOJSON' || dataset.resources[0].format == 'XML' || dataset.resources[0].format == 'csv' || dataset.resources[0].format == 'json' || dataset.resources[0].format == 'shp' || dataset.resources[0].format == 'kml' || dataset.resources[0].format == 'xslx' || dataset.resources[0].format == 'geojson' || dataset.resources[0].format == 'xml'" class="label" data-format="{{ dataset.resources[0].format | noSpace }}">{{ dataset.resources[0].format }}</span></td>
             <td class="ic-dataset">
                 <img ng-if="dataset.section" ng-src="img/ic-{{ dataset.section }}.png" alt="{{ dataset.title }}">
                 <img src="img/ic-dataset.png" alt="{{ dataset.title }}">
