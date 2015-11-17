@@ -7,7 +7,7 @@ define( function ( require ) {
 
     var CommonModule    = angular.module( 'CommonModule', []);
 
-    CommonModule.controller( 'FiltersCtrl', [ '$rootScope', '$scope', FiltersCtrl ] );
+    CommonModule.controller( 'FiltersCtrl', [ '$rootScope', '$scope', '$location', FiltersCtrl ] );
 
     CommonModule.factory( 'CkanService', [ '$rootScope', '$resource', 'events', CkanService ] );
 
