@@ -47,7 +47,7 @@ define( function () {
             $scope.keyword  = decodeURIComponent( search.q );
         }
         if ( search.categoria ) {
-            category    = search.category;
+            category    = search.categoria;
             $scope.$emit( 'CATEGORY_FILTER', category );
         }
         if ( search.formato ) {

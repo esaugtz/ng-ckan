@@ -1,8 +1,10 @@
 'use strict';
 
 define( function () {
-    return function ( $scope, $state, $stateParams, Model ) {
-        var paginating              = false;
+    return function ( $scope, $state, $stateParams, Model, $location ) {
+        var paginating              = false,
+            search                  = $location.search();
+
         $scope.empty                = true;
         $scope.searching            = true;
         $scope.category             = '';
@@ -38,6 +40,16 @@ define( function () {
                 id  : organization
             });
         };
+
+        if ( search.categoria ) {
+            $scope.category     = search.categoria;
+        }
+        if ( search.formato ) {
+            $scope.format       = search.formato;
+        }
+        if ( search.gob ) {
+            $scope.government   = search.gob;
+        }
 
         $scope.$on( Model.getEvent( 'QUERYING' ), function () {
             $scope.searching    = true;
