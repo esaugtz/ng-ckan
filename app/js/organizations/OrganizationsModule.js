@@ -12,7 +12,7 @@ define( function ( require ) {
 
     OrganizationsModule.controller( 'OrganizationsDetailsCtrl', [ '$scope', '$state', '$stateParams', 'events', 'CkanService', OrganizationsDetailsCtrl ] );
 
-    OrganizationsModule.controller( 'OrganizationsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', ResultsCtrl ] );
+    OrganizationsModule.controller( 'OrganizationsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', '$location', ResultsCtrl ] );
 
     OrganizationsModule.controller( 'OrganizationsSearchCtrl', [ '$rootScope', '$scope', '$location', 'CkanService', OrganizationsSearchCtrl ] );
 });
