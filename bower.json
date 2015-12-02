@@ -16,9 +16,12 @@
         "dgm-navbar"                    : "mxabierto/dgm-navbar#^0.0.7",
         "requirejs"                     : "^2.1.18"
     },
-    "overrides"         : {
-        "angular-i18n"  : {
-            "main"      : "angular-locale_es-mx.js"
+    "overrides"             : {
+        "angular-i18n"      : {
+            "main"          : "angular-locale_es-mx.js"
+        },
+        "webcomponentsjs"   : {
+            "main"          : "webcomponents-lite.min.js"
         }
     }
 }

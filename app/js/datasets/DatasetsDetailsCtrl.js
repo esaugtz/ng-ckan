@@ -30,16 +30,16 @@ define( function () {
                     this.callbacks.onReady.push( function() {
                         addAriaHiddenAttrs( $( '#disqus_thread iframe' ) );
                     });
-                };
-            if ( $( '#disqus_thread' ).length > 0) {
-                ( function() {
-                    var dsq     = document.createElement( 'script' );
-                    dsq.type    = 'text/javascript';
-                    dsq.async   = true;
-                    dsq.src     = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                    ( document.getElementsByTagName( 'head' )[0] || document.getElementsByTagName( 'body' )[0] ).appendChild( dsq );
-                } )();
-            }
+                },
+                disqus_shortname    = 'datos-mx';
+
+            ( function () {
+                var dsq     = document.createElement( 'script' );
+                dsq.type    = 'text/javascript';
+                dsq.async   = true;
+                dsq.src     = '//' + disqus_shortname + '.disqus.com/embed.js';
+                ( document.getElementsByTagName( 'head' )[0] || document.getElementsByTagName( 'body' )[0]).appendChild( dsq );
+            })();
         });
     };
 });
