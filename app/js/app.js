@@ -21,8 +21,9 @@ define( function ( require ) {
             'OrganizationsModule'
         ]);
 
-    app.config([ '$urlRouterProvider', function ( $urlRouterProvider ) {
+    app.config([ '$urlRouterProvider', '$locationProvider', function ( $urlRouterProvider, $locationProvider ) {
         $urlRouterProvider.otherwise( '/conjuntos' );
+        $locationProvider.html5Mode( false ).hashPrefix( "!" );
     }]);
 
     app.run([ '$rootScope', '$state', function ( $rootScope, $state ) {
