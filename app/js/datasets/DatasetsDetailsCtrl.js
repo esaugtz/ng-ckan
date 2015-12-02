@@ -23,6 +23,23 @@ define( function () {
             });
 
             $( '.breadcrumb li:last-child span' ).html( $scope.dataset.title );
+
+            var disqus_shortname    = 'datos-mx',
+                disqus_config       = function () {
+                    this.language   = "es_MX";
+                    this.callbacks.onReady.push( function() {
+                        addAriaHiddenAttrs( $( '#disqus_thread iframe' ) );
+                    });
+                },
+                disqus_shortname    = 'datos-mx';
+
+            ( function () {
+                var dsq     = document.createElement( 'script' );
+                dsq.type    = 'text/javascript';
+                dsq.async   = true;
+                dsq.src     = '//' + disqus_shortname + '.disqus.com/embed.js';
+                ( document.getElementsByTagName( 'head' )[0] || document.getElementsByTagName( 'body' )[0]).appendChild( dsq );
+            })();
         });
     };
 });
