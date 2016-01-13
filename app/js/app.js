@@ -46,6 +46,10 @@ define( function ( require ) {
                     break;
             }
         });
+
+        $rootScope.$on( '$viewContentLoaded', function () {
+            $( '#site-spinner' ).fadeOut();
+        });
     }]);
 
     return app;
