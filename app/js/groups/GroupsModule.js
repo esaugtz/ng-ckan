@@ -12,7 +12,7 @@ define( function ( require ) {
 
     GroupsModule.controller( 'GroupsDetailsCtrl', [ '$scope', '$state', '$stateParams', 'events', 'CkanService', GroupsDetailsCtrl ] );
 
-    GroupsModule.controller( 'GroupsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', '$location', ResultsCtrl ] );
+    GroupsModule.controller( 'GroupsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', '$location', 'events', ResultsCtrl ] );
 
     GroupsModule.controller( 'GroupsSearchCtrl', [ '$rootScope', '$scope', 'CkanService', GroupsSearchCtrl ] );
 });
