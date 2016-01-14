@@ -1,5 +1,9 @@
 <p ng-show="searching">Buscando...</p>
-<p ng-show="!searching && empty">No hay resultados</p>
+<p ng-show="!searching && empty && !service_error">No hay resultados</p>
+<div ng-show="!searching && service_error">
+    <p><strong>{{ service_error }}</strong></p>
+    <button class="btn btn-primary" ng-click="reload()">Recargar</button>
+</div>
 <p class="filters-list">
     <span ng-show="government">
         <span>Nivel de Gobierno:</span>

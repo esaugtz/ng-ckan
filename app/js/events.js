@@ -17,6 +17,7 @@ define( function () {
         ORGANIZATIONS_RETRIEVED     : 'organizations_retrieved',
         ORGANIZATIONS_RETRIEVING    : 'organizations_retrieving',
         ORGANIZATIONS_QUERY         : 'organizations_query',
-        ORGANIZATIONS_QUERYING      : 'organizations_querying'
+        ORGANIZATIONS_QUERYING      : 'organizations_querying',
+        SERVICE_TIMEOUT             : 'service_timeout'
     });
 });

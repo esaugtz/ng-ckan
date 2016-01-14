@@ -1,7 +1,7 @@
 'use strict';
 
 define( function () {
-    return function ( $scope, $state, $stateParams, Model, $location ) {
+    return function ( $scope, $state, $stateParams, Model, $location, events ) {
         var paginating              = false,
             search                  = $location.search();
 
@@ -24,6 +24,9 @@ define( function () {
         $scope.paginate             = function () {
             paginating  = true;
             $scope.$emit( 'PAGE_UPDATED', $scope.page );
+        };
+        $scope.reload               = function () {
+            location.reload();
         };
         $scope.selectDataset        = function ( dataset ) {
             $state.go( 'datasets.details', {
@@ -148,6 +151,12 @@ define( function () {
         });
         $scope.$on( 'GROUPS_FILTER', function ( e, filter ) {
             $scope.filter           = filter;
+        });
+        $scope.$on( events.SERVICE_TIMEOUT, function () {
+            $scope.$apply( function () {
+                $scope.searching        = false;
+                $scope.service_error    = 'Estamos en proceso de migración y actualización de infraestructura para ofrecer un mejor servicio. Si aún no encuentra lo que buscaba, por favor actualice la página o espere algunos minutos. Gracias.';
+            });
         });
     };
 });

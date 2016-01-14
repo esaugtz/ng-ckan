@@ -12,7 +12,7 @@ define( function ( require ) {
 
     DatasetsModule.controller( 'DatasetsDetailsCtrl', [ '$scope', '$stateParams', 'events', 'CkanService', DatasetsDetailsCtrl ] );
 
-    DatasetsModule.controller( 'DatasetsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', '$location', ResultsCtrl ] );
+    DatasetsModule.controller( 'DatasetsResultsCtrl', [ '$scope', '$state', '$stateParams', 'CkanService', '$location', 'events', ResultsCtrl ] );
 
     DatasetsModule.controller( 'DatasetsSearchCtrl', [ '$scope', '$location', 'CkanService', DatasetsSearchCtrl ] );
 });
