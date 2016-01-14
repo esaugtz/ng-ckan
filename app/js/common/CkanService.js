@@ -3,7 +3,11 @@
 define( function () {
     return function ( $rootScope, $resource, events ) {
         var Service = {
+            _error          : false,
+
             _querying       : '',
+
+            _timeout        : 5000,
 
             _total          : 0,
 
@@ -70,6 +74,16 @@ define( function () {
                 }
             }),
 
+            _setTimeout     : function () {
+                var that    = this;
+
+                this._error     = false;
+                return setTimeout( function () {
+                    that._error = true;
+                    $rootScope.$broadcast( events.SERVICE_TIMEOUT );
+                }, this._timeout );
+            },
+
             getEvent        : function ( event ) {
                 /* istanbul ignore next */
                 switch ( event ) {
@@ -127,6 +141,10 @@ define( function () {
 
             datasets        : function ( q, order, skip ) {
                 $rootScope.$broadcast( events.DATASETS_QUERYING );
+
+                var that        = this,
+                    timeout     = this._setTimeout();
+
                 return this._resource.datasets({
                         action  : 'package_search',
                         q       : q,
@@ -136,9 +154,12 @@ define( function () {
                     },
                     function ( data ) {
                         while( !data.$resolved ) {
-                            // Resolving
+                            if ( that._error ) {
+                                return;
+                            }
                         }
 
+                        clearTimeout( timeout );
                         $rootScope.$broadcast( events.DATASETS_QUERY, data );
                     });
             },
@@ -161,15 +182,22 @@ define( function () {
 
             groups          : function () {
                 $rootScope.$broadcast( events.GROUPS_QUERYING );
+
+                var that        = this,
+                    timeout     = this._setTimeout();
+
                 return this._resource.groups({
                         action      : 'group_list',
                         all_fields  : 'true'
                     },
                     function ( data ) {
                         while( !data.$resolved ) {
-                            // Resolving
+                            if ( that._error ) {
+                                return;
+                            }
                         }
 
+                        clearTimeout( timeout );
                         $rootScope.$broadcast( events.GROUPS_QUERY, data );
                     });
             },
@@ -192,15 +220,22 @@ define( function () {
 
             organizations   : function () {
                 $rootScope.$broadcast( events.ORGANIZATIONS_QUERYING );
+
+                var that        = this,
+                    timeout     = this._setTimeout();
+
                 return this._resource.organizations({
                         action      : 'organization_list',
                         all_fields  : true
                     },
                     function ( data ) {
                         while( !data.$resolved ) {
-                            // Resolving
+                            if ( that._error ) {
+                                return;
+                            }
                         }
 
+                        clearTimeout( timeout );
                         $rootScope.$broadcast( events.ORGANIZATIONS_QUERY, data );
                     });
             },
