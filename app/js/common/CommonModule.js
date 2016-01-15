@@ -1,13 +1,16 @@
 'use strict';
 
 define( function ( require ) {
-    var CkanService     = require( 'common/CkanService' );
-    var FiltersCtrl     = require( 'common/FiltersCtrl' );
-    var NoSpaceFilter   = require( 'common/NoSpaceFilter' );
+    var CkanService         = require( 'common/CkanService' );
+    var FiltersCtrl         = require( 'common/FiltersCtrl' );
+    var NoSpaceFilter       = require( 'common/NoSpaceFilter' );
+    var SpinnerDirective    = require( 'common/SpinnerDirective' );
 
-    var CommonModule    = angular.module( 'CommonModule', []);
+    var CommonModule        = angular.module( 'CommonModule', []);
 
     CommonModule.controller( 'FiltersCtrl', [ '$rootScope', '$scope', '$location', FiltersCtrl ] );
+
+    CommonModule.directive( 'loader', [ SpinnerDirective ] );
 
     CommonModule.factory( 'CkanService', [ '$rootScope', '$resource', 'events', CkanService ] );
 
