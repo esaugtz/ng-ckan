@@ -1,4 +1,4 @@
-<p ng-show="searching">Buscando...</p>
+<loader ng-show="searching"></loader>
 <div class="row stacked" ng-show="!searching">
     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6" ng-repeat="group in results | filter:filter">
         <div class="group-item" ng-click="selectGroup( group.name )">

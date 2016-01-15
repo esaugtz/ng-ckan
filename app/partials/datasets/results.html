@@ -1,4 +1,4 @@
-<p ng-show="searching">Buscando...</p>
+<loader ng-show="searching"></loader>
 <p ng-show="!searching && empty && !service_error">No hay resultados</p>
 <div ng-show="!searching && service_error">
     <p><strong>{{ service_error }}</strong></p>
