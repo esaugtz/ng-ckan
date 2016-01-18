@@ -154,9 +154,7 @@ define( function () {
                     },
                     function ( data ) {
                         while( !data.$resolved ) {
-                            if ( that._error ) {
-                                return;
-                            }
+                            // Empty statement
                         }
 
                         clearTimeout( timeout );
@@ -192,9 +190,7 @@ define( function () {
                     },
                     function ( data ) {
                         while( !data.$resolved ) {
-                            if ( that._error ) {
-                                return;
-                            }
+                            // Empty statement
                         }
 
                         clearTimeout( timeout );
@@ -230,9 +226,7 @@ define( function () {
                     },
                     function ( data ) {
                         while( !data.$resolved ) {
-                            if ( that._error ) {
-                                return;
-                            }
+                            // Empty statement
                         }
 
                         clearTimeout( timeout );
