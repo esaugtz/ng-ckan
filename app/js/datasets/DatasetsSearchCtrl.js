@@ -10,13 +10,12 @@ define( function () {
             search      = $location.search(),
             skip        = 0,
             setQuery    = function () {
+                query   = '';
                 if ( $scope.keyword ) {
                     var q       = $scope.keyword,
                         exp     = q.split( ' '  ).join( '* OR ' );
                     q           = q.split( ' ' ).join( ' OR ' );
                     query       += 'title:(' + q + ' OR ' + exp + '*)';
-                } else {
-                    query       = '';
                 }
 
                 if ( government ) {
