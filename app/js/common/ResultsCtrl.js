@@ -55,7 +55,8 @@ define( function () {
         }
 
         $scope.$on( Model.getEvent( 'QUERYING' ), function () {
-            $scope.searching    = true;
+            $scope.searching        = true;
+            $scope.service_error    = null;
         });
         $scope.$on( Model.getEvent( 'QUERY' ), function ( e, data ) {
             e.preventDefault();
