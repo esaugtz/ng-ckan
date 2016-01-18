@@ -1,7 +1,7 @@
-# FONDEN transparente
+# NG-CKAN
 
-[![Stories in Ready](https://badge.waffle.io/mxabierto/fonden.png?label=ready&title=Ready)](https://waffle.io/mxabierto/fonden) [![Build Status](https://travis-ci.org/mxabierto/fonden.svg?branch=master)](https://travis-ci.org/mxabierto/fonden)
-[![Coverage Status](https://coveralls.io/repos/mxabierto/fonden/badge.svg?branch=master&service=github)](https://coveralls.io/github/mxabierto/fonden?branch=master)
+[![Stories in Ready](https://badge.waffle.io/mxabierto/ng-ckan.png?label=ready&title=Ready)](https://waffle.io/mxabierto/ng-ckan) [![Build Status](https://travis-ci.org/mxabierto/ng-ckan.svg?branch=master)](https://travis-ci.org/mxabierto/ng-ckan)
+[![Coverage Status](https://coveralls.io/repos/mxabierto/ng-ckan/badge.svg?branch=master&service=github)](https://coveralls.io/github/mxabierto/ng-ckan?branch=master)
 
 ## Installation
 
