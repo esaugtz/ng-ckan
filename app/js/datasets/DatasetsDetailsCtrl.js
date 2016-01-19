@@ -24,14 +24,17 @@ define( function () {
 
             $( '.breadcrumb li:last-child span' ).html( $scope.dataset.title );
 
-            var disqus_shortname    = 'datos-mx',
-                disqus_config       = function () {
-                    this.language   = "es_MX";
+            var disqus_shortname            = 'datos-mx';
+            window.disqus_config            = function () {
+                    this.language           = "es_MX";
+                    this.page.url           = location;
+                    this.page.identifier    = $scope.dataset.name;
+                    this.page.title         = $scope.dataset.title;
+
                     this.callbacks.onReady.push( function() {
                         addAriaHiddenAttrs( $( '#disqus_thread iframe' ) );
                     });
-                },
-                disqus_shortname    = 'datos-mx';
+                };
 
             ( function () {
                 var dsq     = document.createElement( 'script' );
