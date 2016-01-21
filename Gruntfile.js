@@ -71,7 +71,7 @@ module.exports  = function ( grunt ) {
                         '.htaccess',
                         '*.html',
                         'partials/{,*/}*.html',
-                        'img/{,*/}*.{webp}',
+                        'img/{,*/}*.*',
                         'css/{,*/}*.css',
                         'data/{,*/}*.*',
                         'CNAME'
@@ -194,7 +194,7 @@ module.exports  = function ( grunt ) {
                 files   : [{
                     expand  : true,
                     cwd     : '<%= config.app %>/img',
-                    src     : '{,*/}*.{png,jpg,jpeg,gif}',
+                    src     : '{,*/}*.{png,jpg,jpeg,gif,ico}',
                     dest    : '<%= config.dist %>/img'
                 }]
             }
