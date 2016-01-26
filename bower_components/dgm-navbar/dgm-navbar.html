@@ -22,8 +22,13 @@ Example:
         .navbar > .container-fluid .navbar-toggle                           { margin-right: 20px; }
         .navbar-default ul.navbar-nav.social-navigation                     { margin-left: 20px; }
         .navbar-default ul.navbar-nav.social-navigation li                  { display: block; width: 32px; height: 100%; text-indent: -9999px; text-align: center; }
-        .navbar-default ul.navbar-nav.social-navigation li a                { height: 18px; margin: 13.5px 0; padding: 0; background: url(https://raw.githubusercontent.com/mxabierto/assets/master/img/ic-social.png) no-repeat; background-size: 18px; }
+        .navbar-default ul.navbar-nav.social-navigation li a                { height: 18px; margin: 13.5px 0; padding: 0; background: url(https://raw.githubusercontent.com/mxabierto/assets/master/img/ic-social.png) no-repeat; background-size: 18px; outline: 0; }
+        .navbar-default ul.navbar-nav.social-navigation li a:hover,
+        .navbar-default ul.navbar-nav.social-navigation li a:focus,
+        .navbar-default ul.navbar-nav.social-navigation li a:active         { outline: 0; }
         .navbar-default ul.navbar-nav.social-navigation > li > a:hover      { background-color: transparent; }
+        .navbar-default ul.navbar-nav.social-navigation .item-facebook a    { background-position: 50% 0; }
+        .navbar-default ul.navbar-nav.social-navigation .item-twitter a     { background-position: 50% -18px; }
         .navbar-default ul.navbar-nav.social-navigation .item-github a      { background-position: 50% -54px; }
         .navbar-default ul.navbar-nav                                       { margin: 0; padding: 0; list-style: none; float: right; }
         .navbar-default ul.navbar-nav > li                                  { float: left; }
@@ -94,6 +99,8 @@ Example:
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right social-navigation" role="navigation" aria-label="Navegación social">
+                        <li class="item-facebook"><a href="//facebook.com/datosgobmx" target="_blank">Facebook</a></li>
+                        <li class="item-twitter"><a href="//twitter.com/datosgobmx" target="_blank">Twitter</a></li>
                         <li class="item-github"><a href="//github.com/mxabierto" target="_blank">Github</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
