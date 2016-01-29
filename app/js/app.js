@@ -50,6 +50,30 @@ define( function ( require ) {
         $rootScope.$on( '$viewContentLoaded', function () {
             $( '#site-spinner' ).fadeOut();
         });
+
+        var dismissed   = Cookies.get( 'dgm.poll.dismissed' ),
+            setCookie   = function () {
+                var date        = new Date(),
+                    minutes     = 10;
+                date.setTime( date.getTime() + ( minutes * 60 * 1000 ) );
+
+                Cookies.set( 'dgm.poll.dismissed', 'dismissed', {
+                    expires : date
+                });
+            };
+
+        if ( dismissed !== undefined && dismissed == "dismissed" ) {
+            $( '#poll-btn' ).css({ display : 'none' });
+        }
+
+        if ( $( '#poll-btn-close' ).length > 0 ) {
+            $( '#poll-btn-close' ).click( function ( e ) {
+                e.preventDefault();
+
+                $( '#poll-btn' ).fadeOut();
+                setCookie();
+            });
+        }
     }]);
 
     return app;
