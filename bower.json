@@ -14,6 +14,7 @@
         "bootstrap"                     : "^3.3.5",
         "dgm-footer"                    : "mxabierto/dgm-footer#^0.0.3",
         "dgm-navbar"                    : "mxabierto/dgm-navbar#^0.0.7",
+        "js-cookie"                     : "latest",
         "requirejs"                     : "^2.1.18"
     },
     "overrides"             : {
