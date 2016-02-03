@@ -7,6 +7,12 @@ define( function () {
         $scope.clear    = function () {
             $scope.filter   = '';
         };
+        $scope.less     = function ( e ) {
+            $( e.currentTarget ).parent().fadeOut().prev().fadeIn();
+        };
+        $scope.more     = function ( e ) {
+            $( e.currentTarget ).fadeOut().next().fadeIn();
+        };
         $scope.$on( events.DATASETS_RETRIEVED, function () {
             for ( var i = 0; i < $scope.dataset.extras.length; i++ ) {
                 if ( $scope.dataset.extras[i].key == 'dcat_publisher_email' ) {

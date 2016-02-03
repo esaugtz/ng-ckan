@@ -33,7 +33,8 @@
             <ul class="dataset-resources">
                 <li ng-repeat="resource in dataset.resources | filter:filter">
                     <a href="{{ resource.url }}">{{ resource.name }}<span class="hidden-sm hidden-xs">Descargar</span></a>
-                    <p>{{ resource.description | limitTo : 60 }}...</p>
+                    <p ng-if="resource.description.length < 60"></p>
+                    <p ng-if="resource.description.length > 60">{{ resource.description | limitTo : 60 }}<span class="read-more" ng-click="more($event)">leer más...</span><span class="long-desc">{{ resource.description | substring:60 }}<span class="read-more" ng-click="less($event)">ocultar.</span></span></p>
                 </li>
             </ul>
             <ul class="dataset-tags">
@@ -68,7 +69,7 @@
                         <td>Publicador</td>
                         <td>{{ publisher_name }}</td>
                     </tr>
-		    <tr>
+                    <tr>
                         <td>Diccionario de Datos</td>
                         <td><a href="{{ dataset.url }}">{{ dataset.url }}</a></td>
                     </tr>
