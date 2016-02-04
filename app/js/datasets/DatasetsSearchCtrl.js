@@ -21,7 +21,7 @@ define( function () {
                 if ( government ) {
                     $( '.gov-filter' ).removeClass( 'active' );
                     $( '#item-' + government ).addClass( 'active' );
-                    query       += '+vocab_gov_types:(' + government.charAt( 0 ).toUpperCase() + government.slice( 1 ) + ')';
+                    query       += '+tags:(' + government + ')';
                 }
 
                 if ( category ) {
