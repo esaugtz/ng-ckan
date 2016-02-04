@@ -3,7 +3,23 @@
 define( function () {
     return function ( $scope, $state, $stateParams, Model, $location, events ) {
         var paginating              = false,
-            search                  = $location.search();
+            search                  = $location.search(),
+            filterGov               = function ( e, filter ) {
+                switch ( filter ) {
+                    case 'federal' :
+                        $scope.government  = 'Federal';
+                        break;
+                    case 'state' :
+                        $scope.government  = 'Estatal';
+                        break;
+                    case 'municipal' :
+                        $scope.government  = 'Municipal';
+                        break;
+                    case 'autonomous' :
+                        $scope.government  = 'Organismos Autónomos';
+                        break;
+                }
+            };
 
         $scope.empty                = true;
         $scope.searching            = true;
@@ -51,7 +67,7 @@ define( function () {
             $scope.format       = search.formato;
         }
         if ( search.gob ) {
-            $scope.government   = search.gob;
+            filterGov( null, search.gob );
         }
 
         $scope.$on( Model.getEvent( 'QUERYING' ), function () {
@@ -117,22 +133,7 @@ define( function () {
                 }
             }
         });
-        $scope.$on( 'GOVERNMENT_FILTER', function ( e, filter ) {
-            switch ( filter ) {
-                case 'federal' :
-                    $scope.government  = 'Federal';
-                    break;
-                case 'estatal' :
-                    $scope.government  = 'Estatal';
-                    break;
-                case 'municipal' :
-                    $scope.government  = 'Municipal';
-                    break;
-                case 'autonomos' :
-                    $scope.government  = 'Organismos Autónomos';
-                    break;
-            }
-        });
+        $scope.$on( 'GOVERNMENT_FILTER', filterGov );
         $scope.$on( 'CATEGORY_FILTER', function ( e, filter ) {
             if ( filter == 'all' ) {
                 $scope.category     = '';
