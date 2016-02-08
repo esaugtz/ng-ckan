@@ -12,7 +12,7 @@
         "angular-ui-router"             : "^0.2.15",
         "angular-utils-ui-breadcrumbs"  : "^0.2.1",
         "bootstrap"                     : "^3.3.5",
-        "dgm-footer"                    : "mxabierto/dgm-footer#^0.0.4",
+        "dgm-footer"                    : "mxabierto/dgm-footer#^0.0.5",
         "dgm-navbar"                    : "mxabierto/dgm-navbar#^0.0.8",
         "js-cookie"                     : "latest",
         "requirejs"                     : "^2.1.18"
