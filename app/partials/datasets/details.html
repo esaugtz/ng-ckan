@@ -49,17 +49,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr ng-if="dcat_modified">
                         <td>Última actualización</td>
-                        <td>{{ dataset.metadata_modified | date : 'MMMM dd, yyyy, HH:mm' }}</td>
+                        <td>{{ dcat_modified | date : 'MMMM dd, yyyy, HH:mm' }}</td>
                     </tr>
                     <tr>
                         <td>Registro en el sitio</td>
-                        <td>{{ dataset.revision_timestamp | date : 'MMMM dd, yyyy, HH:mm' }}</td>
+                        <td>{{ dataset.metadata_created | date : 'MMMM dd, yyyy, HH:mm' }}</td>
                     </tr>
                     <tr>
                         <td>Fecha de última modificación de los datos</td>
-                        <td>{{ dataset.metadata_created | date : 'MMMM dd, yyyy, HH:mm' }}</td>
+                        <td>{{ dataset.metadata_modified | date : 'MMMM dd, yyyy, HH:mm' }}</td>
                     </tr>
                     <tr>
                         <td>Correo de contacto</td>

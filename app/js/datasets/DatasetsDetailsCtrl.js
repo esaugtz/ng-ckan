@@ -19,6 +19,8 @@ define( function () {
                     $scope.publisher_email  = $scope.dataset.extras[i].value;
                 } else if ( $scope.dataset.extras[i].key == 'dcat_publisher_name' ) {
                     $scope.publisher_name   = $scope.dataset.extras[i].value;
+                } else if ( $scope.dataset.extras[i].key == 'dcat_modified' ) {
+                    $scope.dcat_modified    = $scope.dataset.extras[i].value;
                 }
             }
 
