@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1">
             <div class="organization-image">
-                <img ng-src="https://raw.githubusercontent.com/mxabierto/assets/master/img/logos/{{ dataset.organization.name }}.png" alt="{{ dataset.organization.title }}">
+                <a ui-sref="organizations.details({ id : dataset.organization.name })"><img ng-src="https://raw.githubusercontent.com/mxabierto/assets/master/img/logos/{{ dataset.organization.name }}.png" alt="{{ dataset.organization.title }}"></a>
             </div>
             <p class="text-center"><img src="https://raw.githubusercontent.com/mxabierto/assets/master/img/ic-libre-uso-dark.png" alt="Libre Uso MX"></p>
         </div>
