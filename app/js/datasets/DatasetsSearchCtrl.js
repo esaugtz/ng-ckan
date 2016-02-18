@@ -60,7 +60,7 @@ define( function () {
         if ( search.page ) {
             skip        = ( search.page - 1 ) * 10;
         }
-        $scope.query.order  = search.orden ? decodeURIComponent( search.orden ) : 'score desc, metadata_modified desc';
+        $scope.query.order  = search.orden ? decodeURIComponent( search.orden ) : 'score desc, dcat_modified desc';
 
         $scope.clearSearch  = function () {
             $scope.keyword  = '';
