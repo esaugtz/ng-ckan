@@ -4,16 +4,18 @@ define( function () {
     return function ( $scope, $stateParams, events, Ckan ) {
         $scope.dataset  = Ckan.dataset( $stateParams.id );
 
-        $scope.clear    = function () {
+        $scope.searching    = true;
+        $scope.clear        = function () {
             $scope.filter   = '';
         };
-        $scope.less     = function ( e ) {
+        $scope.less         = function ( e ) {
             $( e.currentTarget ).parent().fadeOut().prev().fadeIn();
         };
-        $scope.more     = function ( e ) {
+        $scope.more         = function ( e ) {
             $( e.currentTarget ).fadeOut().next().fadeIn();
         };
         $scope.$on( events.DATASETS_RETRIEVED, function () {
+            $scope.searching    = false;
             for ( var i = 0; i < $scope.dataset.extras.length; i++ ) {
                 if ( $scope.dataset.extras[i].key == 'dcat_publisher_email' ) {
                     $scope.publisher_email  = $scope.dataset.extras[i].value;

@@ -17,7 +17,8 @@
     </div>
 </div>
 <div class="container-fluid dataset-details">
-    <div class="row">
+    <loader ng-show="searching"></loader>
+    <div class="row" ng-show="!searching">
         <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1">
             <div class="organization-image">
                 <img ng-src="https://raw.githubusercontent.com/mxabierto/assets/master/img/logos/{{ dataset.organization.name }}.png" alt="{{ dataset.organization.title }}">
