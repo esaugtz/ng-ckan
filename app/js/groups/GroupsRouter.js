@@ -16,7 +16,7 @@ define( function () {
                 }
             })
             .state( 'groups.results', {
-                url             : '/grupos?page',
+                url             : '/grupos/?page',
                 views           : {
                     'datasets-sidebar'  : {
                         templateUrl     : 'partials/datasets/filters.html'
@@ -32,7 +32,7 @@ define( function () {
                 }
             })
             .state( 'groups.details', {
-                url             : '/grupos/:id?page',
+                url             : '/grupos/:id/?page',
                 views           : {
                     'search-container@' : {
                         templateUrl     : 'partials/groups/details.html',
