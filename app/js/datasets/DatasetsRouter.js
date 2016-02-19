@@ -16,7 +16,7 @@ define( function () {
                 }
             })
             .state( 'datasets.results', {
-                url             : '/conjuntos?page',
+                url             : '/conjuntos/?page',
                 views           : {
                     'datasets-sidebar'  : {
                         templateUrl     : 'partials/datasets/filters.html',
@@ -33,7 +33,7 @@ define( function () {
                 }
             })
             .state( 'datasets.details', {
-                url             : '/conjuntos/:id?page',
+                url             : '/conjuntos/:id/?page',
                 views           : {
                     'search-container@' : {
                         templateUrl     : 'partials/datasets/details.html',

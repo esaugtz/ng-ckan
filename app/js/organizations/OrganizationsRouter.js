@@ -16,7 +16,7 @@ define( function () {
                 }
             })
             .state( 'organizations.results', {
-                url             : '/instituciones?page',
+                url             : '/instituciones/?page',
                 views           : {
                     'datasets-sidebar'  : {
                         templateUrl     : 'partials/datasets/filters.html'
@@ -32,7 +32,7 @@ define( function () {
                 }
             })
             .state( 'organizations.details', {
-                url             : '/instituciones/:id?page',
+                url             : '/instituciones/:id/?page',
                 views           : {
                     'search-container@' : {
                         templateUrl     : 'partials/organizations/details.html',
