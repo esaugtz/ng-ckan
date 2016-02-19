@@ -2,8 +2,9 @@
 
 define( function () {
     return function ( $scope, $state, $stateParams, events, Ckan ) {
-        $scope.group    = Ckan.group( $stateParams.id );
+        $scope.group            = Ckan.group( $stateParams.id );
 
+        $scope.searching        = true;
         $scope.clear            = function () {
             $scope.filter   = '';
         };
@@ -13,6 +14,7 @@ define( function () {
             });
         };
         $scope.$on( events.GROUPS_RETRIEVED, function () {
+            $scope.searching    = false;
             $( '.organization-image img' ).load( function () {
                 $( this ).css({
                     'margin-top'    : ( $( '.organization-image' ).height() - $( this ).height() ) / 2
