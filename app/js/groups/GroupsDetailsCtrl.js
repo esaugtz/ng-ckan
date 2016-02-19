@@ -20,41 +20,43 @@ define( function () {
             });
 
             for ( var i = 0; i < $scope.group.packages.length; i++ ) {
-                for ( var j = 0; j < $scope.group.packages[i].tags.length; j++ ) {
-                    switch ( $scope.group.packages[i].tags[j].name ) {
-                        case 'salud' :
-                            $scope.group.packages[i].section    = 'health';
-                            break;
-                        case 'geoespacial' :
-                            $scope.group.packages[i].section    = 'geospatial';
-                            break;
-                        case 'seguridad-y-justicia' :
-                            $scope.group.packages[i].section    = 'security';
-                            break;
-                        case 'energia-y-medio-ambiente' :
-                            $scope.group.packages[i].section    = 'energy';
-                            break;
-                        case 'educacion' :
-                            $scope.group.packages[i].section    = 'education';
-                            break;
-                        case 'economia' :
-                            $scope.group.packages[i].section    = 'economy';
-                            break;
-                        case 'cultura-y-turismo' :
-                            $scope.group.packages[i].section    = 'culture';
-                            break;
-                        case 'finanzas-y-contrataciones' :
-                            $scope.group.packages[i].section    = 'finance';
-                            break;
-                        case 'infraestructura' :
-                            $scope.group.packages[i].section    = 'infrastructure';
-                            break;
-                        case 'desarrollo-sostenible' :
-                            $scope.group.packages[i].section    = 'development';
-                            break;
-                        case 'gobiernos-locales' :
-                            $scope.group.packages[i].section    = 'government';
-                            break;
+                if ( $scope.group.packages[i].tags != undefined ) {
+                    for ( var j = 0; j < $scope.group.packages[i].tags.length; j++ ) {
+                        switch ( $scope.group.packages[i].tags[j].name ) {
+                            case 'salud' :
+                                $scope.group.packages[i].section    = 'health';
+                                break;
+                            case 'geoespacial' :
+                                $scope.group.packages[i].section    = 'geospatial';
+                                break;
+                            case 'seguridad-y-justicia' :
+                                $scope.group.packages[i].section    = 'security';
+                                break;
+                            case 'energia-y-medio-ambiente' :
+                                $scope.group.packages[i].section    = 'energy';
+                                break;
+                            case 'educacion' :
+                                $scope.group.packages[i].section    = 'education';
+                                break;
+                            case 'economia' :
+                                $scope.group.packages[i].section    = 'economy';
+                                break;
+                            case 'cultura-y-turismo' :
+                                $scope.group.packages[i].section    = 'culture';
+                                break;
+                            case 'finanzas-y-contrataciones' :
+                                $scope.group.packages[i].section    = 'finance';
+                                break;
+                            case 'infraestructura' :
+                                $scope.group.packages[i].section    = 'infrastructure';
+                                break;
+                            case 'desarrollo-sostenible' :
+                                $scope.group.packages[i].section    = 'development';
+                                break;
+                            case 'gobiernos-locales' :
+                                $scope.group.packages[i].section    = 'government';
+                                break;
+                        }
                     }
                 }
             }
