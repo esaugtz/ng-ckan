@@ -22,7 +22,7 @@
             <form class="form">
                 <div class="form-group" ng-if="$state.is( 'datasets.results' )">
                     <select name="sort" class="form-control" ng-model="query.order" ng-change="sort()">
-                        <option value="score desc, metadata_modified desc">Ordenar por Relevancia</option>
+                        <option value="dcat_modified desc, score desc">Ordenar por Relevancia</option>
                         <option value="title_string asc">Ordenar por Nombre Ascendente</option>
                         <option value="title_string desc">Ordenar por Nombre Descendente</option>
                         <option value="metadata_modified desc">Ordenar por Última Modificación</option>
