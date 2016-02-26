@@ -40,7 +40,7 @@ define( function () {
 
             $( '.breadcrumb li:last-child span' ).html( $scope.dataset.title );
 
-            var disqus_shortname            = 'datos-mx';
+            var disqus_shortname            = 'datosgobmx';
             window.disqus_config            = function () {
                     this.language           = "es_MX";
                     this.page.url           = location;
