@@ -7,6 +7,10 @@ describe( 'App', function () {
             });
         };
 
+    it ( 'should set the browser window size', function () {
+        browser.driver.manage().window().setSize( 1200, 980 );
+    });
+
     it ( 'should have correctly boostraped AngularJS', function () {
         browser.get( '/' );
 
