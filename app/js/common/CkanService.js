@@ -142,8 +142,7 @@ define( function () {
             datasets        : function ( q, order, skip ) {
                 $rootScope.$broadcast( events.DATASETS_QUERYING );
 
-                var that        = this,
-                    timeout     = this._setTimeout();
+                var timeout     = this._setTimeout();
 
                 return this._resource.datasets({
                         action  : 'package_search',
@@ -181,8 +180,7 @@ define( function () {
             groups          : function () {
                 $rootScope.$broadcast( events.GROUPS_QUERYING );
 
-                var that        = this,
-                    timeout     = this._setTimeout();
+                var timeout     = this._setTimeout();
 
                 return this._resource.groups({
                         action      : 'group_list',
@@ -217,8 +215,7 @@ define( function () {
             organizations   : function () {
                 $rootScope.$broadcast( events.ORGANIZATIONS_QUERYING );
 
-                var that        = this,
-                    timeout     = this._setTimeout();
+                var timeout     = this._setTimeout();
 
                 return this._resource.organizations({
                         action      : 'organization_list',

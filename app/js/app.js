@@ -29,10 +29,10 @@ define( function ( require ) {
 
             // check to see if the path already has a slash where it should be
             if ( path[path.length - 1] === '/' || path.indexOf( '/?' ) > -1 ) {
-                return;
+                return '';
             }
 
-            if (path.indexOf( '?' ) > -1) {
+            if ( path.indexOf( '?' ) > -1 ) {
                 return path.replace( '?', '/?' );
             }
 
@@ -40,7 +40,7 @@ define( function ( require ) {
         });
 
         $urlRouterProvider.otherwise( '/conjuntos' );
-        $locationProvider.html5Mode( false ).hashPrefix( "!" );
+        $locationProvider.html5Mode( false ).hashPrefix( '!' );
     }]);
 
     app.run([ '$rootScope', '$state', function ( $rootScope, $state ) {

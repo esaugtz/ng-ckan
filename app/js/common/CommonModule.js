@@ -9,7 +9,7 @@ define( function ( require ) {
 
     var CommonModule        = angular.module( 'CommonModule', []);
 
-    CommonModule.controller( 'FiltersCtrl', [ '$rootScope', '$scope', '$location', FiltersCtrl ] );
+    CommonModule.controller( 'FiltersCtrl', [ '$rootScope', '$scope', FiltersCtrl ] );
 
     CommonModule.directive( 'loader', [ SpinnerDirective ] );
 
