@@ -381,7 +381,7 @@ module.exports  = function ( grunt ) {
         'filerev',
         'usemin',
         'htmlmin',
-        'copy:altdist',
+        'copy:altdist'
     ]);
     grunt.registerTask( 'publish', [
         'build',

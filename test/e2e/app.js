@@ -7,6 +7,10 @@ describe( 'App', function () {
             });
         };
 
+    it ( 'should set the browser window size', function () {
+        browser.driver.manage().window().setSize( 1200, 980 );
+    });
+
     it ( 'should have correctly boostraped AngularJS', function () {
         browser.get( '/' );
 
@@ -14,8 +18,6 @@ describe( 'App', function () {
     });
 
     it ( 'should navigate to the second page of the results', function () {
-        browser.get( '/#/conjuntos' );
-
         element.all( by.css( '.pagination-sm li' ) ).get( 3 ).element( by.tagName( 'a' ) ).click();
     });
 
@@ -40,7 +42,7 @@ describe( 'App', function () {
     });
 
     it ( 'should preserve the search keyword when refreshing the browser', function () {
-        browser.get( '/#/conjuntos?q=presupuesto' );
+        browser.get( '/#!/conjuntos/?q=presupuesto' );
 
         element( by.css( '#search-keyword' ) ).getAttribute( 'value' ).then( function ( value ) {
             expect( value ).toBe( 'presupuesto' );
@@ -70,7 +72,7 @@ describe( 'App', function () {
     });
 
     it ( 'should filter datasets from the URL', function () {
-        browser.get( '/#/conjuntos?categoria=seguridad y justicia&gob=estatal' );
+        browser.get( '/#!/conjuntos?categoria=seguridad y justicia&gob=estatal' );
     });
 
     it ( 'should filter the datasets by government level', function () {
@@ -78,7 +80,7 @@ describe( 'App', function () {
 
         expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
 
-        element( by.css( '#item-estatal a' ) ).click();
+        element( by.css( '#item-state a' ) ).click();
 
         expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
 
@@ -86,7 +88,7 @@ describe( 'App', function () {
 
         expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
 
-        element( by.css( '#item-autonomos a' ) ).click();
+        element( by.css( '#item-autonomous a' ) ).click();
 
         expect( element.all( by.css( '[ng-click="clearGov()"]' ) ).count() ).toBe( 1 );
     });

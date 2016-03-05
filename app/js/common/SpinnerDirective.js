@@ -5,9 +5,7 @@ define( function () {
         return {
             restrict    : 'EA',
             templateUrl : 'partials/spinner.html',
-            link        : function ( scope ) {
-                
-            }
+            link        : function () {}
         };
     };
 });
