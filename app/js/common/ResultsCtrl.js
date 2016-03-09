@@ -80,7 +80,7 @@ define( function () {
             $scope.searching    = false;
             $scope.results      = data;
             $scope.limit        = Model.getPageSize();
-            $scope.total        = Model.getTotal() - 10;
+            $scope.total        = Model.getTotal();
             if ( $stateParams.page && !paginating ) {
                 $scope.page     = $stateParams.page;
             }
