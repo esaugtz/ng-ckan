@@ -97,6 +97,18 @@ describe( 'App', function () {
         element( by.css( '[ng-click="clearGov()"]' ) ).click();
     });
 
+    it ( 'should filter the datasets by format', function () {
+        element( by.css( '#item-csv a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearFormat()"]' ) ).count() ).toBe( 1 );
+    });
+
+    it ( 'should clear the format filter previously set', function () {
+        browser.refresh();
+
+        element( by.css( '[ng-click="clearFormat()"]' ) ).click();
+    });
+
     it ( 'should navigate to the datasets details state', function () {
         element.all( by.css( '#datasets-content table > tbody > tr' ) ).first().click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/conjuntos' );
