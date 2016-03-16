@@ -168,7 +168,7 @@ describe( 'App', function () {
     });
 
     it ( 'should navigate to the group details state', function () {
-        element.all( by.css( '.group-item' ) ).get( 1 ).click().then( function () {
+        element.all( by.css( '.group-item' ) ).get( 2 ).click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/grupos' );
         });
     });
