@@ -127,6 +127,14 @@ describe( 'App', function () {
         });
     });
 
+    it ( 'should filter and clear the organizations displayed', function () {
+        element( by.css( '#search-keyword' ) ).sendKeys( 'ayuntamiento' );
+
+        browser.sleep( 1000 );
+
+        element( by.css( '[ng-click="clearSearch()"]' ) ).click();
+    });
+
     it ( 'should navigate to the organization details state', function () {
         element.all( by.css( '.organization-item' ) ).first().click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/instituciones' );
@@ -149,6 +157,14 @@ describe( 'App', function () {
         element.all( by.css( '.nav-tabs li' ) ).get( 2 ).element( by.tagName( 'a' ) ).click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/grupos' );
         });
+    });
+
+    it ( 'should filter and clear the groups displayed', function () {
+        element( by.css( '#search-keyword' ) ).sendKeys( 'calidad' );
+
+        browser.sleep( 1000 );
+
+        element( by.css( '[ng-click="clearSearch()"]' ) ).click();
     });
 
     it ( 'should navigate to the group details state', function () {
