@@ -97,6 +97,18 @@ describe( 'App', function () {
         element( by.css( '[ng-click="clearGov()"]' ) ).click();
     });
 
+    it ( 'should filter the datasets by format', function () {
+        element( by.css( '#item-csv a' ) ).click();
+
+        expect( element.all( by.css( '[ng-click="clearFormat()"]' ) ).count() ).toBe( 1 );
+    });
+
+    it ( 'should clear the format filter previously set', function () {
+        browser.refresh();
+
+        element( by.css( '[ng-click="clearFormat()"]' ) ).click();
+    });
+
     it ( 'should navigate to the datasets details state', function () {
         element.all( by.css( '#datasets-content table > tbody > tr' ) ).first().click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/conjuntos' );
@@ -113,6 +125,14 @@ describe( 'App', function () {
         element.all( by.css( '.nav-tabs li' ) ).get( 1 ).element( by.tagName( 'a' ) ).click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/instituciones' );
         });
+    });
+
+    it ( 'should filter and clear the organizations displayed', function () {
+        element( by.css( '#search-keyword' ) ).sendKeys( 'ayuntamiento' );
+
+        browser.sleep( 1000 );
+
+        element( by.css( '[ng-click="clearSearch()"]' ) ).click();
     });
 
     it ( 'should navigate to the organization details state', function () {
@@ -139,8 +159,16 @@ describe( 'App', function () {
         });
     });
 
+    it ( 'should filter and clear the groups displayed', function () {
+        element( by.css( '#search-keyword' ) ).sendKeys( 'calidad' );
+
+        browser.sleep( 1000 );
+
+        element( by.css( '[ng-click="clearSearch()"]' ) ).click();
+    });
+
     it ( 'should navigate to the group details state', function () {
-        element.all( by.css( '.group-item' ) ).get( 1 ).click().then( function () {
+        element.all( by.css( '.group-item' ) ).get( 2 ).click().then( function () {
             expect( browser.getLocationAbsUrl() ).toMatch( '/grupos' );
         });
     });

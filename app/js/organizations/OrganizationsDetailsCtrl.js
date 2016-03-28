@@ -22,8 +22,10 @@ define( function () {
             });
 
             for ( var i = 0; i < $scope.organization.packages.length; i++ ) {
+                /* istanbul ignore else */
                 if ( $scope.organization.packages[i].tags ) {
                     for ( var j = 0; j < $scope.organization.packages[i].tags.length; j++ ) {
+                        /* istanbul ignore next */
                         switch ( $scope.organization.packages[i].tags[j].name ) {
                             case 'salud' :
                                 $scope.organization.packages[i].section     = 'health';
