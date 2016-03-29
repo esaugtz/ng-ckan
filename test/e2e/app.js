@@ -60,6 +60,7 @@ describe( 'App', function () {
     });
 
     it ( 'should clear the category filter previously set', function () {
+        browser.sleep( 5000 );
         element( by.css( '[ng-click="clearCat()"]' ) ).click();
     });
 
@@ -94,6 +95,7 @@ describe( 'App', function () {
     });
 
     it ( 'should clear the government filter previously set', function () {
+        browser.sleep( 5000 );
         element( by.css( '[ng-click="clearGov()"]' ) ).click();
     });
 
@@ -105,6 +107,7 @@ describe( 'App', function () {
 
     it ( 'should clear the format filter previously set', function () {
         browser.refresh();
+        browser.sleep( 5000 );
 
         element( by.css( '[ng-click="clearFormat()"]' ) ).click();
     });
