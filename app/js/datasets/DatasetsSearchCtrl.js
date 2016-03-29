@@ -15,7 +15,7 @@ define( function () {
                     var q       = $scope.keyword,
                         exp     = q.split( ' '  ).join( '* OR ' );
                     q           = q.split( ' ' ).join( ' OR ' );
-                    query       += 'title:(' + q.toLowerCase() + ' OR ' + exp.toLowerCase() + '*' + ' OR ' + q.charAt(0).toUpperCase() + q.slice(1) + ' OR ' + exp.charAt(0).toUpperCase() + exp.slice(1) + '*) OR notes:(' + $scope.keyword.toLowerCase() + ')';
+                    query       += '(title:(' + q.toLowerCase() + ' OR ' + exp.toLowerCase() + '*' + ' OR ' + q.charAt(0).toUpperCase() + q.slice(1) + ' OR ' + exp.charAt(0).toUpperCase() + exp.slice(1) + '*) OR notes:(' + $scope.keyword.toLowerCase() + '))';
                 }
 
                 if ( government ) {
@@ -28,7 +28,11 @@ define( function () {
                     var item    = category.indexOf( ' ' ) != -1 ? category.substring( 0, category.indexOf( ' ' ) ) : category;
                     $( '.category-filter' ).removeClass( 'active' );
                     $( '#item-' + item ).addClass( 'active' );
-                    query       += '+tags:' + category.replace( / /g, '-' );
+
+                    if ( query != '' ) {
+                        query   += ' AND ';
+                    }
+                    query       += 'tags:' + category.replace( / /g, '-' );
                 }
 
                 if ( format ) {
