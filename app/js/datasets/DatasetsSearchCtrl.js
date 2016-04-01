@@ -15,7 +15,7 @@ define( function () {
                     var q       = $scope.keyword,
                         exp     = q.split( ' '  ).join( '* OR ' );
                     q           = q.split( ' ' ).join( ' OR ' );
-                    query       += '(title:(' + q.toLowerCase() + ' OR ' + exp.toLowerCase() + '*' + ' OR ' + q.charAt(0).toUpperCase() + q.slice(1) + ' OR ' + exp.charAt(0).toUpperCase() + exp.slice(1) + '*) OR notes:(' + $scope.keyword.toLowerCase() + '))';
+                    query       += '(title:(' + q.toLowerCase() + ' OR ' + exp.toLowerCase() + '*' + ' OR ' + q.charAt(0).toUpperCase() + q.slice(1) + ' OR ' + exp.charAt(0).toUpperCase() + exp.slice(1) + '*) OR notes:(' + $scope.keyword.toLowerCase() + '*) OR tags:(' + $scope.keyword.toLowerCase() + ' OR ' + $scope.keyword.toLowerCase() + '*))';
                 }
 
                 if ( government ) {
