@@ -17,69 +17,16 @@
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
         <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
-		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     </head>
     <body>
         <dgm-navbar></dgm-navbar>
-        <header class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div id="breadcrumb">
-                        <ui-breadcrumbs displayname-property="data.displayName" template-url="partials/breadcrumb.html" abstract-proxy-property="data.breadcrumbProxy"></ui-breadcrumbs>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
-                    <ul class="nav nav-tabs">
-                        <li id="item-datasets" role="presentation" class="active"><a ui-sref="datasets.results">Todos los datos</a></li>
-                        <li id="item-organizations" role="presentation"><a ui-sref="organizations.results">Instituciones</a></li>
-                        <li id="item-groups" role="presentation"><a ui-sref="groups.results">Grupos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <section id="search">
-            <div ui-view="search-container"></div>
-        </section>
         <dgm-footer></dgm-footer>
-        <div id="site-spinner">
-            <div id="main-spinner">
-                <div id="center-mass"></div>
-                <div class="dot dot-1"></div>
-                <div class="dot dot-2"></div>
-            </div>
-        </div>
         <!-- build:js(.) js/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-        <script src="bower_components/angular-i18n/angular-locale_es-mx.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-        <script src="bower_components/js-cookie/src/js.cookie.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-        <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
-        <script type="text/javascript">
-          var _sf_async_config = { uid: 62850, domain: 'busca.datos.gob.mx', useCanonical: true };
-          (function() {
-            function loadChartbeat() {
-              window._sf_endpt = (new Date()).getTime();
-              var e = document.createElement('script');
-              e.setAttribute('language', 'javascript');
-              e.setAttribute('type', 'text/javascript');
-              e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
-              document.body.appendChild(e);
-            };
-            var oldonload = window.onload;
-            window.onload = (typeof window.onload != 'function') ?
-            loadChartbeat : function() { oldonload(); loadChartbeat(); };
-          })();
-        </script>
     </body>
 </html>
