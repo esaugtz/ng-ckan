@@ -7,8 +7,3 @@ app/css
 dist
 .tmp
 .grunt
-
-# Code coverage specific files
-instrumented
-test/coverage
-test/reports

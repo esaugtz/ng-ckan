@@ -1,227 +1,173 @@
 @import url( '../../bower_components/bootstrap/less/bootstrap.less' );
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
-/*********************************
-    GENERAL STYLES
-*********************************/
-html, body                                  { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.6em; font-family: "Open Sans"; color: #595959; }
-img                                         { max-width: 100%; }
-.btn                                        { padding: 10px; border: none; border-radius: 0; }
-.btn-default                                { background-color: #9b9b9b; color: #fff; font-size: 12px; font-weight: 600; text-transform: uppercase; }
-#datasets-container                         { display : -webkit-box; display : -webkit-flex; display : -ms-flexbox; display :flex; }
+/********************************
+    General Styles
+********************************/
+.container-fluid                            { max-width: 1100px; }
+a, a:hover, a:focus, a:active, a:focus      { outline: 0; text-decoration: none; }
+
+/********************************
+    Fonts Styles
+********************************/
+body                                        { font-family: "Open Sans"; }
+h1                                          { font-size: 24px; font-weight: 600; color: #545454; }
+.breadcrumb > li                            { font-size: 12px; font-weight: 400; line-height: 50px; }
+.breadcrumb > li + li::before               { font-size: 13px; }
+.breadcrumb > li > a                        { color: #545454; text-transform: capitalize; }
+.breadcrumb > li.active > a,
+.breadcrumb > li:last-child > a,
+.breadcrumb > li > a:hover                  { color: #0c9; }
+.submenu > li                               { font-size: 12px; font-weight: 400; line-height: 50px; }
+.submenu > li > a                           { color: #545454; }
+.submenu > li.active > a,
+.submenu > li > a:hover                     { color: #0c9; }
+#sidebar h3                                 { font-size: 14px; font-weight: 700; line-height: 45px; color: #d8d8d8; }
+#sidebar h4                                 { font-size: 14px; font-weight: 700; line-height: 45px; color: #545454; }
+#sidebar ul > li > a                        { font-size: 12px; font-weight: 400; line-height: 35px; color: #696969; }
+#sidebar ul > li.active > a,
+#sidebar ul > li > a:hover                  { color: #0c9; }
+#search-form .search-keyword .glyphicon     { font-size: 16px; color: #d8d8d8; }
+#search-form p                              { font-size: 14px; font-weight: 600; line-height: 34px; color: #474747; }
+.form-group label                           { font-size: 14px; font-weight: 300; color: #474747; }
+.custom-select select                       { color: #9b9b9b; }
+.custom-select::before,
+.custom-select::after                       { font-family: 'Glyphicons Halflings'; color: #d8d8d8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.dataset-item .dataset-date                 { font-size: 11px; font-weight: 300; color: #9b9b9b; }
+.dataset-item .dataset-date > span > strong { font-weight: 300; color: #474747; }
+.dataset-item h3                            { font-size: 15px; font-weight: 600; color: #474747; }
+.dataset-item h3 > a                        { color: #474747; }
+.dataset-item h3 > a:hover                  { font-weight: 700; }
+.dataset-item p                             { font-size: 12px; font-weight: 300; color: #474747; }
+.pagination > li > a                        { font-size: 15px; font-weight: 600; color: #0c9; }
+.pagination > li.active > a,
+.pagination > li > a:hover                  { color: #9b9b9b; }
+.filters-list > span                        { font-size: 13px; font-weight: 300; color: #474747; }
+.filters-list .btn-dismiss                  { font-size: 14px; font-weight: 600; color: #fff; }
+.filter-item                                { font-weight: 300; color: #fff; }
+
+/********************************
+    Sticky Footer Styles
+********************************/
+html                                        { position: relative; min-height: 100%; }
+body                                        { margin: 0 0 432px; }
+dgm-footer                                  { width: 100%; height: 432px; position: absolute; left: 0; bottom: 0; }
+
+/********************************
+    Forms Styles
+********************************/
+.form-inline > .form-group > label          { margin-right: 10px; }
+.form-control:focus                         { border-color: rgba(0,204,153,0.8); box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px rgba(0,204,153,0.3); }
+.custom-select                              { display: inline-block; margin: 0; padding: 0; border: 1px solid #ccc; border-radius: 4px; position: relative; }
+.custom-select::before,
+.custom-select::after                       { display: inline-block; position: absolute; right: 8px; }
+.custom-select::before                      { content: "\e252"; bottom: 2px; }
+.custom-select::after                       { content: "\e253"; top: 2px; }
+.custom-select select                       { border: none; box-shadow: none; background-color: transparent; background-image: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+.custom-select select:focus,
+.custom-select select:active                { outline: none; }
+#search-form                                { margin-bottom: 30px; }
+#search-form input[type="text"]             { height: 45px; padding-right: 20px; }
+#search-form .search-keyword                { position: relative; }
+#search-form .search-keyword .glyphicon     { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
+#search-form .form-inline                   { float: right; }
+#search-form p                              { margin-bottom: 0; }
 .filters-list                               { margin-top: 20px; }
-.filters-list .btn-dismiss                  { background: none; border: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 21px; text-shadow: 0 1px 0 #fff; opacity: 0.2; line-height: 1; cursor: pointer; padding: 0; }
-.filter-item                                { background-color: #eee; padding: 5px; padding-left: 10px; font-weight: 400; }
-a                                           { color: #0c9; cursor: pointer; }
-a:hover                                     { color: #0c9; font-weight: bold; text-decoration: none; }
-.btn-primary                                { background-color: #0c9; }
-button.btn.btn-primary:hover,
-button.btn.btn-primary:active,
-button.btn.btn-primary:focus                { background-color: #00b386; }
+.filters-list > span                        { margin-right: 10px; }
+.filters-list > span:last-child             { margin-right: 0; }
+.filters-list .btn-dismiss                  { margin-left: 7px; padding: 0; background: none; border: none; cursor: pointer; position: relative; top: -1px; }
+.filter-item                                { background-color: #0c9; padding: 3px 7px; border-radius: 5px; }
 
-/*********************************
-    SPINNER STYLES
-*********************************/
-@dot-color: #00cc99;
-@center_mass_size: 25px;
-@small-dot-color: rgba( 238,238,238, 0.4 );
-#site-spinner                               { display: block; width: 100%; height: 100%; background-color: #eee; position: absolute; top: 0; left: 0; }
-#main-spinner                               { animation: 1s spin linear infinite; position: absolute; top: 50%; left: 50%; height: 50px; width: 150px; margin-left:-75px; margin-top: -25px; }
-.loader                                     { position: relative; padding-bottom: 500px; }
-.dot                                        { animation: 0.5s backspin linear infinite; position: absolute; box-shadow: 0 100px @dot-color, 0 -100px @dot-color, 100px 0 @dot-color, -100px 0 @dot-color; border-radius:100px; height: 50px; width: 50px; }
-.dot-1                                      { left: 0; }
-.dot-2                                      { right: 0; }
-#center-mass                                { position: absolute; width: @center_mass_size; height: @center_mass_size; left: 50%; top: 50%; margin-top: (@center_mass_size * -0.5); margin-left: (@center_mass_size * -0.5); background: @small-dot-color; border-radius: @center_mass_size; box-shadow: 100px 0 @small-dot-color, -100px 0 @small-dot-color; }
-@keyframes spin                             { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(0.9); } 100% { transform: rotate(360deg) scale(1); } }
-@keyframes backspin                         { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(-180deg) scale(0.9); } 100% { transform: rotate(-360deg) scale(1); } }
+/********************************
+    Breadcrumb Styles
+********************************/
+.breadcrumb-container                       { margin-bottom: 20px; background-color: #f6f6f6; }
+.breadcrumb                                 { margin-bottom: 0; padding: 0; background-color: transparent; border-radius: 0; }
+.breadcrumb > li + li::before               { padding: 0 3px 0 8px; }
+.breadcrumb > li > a                        { display: inline-block; }
+.breadcrumb > li:last-child > a             { pointer-events: none; }
+.submenu                                    { margin-bottom: 0; float: right; }
+.submenu li                                 { display: inline-block; margin-right: 20px; }
+.submenu li:last-child                      { margin-right: 0; }
 
-/*********************************
-    POLL STYLES
-*********************************/
-#poll-btn                                   { width: 50px; height: 260px; background-color: #0c9; position: fixed; top: 50%; right: 0; transform: translateY(-50%); }
-#poll-btn .btn                              { display: block; width: 260px; height: 50px; padding: 0; line-height: 45px; font-weight: 300; color: #fff; position: absolute; top: 102.5px; left: -102.5px; transform: rotate(90deg); }
-#poll-btn .btn a                            { color: #fff; }
-#btn-close-poll-side,
-#poll-btn-close                             { margin-left: 15px; font-size: 16px; color: #fff; font-weight: 300; cursor: pointer; }
-#poll-btn-close:hover                       { font-weight: 400; }
+/********************************
+    Pagination Styles
+********************************/
+.pagination                                 { margin: 20px auto 100px; position: relative; left: 50%; transform: translateX(-50%); }
+.pagination > li.active > a,
+.pagination > li.active > a:hover,
+.pagination > li:hover > a                  { background-color: #d8d8d8; border-color: #d8d8d8; }
 
-/*********************************
-    FONT STYLES
-*********************************/
-h1                                          { font-size: 24px; font-weight: 700; color: #595959; }
-a, a:active, a:hover, a:focus               { outline: 0; border: none; text-decoration: none; }
-a:hover                                     { text-decoration: none; }
-.label                                      { font-size: 12px; font-weight: 700; color: #fff; text-transform: uppercase; border-radius: 0; }
-.label[data-format="csv"],
-.label[data-format="CSV"]                   { background-color: #ffd100; }
-.label[data-format="kml"],
-.label[data-format="KML"]                   { background-color: #474747; }
-.label[data-format="geojson"],
-.label[data-format="GEOJSON"],
-.label[data-format="json"],
-.label[data-format="JSON"]                  { background-color: #33ffd1; }
-.label[data-format="pdf"],
-.label[data-format="PDF"]                   { background-color: #ff2200; }
-.label[data-format="arcgis"],
-.label[data-format="ARCGIS"]                { background-color: #d100FF; }
-.label[data-format="xlsx"],
-.label[data-format="xls"],
-.label[data-format="excel"],
-.label[data-format="vnd.ms-excel"],
-.label[data-format="EXCEL"],
-.label[data-format="VND.MS-EXCEL"],
-.label[data-format="XLS"],
-.label[data-format="XLSX"]                  { background-color: #00d100; }
-.label[data-format="xml"],
-.label[data-format="XML"]                   { background-color: #0000d1; }
-.label[data-format="oracle"],
-.label[data-format="ORACLE"]                { background-color: #55bada; }
-.label[data-format="shp"],
-.label[data-format="SHP"]                   { background-color: #bada55; }
-.label[data-format="kmz"],
-.label[data-format="KMZ"]                   { background-color: #55adab; }
-.label[data-format="zip"],
-.label[data-format="ZIP"]                   { background-color: #001dff; }
+/********************************
+    Sidebar Styles
+********************************/
+#sidebar h3                                 { margin: 0; padding: 0 10px; }
+#sidebar h4                                 { margin: 0; padding: 0 10px; border: 1px solid #d8d8d8; border-left: none; border-right: none; background-color: #f6f6f6; }
+#sidebar ul                                 { margin: 0; padding: 0; list-style: none; }
+#sidebar ul > li                            { padding: 0 10px; border-bottom: 1px solid #d8d8d8; }
+#sidebar ul > li.active                     { background-color: #f6f6f6; }
+#sidebar ul > li:last-child                 { border-bottom: none; }
 
-/*********************************
-    FORM STYLES
-*********************************/
-.form-control                               { border-radius: 0; border: none; color: #a1a1a1; }
+/********************************
+    Main Container Styles
+********************************/
+h1                                          { margin-top: 0; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #d8d8d8; position: relative; }
+h1:after                                    { content: ''; width: 40px; position: absolute; bottom: -6px; left: 0; border-bottom: solid 5px #0c9; }
+#main-container                             { margin-bottom: 60px; border: 1px solid #d8d8d8; border-radius: 5px; }
+#main-container > .row,
+#main-container > .row > .col-md-3,
+#main-container > .row > .col-md-9          { height: 100%; }
 
-/*********************************
-    BREADCRUMB STYLES
-*********************************/
-.breadcrumb                                 { margin-bottom: 0; background-color: transparent; }
-.breadcrumb a                               { font-size: 12px; cursor: pointer; }
-.breadcrumb span                            { font-size: 12px; }
-.breadcrumb .home-item                      { display: inline-block; width: 15px; height: 13px; background: url(../img/ic-home.png) no-repeat 50% 50%; background-size: contain; position: relative; top: 3px; text-indent: -9999px; }
-
-/*********************************
-    PAGINATION STYLES
-*********************************/
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus          { background-color: #0c9; border-color: #0c9; }
-.pagination > li > a,
-.pagination > li > span,
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus               { color: #0c9; font-weight: 300; }
-
-/*********************************
-    TABS STYLES
-*********************************/
-.nav-tabs                                   { border: none; }
-.nav-tabs > li                              { margin-bottom: 0; border-bottom: 5px solid #474747; }
-.nav-tabs > li.active,
-.nav-tabs > li:hover                        { border-bottom-color: #00d2a9; }
-.nav-tabs > li > a                          { font-size: 14px; font-weight: 700; color: #595959; border: none; border-radius: 0; }
-.nav-tabs > li:hover > a,
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus             { color: #00d2a9; border: none; background-color: transparent; }
-
-/*********************************
-    TABLES STYLES
-*********************************/
-table                                       { width: 100%; }
-table > thead > tr > th                     { font-size: 11px; font-weight: 700; color: #595959; }
-table > thead > tr > th > .glyphicon        { color: #d8d8d8; margin-right: 5px; position: relative; top: 2px; }
-table.data                                  { margin-top: -10px; border-spacing: 0 20px; border-collapse: separate; }
-table.data > tbody > tr > td                { padding: 10px 15px; background-color: #eee; font-size: 11px; font-weight: 300; color: #595959; }
-table.data > tbody > tr > td.ic-dataset     { background-color: #d7d7d7; text-align: center; vertical-align: bottom; }
-table.data > tbody > tr > td.ic-dataset img { display: block; width: 20px; margin: 0 auto 10px; }
-table.data > tbody > tr > td.ic-dataset img:last-child  { margin-bottom: 0; }
-
-/*********************************
-    HEADER STYLES
-*********************************/
-header                                      { padding-top: 20px; }
-
-/*********************************
-    SUBSCRIBE SECTION STYLES
-*********************************/
-#subscribe                                  { padding: 30px 0; background-color: #eee; }
-#subscribe p                                { margin-bottom: 0; line-height: 37.15px; }
-#subscribe a                                { color: #595959; font-weight: 700; }
-#subscribe .form                            { overflow: hidden; }
-#subscribe .form > .form-group              { width: 80%; margin-bottom: 0; float: left; }
-#subscribe .form > .form-group > input      { height: 37.15px; font-size: 14px; font-weight: 300; color: #ababab; border-radius: 0; border: none; }
-#subscribe .form > button                   { float: left; width: 20%; }
-
-/*********************************
-    SEARCH SECTION STYLES
-*********************************/
-.search-form .form-group                    { position: relative; }
-.search-form .form-group .glyphicon         { cursor: pointer; position: absolute; right: 10px; top: 10px; }
-#search-header                              { padding-top: 30px; padding-bottom: 30px; background-color: #eee; }
-#search-header h1                           { margin-top: 0; margin-bottom: 20px; }
-#search-header p                            { margin-bottom: 0; }
-#search-header .navigation-links            { margin-bottom: 10px; }
-@media (max-width: 991px)                   { #search-header h1 { margin-bottom: 5px; } #search-header p { margin-bottom: 20px; } .dataset-icon { width: 20px; float: right; } .dataset-icon:last-child { margin-right: 15px; } }
-#datasets-container                         { position: relative; overflow: hidden; }
-#datasets-content                           { padding: 30px; }
-#datasets-content table > tbody > tr        { cursor: pointer; }
-#datasets-sidebar                           { padding-top: 20px; padding-bottom: 20px; background-color: #474747; }
-#datasets-sidebar > h3,
-#datasets-sidebar > h4                      { margin-top: 0; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; color: #7c7c7c; }
-#datasets-sidebar > h3                      { font-weight: 700; }
-#datasets-sidebar > h4                      { margin-bottom: 30px; font-weight: 400; }
-#datasets-sidebar ul                        { margin-bottom: 30px; list-style: none; padding-left: 0; }
-#datasets-sidebar ul > li                   { height: auto; line-height: 18px; padding-top: 6px; padding-bottom: 6px; }
-#datasets-sidebar ul > li.icon-item         { margin: 15px 0; padding-left: 50px; background-size: 21px; background-position: 5px 50%; background-repeat: no-repeat; }
-#datasets-sidebar ul > li > a               { font-size: 13px; font-weight: 400; color: #7c7c7c; }
-#datasets-sidebar ul > li.active > a,
-#datasets-sidebar ul > li:hover > a         { color: #00d2a9; }
-#datasets-sidebar ul > li.filter-all                { background-image: url(../img/ic-all.png); }
-#datasets-sidebar ul > li.filter-health             { background-image: url(../img/ic-health.png); }
-#datasets-sidebar ul > li.filter-geospatial         { background-image: url(../img/ic-geospatial.png); }
-#datasets-sidebar ul > li.filter-security           { background-image: url(../img/ic-security.png); }
-#datasets-sidebar ul > li.filter-energy             { background-image: url(../img/ic-energy.png); }
-#datasets-sidebar ul > li.filter-education          { background-image: url(../img/ic-education.png); }
-#datasets-sidebar ul > li.filter-economy            { background-image: url(../img/ic-economy.png); }
-#datasets-sidebar ul > li.filter-culture            { background-image: url(../img/ic-culture.png); }
-#datasets-sidebar ul > li.filter-finance            { background-image: url(../img/ic-finance.png); }
-#datasets-sidebar ul > li.filter-infrastructure     { background-image: url(../img/ic-infrastructure.png); }
-#datasets-sidebar ul > li.filter-development        { background-image: url(../img/ic-development.png); }
-#datasets-sidebar ul > li.filter-government         { background-image: url(../img/ic-government.png); }
-#datasets-sidebar ul > li.filter-others             { background-image: url(../img/ic-others.png); }
-
-/*********************************
-    DATASETS SECTION STYLES
-*********************************/
-.dataset-details,
-.organization-details                       { margin-top: 50px; padding-bottom: 50px; }
-.organization-details .organization-image,
-.dataset-details .organization-image        { height: 170px; margin-bottom: 30px; padding: 15px; background-color: #eee; }
-.organization-details p                     { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
-.dataset-details .organization-image > img  { vertical-align: middle; }
-.dataset-details h1                         { margin-top: 0; margin-bottom: 30px; }
-.dataset-details h4                         { margin: 20px 0; font-size: 14px; font-weight: 700; color: #474747; }
-.dataset-details h5                         { margin: 30px 0; text-transform: uppercase; }
-.dataset-details ul                         { padding-left: 0; list-style: none; overflow: hidden; }
-.dataset-details .dataset-resources > li    { background-color: #eee; margin-bottom: 30px; padding: 20px; position: relative; }
-.dataset-details .dataset-resources li a    { display: block; padding-right: 110px; font-size: 14px; font-weight: 600; color: #474747; overflow: hidden; }
-.dataset-details .dataset-resources li p    { padding-right: 110px; }
-.dataset-details .dataset-resources a span  { padding: 20px; line-height: 56px; background-color: #d8d8d8; position: absolute; right: 0; top: 0; bottom: 0; }
-.dataset-details .dataset-tags > li         { margin-right: 10px; margin-bottom: 10px; padding: 5px 10px; float: left; background-color: #0c9; color: #fff; }
-.dataset-details .table > tbody > tr > td   { font-size: 12px; }
-table.data > tbody > tr                     { cursor: pointer; }
-@media (max-width: 991px)                   { .dataset-details h1 { font-size: 14px; line-height: 20px; margin-bottom: 20px; } .dataset-details .dataset-resources li a { font-size: 12px; padding-right: 0; } .dataset-details .dataset-resources li p { padding-right: 0; } }
-.dataset-details .dataset-resources li .read-more   { margin-left: 5px; color: #0c9; font-size: 12px; cursor: pointer; }
-.dataset-details .dataset-resources li .long-desc   { display: none; }
-
-/*********************************
-    ORGANIZATIONS STYLES
-*********************************/
-.organization-item,
-.group-item                                 { height: 225px; margin-bottom: 20px; background-color: #eee; text-align: center; cursor: pointer; position: relative; }
-.group-item img                             { margin-bottom: 10px; padding-top: 10px; max-height: 65%;  }
-.organization-item p,
-.group-item p                               { margin-bottom: 0; padding-bottom: 10px; background-color: #d9d9d9; color: #828282; font-size: 13px; line-height: 18px; position: absolute; bottom: 0; left: 0; right: 0; }
-.organization-item p strong                 { padding-bottom: 5px; font-size: 10px; }
-@media (max-width: 991px)                   { .organization-item, .group-item { height: 150px; } }
+/********************************
+    Content Styles
+********************************/
+#content                                    { margin: 0 15px 0 -15px; padding-top: 30px; border-left: 1px solid #d8d8d8; }
+.dataset-item                               { margin-bottom: 20px; padding: 15px 10px; background-color: #f9f9f9; border: 1px solid #f6f6f6; border-radius: 5px; overflow: hidden; }
+.dataset-item .dataset-date                 { height: 30px; margin-bottom: 0; position: relative; }
+.dataset-item .dataset-date > span          { position: absolute; left: 45px; top: 50%; transform: translateY(-50%); }
+.dataset-item .dataset-date > .tag-icon     { left: 0; }
+.dataset-item h3,
+.dataset-item p.dependency                  { margin-bottom: 20px; }
+.dataset-format                             { font-size: 10px; font-weight: 700; color: #fff; text-transform: uppercase; border-radius: 3px; padding: 2px 4px; }
+.dataset-format[data-format="csv"],
+.dataset-format[data-format="CSV"]          { background-color: #ffd100; }
+.dataset-format[data-format="kml"],
+.dataset-format[data-format="KML"]          { background-color: #474747; }
+.dataset-format[data-format="geojson"],
+.dataset-format[data-format="GEOJSON"],
+.dataset-format[data-format="json"],
+.dataset-format[data-format="JSON"]         { background-color: #33ffd1; }
+.dataset-format[data-format="pdf"],
+.dataset-format[data-format="PDF"]          { background-color: #ff2200; }
+.dataset-format[data-format="arcgis"],
+.dataset-format[data-format="ARCGIS"]       { background-color: #d100FF; }
+.dataset-format[data-format="xlsx"],
+.dataset-format[data-format="xls"],
+.dataset-format[data-format="excel"],
+.dataset-format[data-format="vnd.ms-excel"],
+.dataset-format[data-format="EXCEL"],
+.dataset-format[data-format="VND.MS-EXCEL"],
+.dataset-format[data-format="XLS"],
+.dataset-format[data-format="XLSX"]         { background-color: #00d100; }
+.dataset-format[data-format="xml"],
+.dataset-format[data-format="XML"]          { background-color: #0000d1; }
+.dataset-format[data-format="oracle"],
+.dataset-format[data-format="ORACLE"]       { background-color: #55bada; }
+.dataset-format[data-format="shp"],
+.dataset-format[data-format="SHP"]          { background-color: #bada55; }
+.dataset-format[data-format="kmz"],
+.dataset-format[data-format="KMZ"]          { background-color: #55adab; }
+.dataset-format[data-format="zip"],
+.dataset-format[data-format="ZIP"]          { background-color: #001dff; }
+.tag-icon                                   { display: inline-block; width: 30px; height: 30px; background-color: #9b9b9b; background-repeat: no-repeat; background-position: 50%; background-size: 50%; border-radius: 15px; }
+.tag-icon.tag-cultura-y-turismo             { background-image: url(../img/ic-cultura-y-turismo.png); }
+.tag-icon.tag-desarrollo-sostenible         { background-image: url(../img/ic-desarollo-sostenible.png); }
+.tag-icon.tag-economia                      { background-image: url(../img/ic-economia.png); }
+.tag-icon.tag-educacion                     { background-image: url(../img/ic-educacion.png); }
+.tag-icon.tag-energia-y-medio-ambiente      { background-image: url(../img/ic-energia-y-medio-ambiente.png); }
+.tag-icon.tag-finanzas-y-contrataciones     { background-image: url(../img/ic-finanzas-y-contrataciones.png); }
+.tag-icon.tag-geoespacial                   { background-image: url(../img/ic-geoespacial.png); }
+.tag-icon.tag-gobiernos-locales             { background-image: url(../img/ic-gobiernos-locales.png); }
+.tag-icon.tag-salud                         { background-image: url(../img/ic-salud.png); }
+.tag-icon.tag-seguridad-y-justicia          { background-image: url(../img/ic-seguridad-y-justicia.png); background-position: 50% 42%; }
+.tag-icon.tag-infraestructura               { background-image: url(../img/ic-infraestructura.png); }
