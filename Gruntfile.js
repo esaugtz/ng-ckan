@@ -12,13 +12,13 @@ module.exports  = function ( grunt ) {
     require( 'time-grunt' )( grunt );
 
     grunt.initConfig({
-        config                  : appConfig,
-        cdnify                  : {
+        config          : appConfig,
+        cdnify          : {
             dist    : {
                 html    : '<%= config.dist %>/*.html'
             }
         },
-        concurrent              : {
+        concurrent      : {
             dist    : [
                 'less',
                 'imagemin',
@@ -28,7 +28,7 @@ module.exports  = function ( grunt ) {
                 'less'
             ]
         },
-        connect                 : {
+        connect         : {
             options : {
                 port            : 9000,
                 hostname        : 'localhost',
@@ -45,21 +45,9 @@ module.exports  = function ( grunt ) {
                         ];
                     }
                 }
-            },
-            test    : {
-                options         : {
-                    port        : 9001,
-                    middleware  : function ( connect ) {
-                        return [
-                            connect().use( '/bower_components', connect.static( './bower_components' ) ),
-                            connect().use( '/js', connect.static( 'instrumented/app/js' ) ),
-                            connect.static( appConfig.app )
-                        ];
-                    }
-                }
             }
         },
-        copy                    : {
+        copy            : {
             dist    : {
                 files   : [{
                     expand  : true,
@@ -70,11 +58,8 @@ module.exports  = function ( grunt ) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         '*.html',
-                        'partials/{,*/}*.html',
                         'img/{,*/}*.*',
-                        'css/{,*/}*.css',
-                        'data/{,*/}*.*',
-                        'CNAME'
+                        'css/{,*/}*.css'
                     ]
                 }, {
                     expand  : true,
@@ -82,11 +67,6 @@ module.exports  = function ( grunt ) {
                     cwd     : '.',
                     src     : 'bower_components/bootstrap/fonts/*',
                     dest    : '<%= config.dist %>/fonts'
-                }, {
-                    expand  : true,
-                    cwd     : '.',
-                    src     : 'bower_components/requirejs/require.js',
-                    dest    : '<%= config.dist %>'
                 }, {
                     expand  : true,
                     cwd     : '.',
@@ -107,28 +87,9 @@ module.exports  = function ( grunt ) {
                     src     : 'bower_components/dgm-footer/dgm-footer.html',
                     dest    : '<%= config.dist %>'
                 }]
-            },
-            altdist : {
-                files   : [{
-                    expand  : true,
-                    dot     : true,
-                    cwd     : '<%= config.app %>',
-                    dest    : '<%= config.dist %>',
-                    src     : [
-                        'img/ic-*.png'
-                    ]
-                }]
             }
         },
-        coveralls               : {
-            options : {
-                force   : true
-            },
-            target  : {
-                src     : 'test/reports/lcov.info'
-            }
-        },
-        clean                   : {
+        clean           : {
             dist: {
                 files: [{
                     dot : true,
@@ -140,21 +101,10 @@ module.exports  = function ( grunt ) {
                 }]
             },
             server  : [
-                '.tmp',
-                '<%= config.app %>/css',
-                'instrumented',
-                'test/coverage',
-                'test/reports'
+                '.tmp'
             ]
         },
-        eslint                  : {
-            src     : [
-                'Gruntfile.js',
-                '<%= config.app %>/js/{,*/}*.js',
-                '!<%= config.app %>/js/lib/*.js'
-            ]
-        },
-        filerev                 : {
+        filerev         : {
             dist    : {
                 src : [
                     '<%= config.dist %>/js/vendor.js',
@@ -163,13 +113,7 @@ module.exports  = function ( grunt ) {
                 ]
             }
         },
-        'gh-pages'              : {
-            options     : {
-                base    : '<%= config.dist %>'
-            },
-            src         : [ '**' ]
-        },
-        htmlmin                 : {
+        htmlmin         : {
             dist    : {
                 options: {
                     collapseWhitespace          : true,
@@ -182,14 +126,13 @@ module.exports  = function ( grunt ) {
                     expand  : true,
                     cwd     : '<%= config.dist %>',
                     src     : [
-                        '*.html',
-                        'partials/{,*/}*.html'
+                        '*.html'
                     ],
                     dest    : '<%= config.dist %>'
                 }]
             }
         },
-        imagemin                : {
+        imagemin        : {
             dist    : {
                 files   : [{
                     expand  : true,
@@ -199,17 +142,7 @@ module.exports  = function ( grunt ) {
                 }]
             }
         },
-        instrument              : {
-            files   : [
-                '<%= config.app %>/js/**/*.js',
-                '!<%= config.app %>/js/lib/*.js'
-            ],
-            options : {
-                lazy        : true,
-                basePath    : 'instrumented'
-            }
-        },
-        less                    : {
+        less            : {
             development : {
                 options : {
                     compress        : true,
@@ -221,25 +154,7 @@ module.exports  = function ( grunt ) {
                 }
             }
         },
-        makeReport              : {
-            src     : 'test/coverage/**/*.json',
-            options : {
-                type    : 'lcov',
-                dir     : 'test/reports',
-                print   : 'detail'
-            }
-        },
-        ngAnnotate              : {
-            dist    : {
-                files   : [{
-                    expand  : true,
-                    cwd     : '.tmp/concat/scripts',
-                    src     : ['*.js', '!oldieshim.js'],
-                    dest    : '.tmp/concat/scripts'
-                }]
-            }
-        },
-        postcss                 : {
+        postcss         : {
             options : {
                 map         : false,
                 processors  : [
@@ -252,41 +167,7 @@ module.exports  = function ( grunt ) {
                 src : '<%= config.app %>/css/*.css'
             }
         },
-        protractorCoverage      : {
-            options     : {
-                configFile  : 'test/protractor.conf.js',
-                noColor     : false,
-                coverageDir : 'test/coverage',
-                args        : {
-                    browser : 'firefox'
-                }
-            },
-            test        : {
-                options : {
-                    configFile  : 'test/protractor.conf.js',
-                    args        : {}
-                }
-            }
-        },
-        protractorWebdriver     : {
-            test    : {
-                path    : 'node_modules/protractor/bin/',
-                command : 'webdriver-manager start'
-            }
-        },
-        requirejs               : {
-            compile : {
-                options : {
-                    baseUrl                 : '<%= config.app %>/js',
-                    mainConfigFile          : '<%= config.app %>/js/main.js',
-                    name                    : 'main',
-                    out                     : '<%= config.dist %>/js/main.js',
-                    preserveLicenseComments : false,
-                    removeCombined          : true
-                }
-            }
-        },
-        svgmin                  : {
+        svgmin          : {
             dist    : {
                 files   : [{
                     expand  : true,
@@ -296,7 +177,7 @@ module.exports  = function ( grunt ) {
                 }]
             }
         },
-        usemin                  : {
+        usemin          : {
             html    : [
                 '<%= config.dist %>/{,*/}*.html',
                 '<%= config.dist %>/partials/{,*/}*.html'
@@ -312,7 +193,7 @@ module.exports  = function ( grunt ) {
                 ]
             }
         },
-        useminPrepare           : {
+        useminPrepare   : {
             html    : '<%= config.app %>/index.html',
             options : {
                 dest    : '<%= config.dist %>',
@@ -327,7 +208,7 @@ module.exports  = function ( grunt ) {
                 }
             }
         },
-        watch                   : {
+        watch           : {
             styles      : {
                 files   : [ '<%= config.app %>/less/**/*.less' ],
                 tasks   : [ 'less', 'postcss' ],
@@ -353,7 +234,7 @@ module.exports  = function ( grunt ) {
                 ]
             }
         },
-        wiredep                 : {
+        wiredep         : {
             app : {
                 src         : [ '<%= config.app %>/index.html' ],
                 exclude     : [ 'require.js' ],
@@ -362,10 +243,6 @@ module.exports  = function ( grunt ) {
         }
     });
 
-    grunt.task.renameTask( 'protractor_coverage', 'protractorCoverage' );
-    grunt.task.renameTask( 'protractor_webdriver', 'protractorWebdriver' );
-    grunt.loadNpmTasks( 'gruntify-eslint' );
-
     grunt.registerTask( 'build', [
         'clean:dist',
         'wiredep',
@@ -373,22 +250,12 @@ module.exports  = function ( grunt ) {
         'concurrent:dist',
         'postcss',
         'concat',
-        'ngAnnotate',
-        'requirejs',
         'copy:dist',
         'cdnify',
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin',
-        'copy:altdist'
-    ]);
-    grunt.registerTask( 'publish', [
-        'build',
-        'gh-pages'
-    ]);
-    grunt.registerTask( 'report', [
-        'coveralls'
+        'htmlmin'
     ]);
     grunt.registerTask( 'serve', [
         'clean:server',
@@ -397,17 +264,5 @@ module.exports  = function ( grunt ) {
         'postcss',
         'connect:dev',
         'watch'
-    ]);
-    grunt.registerTask( 'test', [
-        'clean:server',
-        'eslint',
-        'wiredep',
-        'concurrent:server',
-        'postcss',
-        'instrument',
-        'connect:test',
-        'protractorWebdriver:test',
-        'protractorCoverage:test',
-        'makeReport'
     ]);
 };

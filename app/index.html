@@ -17,77 +17,286 @@
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
         <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
-        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-        <!-- Google Analytics -->
-        <script>
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'UA-44411606-19', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script async src='https://www.google-analytics.com/analytics.js'></script>
-        <!-- End Google Analytics -->
     </head>
     <body>
         <dgm-navbar></dgm-navbar>
-        <header class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div id="breadcrumb">
-                        <ui-breadcrumbs displayname-property="data.displayName" template-url="partials/breadcrumb.html" abstract-proxy-property="data.breadcrumbProxy"></ui-breadcrumbs>
+        <div class="breadcrumb-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <ul class="breadcrumb">
+                            <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="index.html">Datos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="submenu">
+                            <li class="active"><a href="index.html">Todos los datos</a></li>
+                            <li><a href="institutions.html">Instituciones</a></li>
+                            <li><a href="groups.html">Grupos</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
-                    <ul class="nav nav-tabs">
-                        <li id="item-datasets" role="presentation" class="active"><a ui-sref="datasets.results">Todos los datos</a></li>
-                        <li id="item-organizations" role="presentation"><a ui-sref="organizations.results">Instituciones</a></li>
-                        <li id="item-groups" role="presentation"><a ui-sref="groups.results">Grupos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <section id="search">
-            <div ui-view="search-container"></div>
-        </section>
-        <dgm-footer></dgm-footer>
-        <div id="site-spinner">
-            <div id="main-spinner">
-                <div id="center-mass"></div>
-                <div class="dot dot-1"></div>
-                <div class="dot dot-2"></div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Datos</h1>
+                    <div id="main-container">
+                        <div class="row">
+                            <div id="sidebar" class="col-md-3">
+                                <h3>Filtrar por</h3>
+                                <h4>Categorías</h4>
+                                <ul class="filters-menu">
+                                    <li><a href="#">Educación</a></li>
+                                    <li class="active"><a href="#">Salud</a></li>
+                                    <li><a href="#">Geoespacial</a></li>
+                                    <li><a href="#">Seguridad y justicia</a></li>
+                                    <li><a href="#">Energía y medio ambiente</a></li>
+                                    <li><a href="#"><strong>Más Categorías</strong></a></li>
+                                </ul>
+                                <h4>Nivel</h4>
+                                <ul class="filters-menu">
+                                    <li><a href="#">Federal</a></li>
+                                    <li><a href="#">Estatal</a></li>
+                                    <li><a href="#">Municipal</a></li>
+                                    <li><a href="#">Organismos Autónomos</a></li>
+                                </ul>
+                                <h4>Formatos</h4>
+                                <ul class="filters-menu">
+                                    <li class="active"><a href="#">CSV</a></li>
+                                    <li><a href="#">KML</a></li>
+                                    <li><a href="#">SHP</a></li>
+                                    <li><a href="#">XLSX</a></li>
+                                    <li><a href="#">KMZ</a></li>
+                                </ul>
+                                <h4>Etiquetas</h4>
+                                <ul class="filters-menu">
+                                    <li><a href="#">Todas</a></li>
+                                    <li><a href="#">Salud</a></li>
+                                    <li><a href="#">Geoespacial</a></li>
+                                    <li><a href="#">Seguridad y Justicia</a></li>
+                                    <li><a href="#">Energía y Medio Ambiente</a></li>
+                                    <li><a href="#"><strong>Más Categorías</strong></a></li>
+                                </ul>
+                            </div>
+                            <div id="content" class="col-md-9">
+                                <div id="search-form" class="row">
+                                    <div class="col-md-12">
+                                        <form>
+                                            <div class="form-group search-keyword">
+                                                <input type="text" name="keyword" class="form-control" placeholder="Buscar conjuntos de datos">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>245 conjuntos de datos encontrados</p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label for="order">Ordenar por</label>
+                                                <div class="custom-select">
+                                                    <select name="order" class="form-control">
+                                                        <option value="">Relevancia</option>
+                                                        <option value="">Nombre ascendente</option>
+                                                        <option value="">Nombre descendente</option>
+                                                        <option value="">Última modificación</option>
+                                                        <option value="">Popularidad</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p class="filters-list">
+                                            <span>
+                                                <span>Categoría:</span>
+                                                <span class="filter-item">Salud<button class="btn-dismiss" type="button">x</button></span>
+                                            </span>
+                                            <span>
+                                                <span>Formato:</span>
+                                                <span class="filter-item">CSV<button class="btn-dismiss" type="button">x</button></span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <div class="dataset-item">
+                                            <div class="col-md-9">
+                                                <p class="dataset-date"><span class="tag-icon tag-geoespacial"></span><span>Actualización: <strong>25/11/2016</strong></span></p>
+                                                <h3><a href="dataset.html">Mapas Topográficos. Escala 1:50 000. Serie III. Aguascalientes</a></h3>
+                                                <p>Subdivisión de la Infraestructura de Datos Espaciales de México que contiene elementos que caracterizan parte...</p>
+                                            </div>
+                                            <div class="col-md-2 col-md-offset-1">
+                                                <p>Dependencia</p>
+                                                <p class="dependency">INEGI</p>
+                                                <p>Formato</p>
+                                                <span class="dataset-format" data-format="CSV">CSV</span>
+                                                <span class="dataset-format" data-format="SHP">SHP</span>
+                                            </div>
+                                        </div>
+                                        <ul class="pagination">
+                                            <li>
+                                                <a href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li>
+                                                <a href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dgm-footer></dgm-footer>
         <!-- build:js(.) js/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-        <script src="bower_components/angular-i18n/angular-locale_es-mx.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-        <script src="bower_components/js-cookie/src/js.cookie.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-        <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
-        <script type="text/javascript">
-          var _sf_async_config = { uid: 62850, domain: 'busca.datos.gob.mx', useCanonical: true };
-          (function() {
-            function loadChartbeat() {
-              window._sf_endpt = (new Date()).getTime();
-              var e = document.createElement('script');
-              e.setAttribute('language', 'javascript');
-              e.setAttribute('type', 'text/javascript');
-              e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
-              document.body.appendChild(e);
-            };
-            var oldonload = window.onload;
-            window.onload = (typeof window.onload != 'function') ?
-            loadChartbeat : function() { oldonload(); loadChartbeat(); };
-          })();
-        </script>
     </body>
 </html>
