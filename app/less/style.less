@@ -37,6 +37,12 @@ h1                                          { font-size: 24px; font-weight: 600;
 .dataset-item .dataset-date > span > strong { font-weight: 300; color: #474747; }
 .dataset-item h3                            { font-size: 15px; font-weight: 600; color: #474747; }
 .dataset-item p                             { font-size: 12px; font-weight: 300; color: #474747; }
+.pagination > li > a                        { font-size: 15px; font-weight: 600; color: #0c9; }
+.pagination > li.active > a,
+.pagination > li > a:hover                  { color: #9b9b9b; }
+.filters-list > span                        { font-size: 13px; font-weight: 300; color: #474747; }
+.filters-list .btn-dismiss                  { font-size: 14px; font-weight: 600; color: #fff; }
+.filter-item                                { font-weight: 300; color: #fff; }
 
 /********************************
     Sticky Footer Styles
@@ -64,9 +70,11 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 #search-form .search-keyword .glyphicon     { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
 #search-form .form-inline                   { float: right; }
 #search-form p                              { margin-bottom: 0; }
-.pagination > li > a                        { font-size: 15px; font-weight: 600; color: #0c9; }
-.pagination > li.active > a,
-.pagination > li > a:hover                  { color: #9b9b9b; }
+.filters-list                               { margin-top: 20px; }
+.filters-list > span                        { margin-right: 10px; }
+.filters-list > span:last-child             { margin-right: 0; }
+.filters-list .btn-dismiss                  { margin-left: 7px; padding: 0; background: none; border: none; cursor: pointer; position: relative; top: -1px; }
+.filter-item                                { background-color: #0c9; padding: 3px 7px; border-radius: 5px; }
 
 /********************************
     Breadcrumb Styles
