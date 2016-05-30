@@ -64,6 +64,9 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 #search-form .search-keyword .glyphicon     { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
 #search-form .form-inline                   { float: right; }
 #search-form p                              { margin-bottom: 0; }
+.pagination > li > a                        { font-size: 15px; font-weight: 600; color: #0c9; }
+.pagination > li.active > a,
+.pagination > li > a:hover                  { color: #9b9b9b; }
 
 /********************************
     Breadcrumb Styles
@@ -76,6 +79,14 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 .submenu                                    { margin-bottom: 0; float: right; }
 .submenu li                                 { display: inline-block; margin-right: 20px; }
 .submenu li:last-child                      { margin-right: 0; }
+
+/********************************
+    Pagination Styles
+********************************/
+.pagination                                 { margin: 20px auto 100px; position: relative; left: 50%; transform: translateX(-50%); }
+.pagination > li.active > a,
+.pagination > li.active > a:hover,
+.pagination > li:hover > a                  { background-color: #d8d8d8; border-color: #d8d8d8; }
 
 /********************************
     Sidebar Styles
