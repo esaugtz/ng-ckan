@@ -33,6 +33,10 @@ h1                                          { font-size: 24px; font-weight: 600;
 .custom-select select                       { color: #9b9b9b; }
 .custom-select::before,
 .custom-select::after                       { font-family: 'Glyphicons Halflings'; color: #d8d8d8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.dataset-item .dataset-date                 { font-size: 11px; font-weight: 300; color: #9b9b9b; }
+.dataset-item .dataset-date > span > strong { font-weight: 300; color: #474747; }
+.dataset-item h3                            { font-size: 15px; font-weight: 600; color: #474747; }
+.dataset-item p                             { font-size: 12px; font-weight: 300; color: #474747; }
 
 /********************************
     Sticky Footer Styles
@@ -54,6 +58,7 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 .custom-select select                       { border: none; box-shadow: none; background-color: transparent; background-image: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 .custom-select select:focus,
 .custom-select select:active                { outline: none; }
+#search-form                                { margin-bottom: 30px; }
 #search-form input[type="text"]             { height: 45px; padding-right: 20px; }
 #search-form .search-keyword                { position: relative; }
 #search-form .search-keyword .glyphicon     { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
@@ -75,7 +80,6 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 /********************************
     Sidebar Styles
 ********************************/
-#sidebar                                    { height: 100%; border-right: 1px solid #d8d8d8; }
 #sidebar h3                                 { margin: 0; padding: 0 10px; }
 #sidebar h4                                 { margin: 0; padding: 0 10px; border: 1px solid #d8d8d8; border-left: none; border-right: none; background-color: #f6f6f6; }
 #sidebar ul                                 { margin: 0; padding: 0; list-style: none; }
@@ -96,4 +100,53 @@ h1:after                                    { content: ''; width: 40px; position
 /********************************
     Content Styles
 ********************************/
-#content                                    { margin: 30px 15px 0 -15px; }
+#content                                    { margin: 0 15px 0 -15px; padding-top: 30px; border-left: 1px solid #d8d8d8; }
+.dataset-item                               { margin-bottom: 20px; padding: 15px 10px; background-color: #f9f9f9; border: 1px solid #f6f6f6; border-radius: 5px; overflow: hidden; }
+.dataset-item .dataset-date                 { height: 30px; margin-bottom: 0; position: relative; }
+.dataset-item .dataset-date > span          { position: absolute; left: 45px; top: 50%; transform: translateY(-50%); }
+.dataset-item .dataset-date > .tag-icon     { left: 0; }
+.dataset-item h3,
+.dataset-item p.dependency                  { margin-bottom: 20px; }
+.dataset-format                             { font-size: 10px; font-weight: 700; color: #fff; text-transform: uppercase; border-radius: 3px; padding: 2px 4px; }
+.dataset-format[data-format="csv"],
+.dataset-format[data-format="CSV"]          { background-color: #ffd100; }
+.dataset-format[data-format="kml"],
+.dataset-format[data-format="KML"]          { background-color: #474747; }
+.dataset-format[data-format="geojson"],
+.dataset-format[data-format="GEOJSON"],
+.dataset-format[data-format="json"],
+.dataset-format[data-format="JSON"]         { background-color: #33ffd1; }
+.dataset-format[data-format="pdf"],
+.dataset-format[data-format="PDF"]          { background-color: #ff2200; }
+.dataset-format[data-format="arcgis"],
+.dataset-format[data-format="ARCGIS"]       { background-color: #d100FF; }
+.dataset-format[data-format="xlsx"],
+.dataset-format[data-format="xls"],
+.dataset-format[data-format="excel"],
+.dataset-format[data-format="vnd.ms-excel"],
+.dataset-format[data-format="EXCEL"],
+.dataset-format[data-format="VND.MS-EXCEL"],
+.dataset-format[data-format="XLS"],
+.dataset-format[data-format="XLSX"]         { background-color: #00d100; }
+.dataset-format[data-format="xml"],
+.dataset-format[data-format="XML"]          { background-color: #0000d1; }
+.dataset-format[data-format="oracle"],
+.dataset-format[data-format="ORACLE"]       { background-color: #55bada; }
+.dataset-format[data-format="shp"],
+.dataset-format[data-format="SHP"]          { background-color: #bada55; }
+.dataset-format[data-format="kmz"],
+.dataset-format[data-format="KMZ"]          { background-color: #55adab; }
+.dataset-format[data-format="zip"],
+.dataset-format[data-format="ZIP"]          { background-color: #001dff; }
+.tag-icon                                   { display: inline-block; width: 30px; height: 30px; background-color: #9b9b9b; background-repeat: no-repeat; background-position: 50%; background-size: 50%; border-radius: 15px; }
+.tag-icon.tag-cultura-y-turismo             { background-image: url(../img/ic-cultura-y-turismo.png); }
+.tag-icon.tag-desarrollo-sostenible         { background-image: url(../img/ic-desarollo-sostenible.png); }
+.tag-icon.tag-economia                      { background-image: url(../img/ic-economia.png); }
+.tag-icon.tag-educacion                     { background-image: url(../img/ic-educacion.png); }
+.tag-icon.tag-energia-y-medio-ambiente      { background-image: url(../img/ic-energia-y-medio-ambiente.png); }
+.tag-icon.tag-finanzas-y-contrataciones     { background-image: url(../img/ic-finanzas-y-contrataciones.png); }
+.tag-icon.tag-geoespacial                   { background-image: url(../img/ic-geoespacial.png); }
+.tag-icon.tag-gobiernos-locales             { background-image: url(../img/ic-gobiernos-locales.png); }
+.tag-icon.tag-salud                         { background-image: url(../img/ic-salud.png); }
+.tag-icon.tag-seguridad-y-justicia          { background-image: url(../img/ic-seguridad-y-justicia.png); background-position: 50% 42%; }
+.tag-icon.tag-infraestructura               { background-image: url(../img/ic-infraestructura.png); }
