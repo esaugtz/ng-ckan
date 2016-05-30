@@ -40,6 +40,10 @@ h2                                          { font-size: 14px; font-weight: 600;
 .dataset-item h3 > a                        { color: #474747; }
 .dataset-item h3 > a:hover                  { font-weight: 700; }
 .dataset-item p                             { font-size: 12px; font-weight: 300; color: #474747; }
+.institution-item                           { text-align: center; }
+.institution-item > p                       { font-weight: 300; text-align: left; }
+.institution-item > p > a                   { color: #595959; }
+.institution-item > p.datasets              { font-size: 12px; font-weight: 400; color: #4a4a4a; }
 .pagination > li > a                        { font-size: 15px; font-weight: 600; color: #0c9; }
 .pagination > li.active > a,
 .pagination > li > a:hover                  { color: #9b9b9b; }
@@ -126,12 +130,16 @@ h1:after                                    { content: ''; width: 40px; position
     Content Styles
 ********************************/
 #content                                    { margin: 0 15px 0 -15px; padding-top: 30px; border-left: 1px solid #d8d8d8; }
-.dataset-item                               { margin-bottom: 20px; padding: 15px 10px; background-color: #f9f9f9; border: 1px solid #f6f6f6; border-radius: 5px; overflow: hidden; }
+.dataset-item,
+.institution-item                           { margin-bottom: 20px; padding: 15px 10px; background-color: #f9f9f9; border: 1px solid #f6f6f6; border-radius: 5px; }
+.dataset-item                               { overflow: hidden; }
 .dataset-item .dataset-date                 { height: 30px; margin-bottom: 0; position: relative; }
 .dataset-item .dataset-date > span          { position: absolute; left: 45px; top: 50%; transform: translateY(-50%); }
 .dataset-item .dataset-date > .tag-icon     { left: 0; }
 .dataset-item h3,
 .dataset-item p.dependency                  { margin-bottom: 20px; }
+.institution-item                           { height: 275px; }
+.institution-item > a                       { display: inline-block; margin: 20px auto 30px; }
 .dataset-format                             { font-size: 10px; font-weight: 700; color: #fff; text-transform: uppercase; border-radius: 3px; padding: 2px 4px; }
 .dataset-format[data-format="csv"],
 .dataset-format[data-format="CSV"]          { background-color: #ffd100; }
