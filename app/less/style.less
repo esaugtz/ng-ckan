@@ -4,21 +4,35 @@
 /********************************
     General Styles
 ********************************/
-body                                        { font-family: "Open Sans"; }
 .container-fluid                            { max-width: 1100px; }
 a, a:hover, a:focus, a:active, a:focus      { outline: 0; text-decoration: none; }
 
 /********************************
     Fonts Styles
 ********************************/
-h1                                          { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #d8d8d8; position: relative; font-size: 24px; font-weight: 600; color: #545454; }
-h1:after                                    { content: ''; width: 40px; position: absolute; bottom: -6px; left: 0; border-bottom: solid 5px #0c9; }
+body                                        { font-family: "Open Sans"; }
+h1                                          { font-size: 24px; font-weight: 600; color: #545454; }
+.breadcrumb > li                            { font-size: 12px; font-weight: 400; line-height: 50px; }
+.breadcrumb > li + li::before               { font-size: 13px; }
+.breadcrumb > li > a                        { color: #545454; text-transform: capitalize; }
+.breadcrumb > li.active > a,
+.breadcrumb > li:last-child > a,
+.breadcrumb > li > a:hover                  { color: #0c9; }
+.submenu > li                               { font-size: 12px; font-weight: 400; line-height: 50px; }
+.submenu li > a                             { color: #545454; }
+.submenu li.active > a,
+.submenu li > a:hover                       { color: #0c9; }
+#sidebar h3                                 { font-size: 14px; font-weight: 700; line-height: 45px; color: #d8d8d8; }
+#sidebar h4                                 { font-size: 14px; font-weight: 700; line-height: 45px; color: #545454; }
+#sidebar ul > li > a                        { font-size: 12px; font-weight: 400; line-height: 35px; color: #696969; }
+#sidebar ul > li.active > a,
+#sidebar ul > li > a:hover                  { color: #0c9; }
 
 /********************************
     Sticky Footer Styles
 ********************************/
 html                                        { position: relative; min-height: 100%; }
-body.front                                  { margin: 0 0 432px; }
+body                                        { margin: 0 0 432px; }
 dgm-footer                                  { width: 100%; height: 432px; position: absolute; left: 0; bottom: 0; }
 
 /********************************
@@ -26,16 +40,30 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 ********************************/
 .breadcrumb-container                       { margin-bottom: 20px; background-color: #f6f6f6; }
 .breadcrumb                                 { margin-bottom: 0; padding: 0; background-color: transparent; border-radius: 0; }
-.breadcrumb > li                            { font-size: 12px; font-weight: 400; line-height: 50px; }
-.breadcrumb > li + li::before               { padding: 0 3px 0 8px; font-size: 13px; }
-.breadcrumb > li > a                        { display: inline-block; color: #545454; text-transform: capitalize; }
-.breadcrumb > li.active > a,
-.breadcrumb > li:last-child > a,
-.breadcrumb > li > a:hover                  { color: #0c9; }
+.breadcrumb > li + li::before               { padding: 0 3px 0 8px; }
+.breadcrumb > li > a                        { display: inline-block; }
 .breadcrumb > li:last-child > a             { pointer-events: none; }
 .submenu                                    { margin-bottom: 0; float: right; }
-.submenu li                                 { display: inline-block; margin-right: 20px; font-size: 12px; font-weight: 400; line-height: 50px; }
-.submenu li > a                             { color: #545454; }
-.submenu li.active > a,
-.submenu li > a:hover                       { color: #0c9; }
+.submenu li                                 { display: inline-block; margin-right: 20px; }
 .submenu li:last-child                      { margin-right: 0; }
+
+/********************************
+    Sidebar Styles
+********************************/
+#sidebar                                    { height: 100%; border-right: 1px solid #d8d8d8; }
+#sidebar h3                                 { margin: 0; padding: 0 10px; }
+#sidebar h4                                 { margin: 0; padding: 0 10px; border: 1px solid #d8d8d8; border-left: none; border-right: none; background-color: #f6f6f6; }
+#sidebar ul                                 { margin: 0; padding: 0; list-style: none; }
+#sidebar ul > li                            { padding: 0 10px; border-bottom: 1px solid #d8d8d8; }
+#sidebar ul > li.active                     { background-color: #f6f6f6; }
+#sidebar ul > li:last-child                 { border-bottom: none; }
+
+/********************************
+    Main Container Styles
+********************************/
+h1                                          { margin-top: 0; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #d8d8d8; position: relative; }
+h1:after                                    { content: ''; width: 40px; position: absolute; bottom: -6px; left: 0; border-bottom: solid 5px #0c9; }
+#main-container                             { margin-bottom: 60px; border: 1px solid #d8d8d8; border-radius: 5px; }
+#main-container > .row,
+#main-container > .row > .col-md-3,
+#main-container > .row > .col-md-9          { height: 100%; }
