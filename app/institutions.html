@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Catálogo de Datos Abiertos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- build:css(.) css/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) css/style.css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- endbuild -->
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
+        <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
+    </head>
+    <body>
+        <dgm-navbar></dgm-navbar>
+        <div class="breadcrumb-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="institutions.html">Instituciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="submenu">
+                            <li><a href="index.html">Todos los datos</a></li>
+                            <li class="active"><a href="institutions.html">Instituciones</a></li>
+                            <li><a href="groups.html">Grupos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Instituciones</h1>
+                    <div id="main-container">
+                        <div class="row">
+                            <div id="sidebar" class="col-md-3">
+                                <h3>Filtrar por</h3>
+                                <h4>Categorías</h4>
+                                <ul class="filters-menu">
+                                    <li><a href="#">Educación</a></li>
+                                    <li class="active"><a href="#">Salud</a></li>
+                                    <li><a href="#">Geoespacial</a></li>
+                                    <li><a href="#">Seguridad y justicia</a></li>
+                                    <li><a href="#">Energía y medio ambiente</a></li>
+                                    <li><a href="#"><strong>Más Categorías</strong></a></li>
+                                </ul>
+                                <h4>Nivel</h4>
+                                <ul class="filters-menu">
+                                    <li><a href="#">Federal</a></li>
+                                    <li><a href="#">Estatal</a></li>
+                                    <li><a href="#">Municipal</a></li>
+                                    <li><a href="#">Organismos Autónomos</a></li>
+                                </ul>
+                                <h4>Formatos</h4>
+                                <ul class="filters-menu">
+                                    <li class="active"><a href="#">CSV</a></li>
+                                    <li><a href="#">KML</a></li>
+                                    <li><a href="#">SHP</a></li>
+                                    <li><a href="#">XLSX</a></li>
+                                    <li><a href="#">KMZ</a></li>
+                                </ul>
+                                <h4>Etiquetas</h4>
+                                <ul class="filters-menu">
+                                    <li><a href="#">Todas</a></li>
+                                    <li><a href="#">Salud</a></li>
+                                    <li><a href="#">Geoespacial</a></li>
+                                    <li><a href="#">Seguridad y Justicia</a></li>
+                                    <li><a href="#">Energía y Medio Ambiente</a></li>
+                                    <li><a href="#"><strong>Más Categorías</strong></a></li>
+                                </ul>
+                            </div>
+                            <div id="content" class="col-md-9">
+                                <div id="search-form" class="row">
+                                    <div class="col-md-12">
+                                        <form>
+                                            <div class="form-group search-keyword">
+                                                <input type="text" name="keyword" class="form-control" placeholder="Buscar organizaciones">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>245 instituciones encontrados</p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label for="order">Ordenar por</label>
+                                                <div class="custom-select">
+                                                    <select name="order" class="form-control">
+                                                        <option value="">Relevancia</option>
+                                                        <option value="">Nombre ascendente</option>
+                                                        <option value="">Nombre descendente</option>
+                                                        <option value="">Última modificación</option>
+                                                        <option value="">Popularidad</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="pagination">
+                                            <li>
+                                                <a href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li>
+                                                <a href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dgm-footer></dgm-footer>
+        <!-- build:js(.) js/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+    </body>
+</html>
