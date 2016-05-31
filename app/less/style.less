@@ -5,7 +5,7 @@
     General Styles
 ********************************/
 .container-fluid                            { max-width: 1100px; }
-a, a:hover, a:focus, a:active, a:focus      { outline: 0; text-decoration: none; }
+a, a:hover, a:focus, a:active               { outline: 0; text-decoration: none; }
 
 /********************************
     Fonts Styles
@@ -13,6 +13,9 @@ a, a:hover, a:focus, a:active, a:focus      { outline: 0; text-decoration: none;
 body                                        { font-family: "Open Sans"; font-size: 14px; font-weight: 400; line-height: 1.5em; color: #343434; }
 h1                                          { font-size: 24px; font-weight: 600; color: #545454; }
 h2                                          { font-size: 14px; font-weight: 600; color: #343434; }
+h2.institution-name                         { font-size: 18px; color: #545454; }
+.table > thead > tr > th                    { font-size: 12px; font-weight: 400; }
+.table > tbody > tr > td                    { font-size: 12px; font-weight: 300; }
 .breadcrumb > li                            { font-size: 12px; font-weight: 400; line-height: 50px; }
 .breadcrumb > li + li::before               { font-size: 13px; }
 .breadcrumb > li > a                        { color: #545454; text-transform: capitalize; }
@@ -39,6 +42,7 @@ h2                                          { font-size: 14px; font-weight: 600;
 .dataset-item h3                            { font-size: 15px; font-weight: 600; color: #474747; }
 .dataset-item h3 > a                        { color: #474747; }
 .dataset-item h3 > a:hover                  { font-weight: 700; }
+.dataset-item h4                            { font-size: 12px; font-weight: 600; }
 .dataset-item p                             { font-size: 12px; font-weight: 300; color: #474747; }
 .result-item                                { text-align: center; }
 .result-item > p                            { font-weight: 300; text-align: left; }
@@ -50,6 +54,9 @@ h2                                          { font-size: 14px; font-weight: 600;
 .filters-list > span                        { font-size: 13px; font-weight: 300; color: #474747; }
 .filters-list .btn-dismiss                  { font-size: 14px; font-weight: 600; color: #fff; }
 .filter-item                                { font-weight: 300; color: #fff; }
+.dropdown.btn > a                           { font-size: 14px; font-weight: 600; color: #fff; }
+.tags-list > li > a                         { font-size: 12px; font-weight: 400; color: #fff; }
+.nav-tabs > li > a                          { font-size: 14px; font-weight: 300; color: #474747; }
 
 /********************************
     Sticky Footer Styles
@@ -82,6 +89,15 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 .filters-list > span:last-child             { margin-right: 0; }
 .filters-list .btn-dismiss                  { margin-left: 7px; padding: 0; background: none; border: none; cursor: pointer; position: relative; top: -1px; }
 .filter-item                                { background-color: #0c9; padding: 3px 7px; border-radius: 5px; }
+.dropdown-container                         { margin: 0; padding: 0; list-style: none; }
+.btn                                        { padding-right: 30px; }
+.btn.dropdown .caret                        { position: relative; left: 20px; }
+.btn.btn-primary                            { background-color: #0c9; border: none; }
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active                     { background-color: #00aa80; }
+.nav-tabs                                   { margin: 0 -15px 20px; padding: 0 10px; }
+.nav-tabs > li > a                          { border-radius: 0; }
 
 /********************************
     Breadcrumb Styles
@@ -115,12 +131,15 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 #sidebar ul > li                            { padding: 0 10px; border-bottom: 1px solid #d8d8d8; }
 #sidebar ul > li.active                     { background-color: #f6f6f6; }
 #sidebar ul > li:last-child                 { border-bottom: none; }
+#sidebar img                                { margin: 30px 0; padding: 0 10px; }
 
 /********************************
     Main Container Styles
 ********************************/
 h1                                          { margin-top: 0; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #d8d8d8; position: relative; }
 h1:after                                    { content: ''; width: 40px; position: absolute; bottom: -6px; left: 0; border-bottom: solid 5px #0c9; }
+#content h1                                 { margin-bottom: 20px; padding-bottom: 0; border: none; }
+#content h1:after                           { display: none; }
 #main-container                             { margin-bottom: 60px; border: 1px solid #d8d8d8; border-radius: 5px; }
 #main-container > .row,
 #main-container > .row > .col-md-3,
@@ -130,16 +149,22 @@ h1:after                                    { content: ''; width: 40px; position
     Content Styles
 ********************************/
 #content                                    { margin: 0 15px 0 -15px; padding-top: 30px; border-left: 1px solid #d8d8d8; }
+#content .panel                             { margin: 30px 0; }
 .dataset-item,
 .result-item                                { margin-bottom: 20px; padding: 15px 10px; background-color: #f9f9f9; border: 1px solid #f6f6f6; border-radius: 5px; }
-.dataset-item                               { overflow: hidden; }
+#datasets-list                              { margin-top: 20px; margin-bottom: 20px; }
 .dataset-item .dataset-date                 { height: 30px; margin-bottom: 0; position: relative; }
 .dataset-item .dataset-date > span          { position: absolute; left: 45px; top: 50%; transform: translateY(-50%); }
 .dataset-item .dataset-date > .tag-icon     { left: 0; }
 .dataset-item h3,
 .dataset-item p.dependency                  { margin-bottom: 20px; }
+.dataset-item h4                            { margin-top: 0; margin-bottom: 10px; }
 .result-item                                { height: 275px; }
 .result-item > a                            { display: inline-block; margin: 20px auto 30px; }
+.tags-list                                  { margin-bottom: 50px; padding: 0; list-style: none; }
+.tags-list > li                             { display: inline-block; margin-right: 10px; padding: 4px 12px; background-color: #9b9b9b; border-radius: 5px; }
+.tags-list > li:last-child                  { margin-right: 0; }
+.tags-list > li > a                         { display: block; }
 .dataset-format                             { font-size: 10px; font-weight: 700; color: #fff; text-transform: uppercase; border-radius: 3px; padding: 2px 4px; }
 .dataset-format[data-format="csv"],
 .dataset-format[data-format="CSV"]          { background-color: #ffd100; }
