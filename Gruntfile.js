@@ -255,6 +255,7 @@ module.exports  = function ( grunt ) {
         'uglify',
         'filerev',
         'usemin',
+        'usemin:css',
         'htmlmin'
     ]);
     grunt.registerTask( 'serve', [
