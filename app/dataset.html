@@ -58,7 +58,74 @@
                                 <h4>Licencia</h4>
                                 <img src="img/ic-libreuso.png" alt="Libre Uso MX">
                             </div>
-                            <div id="content" class="col-md-9"></div>
+                            <div id="content" class="col-md-9">
+                                <h1>Catálogo Nacional de Códigos Postales</h1>
+                                <p><strong>Recursos de datos</strong></p>
+                                <div id="datasets-list" class="container-fluid">
+                                    <div class="dataset-item row">
+                                        <div class="col-md-1">
+                                            <img src="img/ic-xlm.png" alt="XLM">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>Tabla de códigos postales y asentamientos humanos del país</h4>
+                                            <p>Son archivos que contienen los Códigos Postales y asentamientos humanos de las 31 Entidades Federativas y el Distrito Federal.</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul class="dropdown-container">
+                                                <li class="btn btn-primary dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Action</a></li>
+                                                        <li><a href="#">Another action</a></li>
+                                                        <li><a href="#">Something else here</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="tags-list">
+                                    <li><a href="#">catálogo</a></li>
+                                    <li><a href="#">códigos postales</a></li>
+                                    <li><a href="#">federal</a></li>
+                                    <li><a href="#">infraestructura</a></li>
+                                    <li><a href="#">nacional</a></li>
+                                </ul>
+                                <p><strong>Información adicional</strong></p>
+                                <div class="panel panel-default">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">Campo</th>
+                                                <th>Valor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Registro en el sitio</td>
+                                                <td>febrero 16, 2016 | 11:40</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fecha de última modificación de datos</td>
+                                                <td>abril 07, 2016 | 12:39</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Correo de contacto</td>
+                                                <td>emora@correosdemexico.gob.mx</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Publicador</td>
+                                                <td>CM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diccionario de datos</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="disqus_thread"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,5 +139,19 @@
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+        <script>
+            window.disqus_config    = function () {
+                this.language           = 'es_MX';
+                this.experiment.enable_scroll_container = false;
+            };
+            ( function () {
+                var dsq     = document.createElement( 'script' );
+                dsq.type    = 'text/javascript';
+                dsq.async   = true;
+                dsq.src     = '//datosgobmx.disqus.com/embed.js';
+                ( document.getElementsByTagName( 'head' )[0] || document.getElementsByTagName( 'body' )[0]).appendChild( dsq );
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     </body>
 </html>
