@@ -14,8 +14,10 @@ body                                        { font-family: "Open Sans"; font-siz
 h1                                          { font-size: 24px; font-weight: 600; color: #545454; }
 h2                                          { font-size: 14px; font-weight: 600; color: #343434; }
 h2.institution-name                         { font-size: 18px; color: #545454; }
-p > a                                       { color: #0c9; }
-p > a:hover                                 { color: #00aa80; }
+p > a,
+li > a                                      { color: #0c9; }
+p > a:hover,
+li > a:hover                                { color: #00aa80; }
 .table > thead > tr > th                    { font-size: 12px; font-weight: 400; }
 .table > tbody > tr > td                    { font-size: 12px; font-weight: 300; }
 .breadcrumb > li                            { font-size: 12px; font-weight: 400; line-height: 50px; }
@@ -59,6 +61,10 @@ p > a:hover                                 { color: #00aa80; }
 .dropdown.btn > a                           { font-size: 14px; font-weight: 600; color: #fff; }
 .tags-list > li > a                         { font-size: 12px; font-weight: 400; color: #fff; }
 .nav-tabs > li > a                          { font-size: 14px; font-weight: 300; color: #474747; }
+.activity-list > li > p                     { font-weight: 300; color: #474747; line-height: 30px; }
+.activity-list > li > p > .date             { color: #9b9b9b; }
+.activity-icon                              { text-align: center; }
+.activity-icon > .glyphicon                 { color: #fff; }
 
 /********************************
     Sticky Footer Styles
@@ -214,3 +220,10 @@ h1:after                                    { content: ''; width: 40px; position
 .tag-icon.tag-salud                         { background-image: url(../img/ic-salud.png); }
 .tag-icon.tag-seguridad-y-justicia          { background-image: url(../img/ic-seguridad-y-justicia.png); background-position: 50% 42%; }
 .tag-icon.tag-infraestructura               { background-image: url(../img/ic-infraestructura.png); }
+.activity-list                              { padding: 0; list-style: none; }
+.activity-list > li                         { display: block; margin-bottom: 15px; overflow: hidden; position: relative; }
+.activity-list > li > p                     { width: ~"calc(100% - 45px)"; float: right; }
+.activity-icon                              { display: block; width: 30px; height: 30px; padding-top: 5px; padding-left: 2px; position: absolute; border-radius: 15px; float: left; box-shadow: inset 0 0 3px rgba(0,0,0,0.3); top: 40%; transform: translateY(-50%); }
+.activity-icon.icon-update                  { background-color: #ab73e2; }
+.activity-icon.icon-dataset                 { background-color: #8c73d0; }
+.activity-icon.icon-add                     { background-color: #80a766; }
