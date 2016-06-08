@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Catálogo de Datos Abiertos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- build:css(.) css/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) css/style.css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- endbuild -->
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
+        <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
+    </head>
+    <body>
+        <dgm-navbar></dgm-navbar>
+        <div class="breadcrumb-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="index.html">Datos</a></li>
+                            <li><a href="dataset.html">Catálogo Nacional de Códigos Postales</a></li>
+                            <li><a href="request.html">Solicitar Conjunto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Solicitar un Conjunto | <strong>BETA</strong></h1>
+                    <div id="report-container" class="row">
+                        <div class="col-md-8">
+                            <p>Datos.gob.mx incluirá mecanismos para la solicitud ciudadana de Datos Abiertos, las cuales seguirán el siguiente procedimiento:</p>
+                            <ol>
+                                <li>Las solicitudes serán remitidas al correo electrónico del Administrador de Datos</li>
+                                <li>El Administrador de Datos deberá consultar a las Áreas Generadoras sobre la disponibilidad de los Datos Solicitados y si la consulta procede o no</li>
+                                <li>De tener una respuesta afirmativa, el Administrador de Datos dará respuesta a la solicitud especificando la fecha estimada de publicación de los datos en datos.gob.mx</li>
+                                <li>De tener respuesta negativa, el Administrador de Datos dará respuesta a la solicitud con el fundamento para no publicar los datos</li>
+                            </ol>
+                            <p>Las instituciones tendrán la obligación de responder a las solicitudes en un periodo de 40 días naturales a partir de que se informen al Administrador de Datos.</p>
+                            <p>Todas las solicitudes de datos ciudadanas, su estatus dentro de las instituciones y las respuestas a las mismas serán públicadas en datos.gob.mx</p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="dataset">Nombre del conjunto de datos</label>
+                                    <input type="text" name="dataset" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Descripción del conjunto de datos</label>
+                                    <input type="text" name="description" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="institution">Institución generadora</label>
+                                    <div class="custom-select">
+                                        <select name="institution" class="form-control">
+                                            <option>Selecciona una institución</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Tipo de datos</label>
+                                    <div>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="type" value="table"> Tabla
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="type" value="map"> Mapa
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="type" value="text"> Texto
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="temporary_resolution">Resolución temporal</label>
+                                    <div class="custom-select">
+                                        <select name="temporary_resolution" class="form-control">
+                                            <option>Selecciona una resolución</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="geographic_resolution">Resolución geografica</label>
+                                    <div class="custom-select">
+                                        <select name="geographic_resolution" class="form-control">
+                                            <option>Selecciona una resolución</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Rango de fechas</label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="from">Desde</label>
+                                                <div class="input-group">
+                                                    <input type="text" name="from" class="form-control" placeholder="dd/mm/aaaa">
+                                                    <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="to">Hasta</label>
+                                                <div class="input-group">
+                                                    <input type="text" name="to" class="form-control" placeholder="dd/mm/aaaa">
+                                                    <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2><strong>Datos de Contacto</strong></h2>
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" for="name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Apellido</label>
+                                    <input type="text" for="last_name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico</label>
+                                    <input type="emal" for="email" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dgm-footer></dgm-footer>
+        <!-- build:js(.) js/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+    </body>
+</html>
