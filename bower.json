@@ -3,8 +3,14 @@
     "description"       : "Yet another data catalog, but this one runs as a single-page app",
     "version"           : "6.0.0",
     "dependencies"      : {
-        "bootstrap"     : "^3.3.5",
-        "dgm-footer"    : "mxabierto/dgm-footer#^0.0.8",
-        "dgm-navbar"    : "mxabierto/dgm-navbar#^0.0.8"
+        "bootstrap"             : "^3.3.5",
+        "bootstrap-datepicker"  : "1.6.1",
+        "dgm-footer"            : "mxabierto/dgm-footer#^0.0.8",
+        "dgm-navbar"            : "mxabierto/dgm-navbar#^0.0.8"
+    },
+    "overrides"         : {
+        "webcomponentsjs"       : {
+             "main"  : "webcomponents-lite.min.js"
+         }
     }
 }
