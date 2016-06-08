@@ -9,6 +9,7 @@
         <link rel="shortcut icon" href="img/favicon.ico">
         <!-- build:css(.) css/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) css/style.css -->
@@ -103,7 +104,7 @@
                                             <div class="form-group">
                                                 <label for="from">Desde</label>
                                                 <div class="input-group">
-                                                    <input type="text" name="from" class="form-control" placeholder="dd/mm/aaaa">
+                                                    <input type="text" name="from" class="form-control datepicker" placeholder="dd/mm/aaaa">
                                                     <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
                                                 </div>
                                             </div>
@@ -112,7 +113,7 @@
                                             <div class="form-group">
                                                 <label for="to">Hasta</label>
                                                 <div class="input-group">
-                                                    <input type="text" name="to" class="form-control" placeholder="dd/mm/aaaa">
+                                                    <input type="text" name="to" class="form-control datepicker" placeholder="dd/mm/aaaa">
                                                     <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
                                                 </div>
                                             </div>
@@ -145,8 +146,16 @@
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+        <script type="text/javascript">
+            $( document ).ready( function () {
+                $( '.datepicker' ).datepicker({
+                    format  : 'dd/mm/yyyy'
+                });
+            });
+        </script>
     </body>
 </html>
