@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Catálogo de Datos Abiertos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- build:css(.) css/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) css/style.css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- endbuild -->
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
+        <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
+    </head>
+    <body>
+        <dgm-navbar></dgm-navbar>
+        <div class="breadcrumb-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="index.html">Datos</a></li>
+                            <li><a href="dataset.html">Catálogo Nacional de Códigos Postales</a></li>
+                            <li><a href="report.html">Reportar Conjunto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Reportar un Conjunto | <strong>BETA</strong></h1>
+                    <div id="report-container" class="row">
+                        <div class="col-md-8">
+                            <p>Utilice el siguiente formulario para reportar un problema o solución que haya identificado para este recurso de datos. El reporte se le enviará automáticamente al encargado de generar y actualizar los datos con el fin de mejorar continuamente su calidad y/o accesibilidad a través de esta retroalimentación.</p>
+                            <p>Sus datos personales no son obligatorios para este formulario aunque dejar su nombre y correo electrónico pueden ayudar a darle seguimiento al reporte. Para obtener detalles adicionales, consulte nuestra política de privacidad.</p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="dataset">Nombre del conjunto de datos</label>
+                                    <input type="text" name="dataset" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Tipo de problema</label>
+                                    <div class="custom-select">
+                                        <select name="type" class="form-control">
+                                            <option>Selecciona un tipo de problema</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Descripción del problema</label>
+                                    <input type="text" name="description" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="url">URL del recurso</label>
+                                    <input type="text" name="url" class="form-control" value="http://busca.datos.gob.mx/!#/conjuntos/secretaria-del-trabajo-y-prevision-social/" disabled="disabled">
+                                </div>
+                                <h2><strong>Datos de Contacto</strong> | Opcional</h2>
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" for="name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Apellido</label>
+                                    <input type="text" for="last_name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico</label>
+                                    <input type="emal" for="email" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <p><a href="privacy.html">Consulta nuestro aviso de privacidad</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dgm-footer></dgm-footer>
+        <!-- build:js(.) js/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+    </body>
+</html>

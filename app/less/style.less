@@ -10,10 +10,12 @@ a, a:hover, a:focus, a:active               { outline: 0; text-decoration: none;
 /********************************
     Fonts Styles
 ********************************/
-body                                        { font-family: "Open Sans"; font-size: 14px; font-weight: 400; line-height: 1.8em; color: #343434; }
+body                                        { font-family: "Open Sans"; font-size: 16px; font-weight: 300; line-height: 1.8em; color: #343434; }
 h1                                          { font-size: 24px; font-weight: 600; color: #545454; }
 h2                                          { font-size: 14px; font-weight: 600; color: #343434; }
 h2.institution-name                         { font-size: 18px; color: #545454; }
+form > h2                                   { font-size: 22px; font-weight: 300; color: #545454; }
+form > .btn                                 { font-size: 16px; text-transform: uppercase; text-shadow: 0 0 1px rgba(0,0,0,0.3); }
 .tab-pane > h2                              { font-size: 24px; font-weight: 700; color: #424242; line-height: 1.8em; }
 .tab-pane > p                               { font-size: 14px; font-weight: 300; color: #474747; line-height: 2em; }
 p > a,
@@ -34,12 +36,14 @@ li > a:hover                                { color: #00aa80; }
 .submenu > li > a:hover                     { color: #0c9; }
 #sidebar h3                                 { font-size: 14px; font-weight: 700; line-height: 45px; color: #d8d8d8; }
 #sidebar h4                                 { font-size: 14px; font-weight: 700; line-height: 45px; color: #545454; }
+#sidebar p                                  { font-size: 14px; }
 #sidebar ul > li > a                        { font-size: 12px; font-weight: 400; line-height: 35px; color: #696969; }
 #sidebar ul > li.active > a,
 #sidebar ul > li > a:hover                  { color: #0c9; }
 #search-form .search-keyword .glyphicon     { font-size: 16px; color: #d8d8d8; }
 #search-form p                              { font-size: 14px; font-weight: 600; line-height: 34px; color: #474747; }
-.form-group label                           { font-size: 14px; font-weight: 300; color: #474747; }
+.form-group label                           { font-size: 14px; font-weight: 600; color: #474747; }
+.form-inline .form-group label              { font-weight: 300; }
 .custom-select select                       { color: #9b9b9b; }
 .custom-select::before,
 .custom-select::after                       { font-family: 'Glyphicons Halflings'; color: #d8d8d8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -79,11 +83,16 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 /********************************
     Forms Styles
 ********************************/
+form                                        { margin-top: 30px; }
+form > h2                                   { margin-top: 60px; margin-bottom: 20px; }
 .form-inline > .form-group                  { margin-bottom: 15px; }
 .form-inline > .form-group > label          { margin-right: 10px; }
 .form-inline .form-control.block            { display: block; width: 100%; }
+.form-group                                 { margin-bottom: 20px; }
 .form-control:focus                         { border-color: rgba(0,204,153,0.8); box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px rgba(0,204,153,0.3); }
-.custom-select                              { display: inline-block; margin: 0; padding: 0; border: 1px solid #ccc; border-radius: 4px; position: relative; }
+.form-group .form-control                   { height: 45px; }
+.custom-select                              { margin: 0; padding: 0; border: 1px solid #ccc; border-radius: 4px; position: relative; }
+.form-inline .custom-select                 { display: inline-block; }
 .custom-select::before,
 .custom-select::after                       { display: inline-block; position: absolute; right: 8px; }
 .custom-select::before                      { content: "\e252"; bottom: 0; }
@@ -92,7 +101,8 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 .custom-select select:focus,
 .custom-select select:active                { outline: none; }
 #search-form                                { margin-bottom: 30px; }
-#search-form input[type="text"]             { height: 45px; padding-right: 30px; }
+#search-form > form                         { margin-top: 0; }
+#search-form input[type="text"]             { padding-right: 30px; }
 #search-form .search-keyword                { position: relative; }
 #search-form .search-keyword .glyphicon     { position: absolute; right: 25px; top: 50%; transform: translateY(-50%); }
 #search-form p                              { margin-bottom: 0; }
@@ -108,6 +118,7 @@ dgm-footer                                  { width: 100%; height: 432px; positi
 .btn.btn-primary:hover,
 .btn.btn-primary:focus,
 .btn.btn-primary:active                     { background-color: #00aa80; }
+form .btn                                   { display: block; margin-top: 40px; margin-bottom: 20px; padding: 13px 90px; }
 .nav-tabs                                   { margin: 0 -15px 20px; padding: 0 10px; }
 .nav-tabs > li > a                          { border-radius: 0; }
 #content .btn.report-link                   { position: absolute; right: 10px; top: 18px; }
@@ -233,3 +244,4 @@ h1:after                                    { content: ''; width: 40px; position
 .activity-icon.icon-update                  { background-color: #ab73e2; }
 .activity-icon.icon-dataset                 { background-color: #8c73d0; }
 .activity-icon.icon-add                     { background-color: #80a766; }
+#report-container                           { margin-bottom: 50px; }
