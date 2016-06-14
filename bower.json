@@ -10,7 +10,7 @@
     },
     "overrides"         : {
         "webcomponentsjs"       : {
-             "main"  : "webcomponents-lite.min.js"
-         }
+            "main"  : "webcomponents-lite.min.js"
+        }
     }
 }
