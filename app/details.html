@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Catálogo de Datos Abiertos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <!-- build:css(.) css/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) css/style.css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- endbuild -->
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/dgm-navbar/dgm-navbar.html">
+        <link rel="import" href="bower_components/dgm-footer/dgm-footer.html">
+    </head>
+    <body>
+        <dgm-navbar></dgm-navbar>
+        <div class="breadcrumb-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="index.html">Datos</a></li>
+                            <li><a href="dataset.html">Catálogo Nacional de Códigos Postales</a></li>
+                            <li><a href="details.html">Códigos Postales Chihuahua</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="submenu">
+                            <li class="active"><a href="index.html">Todos los datos</a></li>
+                            <li><a href="institutions.html">Instituciones</a></li>
+                            <li><a href="groups.html">Grupos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Datos</h1>
+                    <div id="main-container">
+                        <div class="row">
+                            <div id="content" class="col-md-12 no-border details">
+                                <h1>Catálogo de códigos postales de Chihuahua</h1>
+                                <p>URL: <a href="#">http://datosabiertos.stps.gob.mx/ods/Base_Brecha_entre_la_TNP_femenina_y_TNP_masculina.csv</a></p>
+                                <p>Es la diferencia absoluta -medida en puntos porcentuales- entre la tasa neta de participación de las mujeres y la tasa neta de participación de los hombres.</p>
+                                <ul id="tabs" class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#preview" data-toggle="tab">Explora los datos</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="preview">
+                                        <button class="btn btn-defailt btn-embed">&lt;/&gt; Embed</button>
+                                        <div class="clearfix"></div>
+                                        <iframe src="http://datapipes.okfnlabs.org/csv/html/?url=http://datosabiertos.stps.gob.mx/ods/Base_Brecha_entre_la_TNP_femenina_y_TNP_masculina.csv"></iframe>
+                                    </div>
+                                </div>
+                                <div id="additionals" class="row">
+                                    <div id="sidebar" class="col-md-3">
+                                        <h2>Recursos</h2>
+                                        <p>Códigos Postales de Chihuahua</p>
+                                        <h4>Compartir en</h4>
+                                        <ul class="filters-menu">
+                                            <li><a href="#">Facebook</a></li>
+                                            <li><a href="#">Twitter</a></li>
+                                            <li><a href="#">Github</a></li>
+                                        </ul>
+                                        <h4>Licencia</h4>
+                                        <img src="img/ic-libreuso.png" alt="Libre Uso MX">
+                                    </div>
+                                    <div id="info" class="col-md-9">
+                                        <p><strong>Información adicional</strong></p>
+                                        <div class="panel panel-default">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="50%">Campo</th>
+                                                        <th>Valor</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Registro en el sitio</td>
+                                                        <td>febrero 16, 2016 | 11:40</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fecha de última modificación de datos</td>
+                                                        <td>abril 07, 2016 | 12:39</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Correo de contacto</td>
+                                                        <td>emora@correosdemexico.gob.mx</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Publicador</td>
+                                                        <td>CM</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Diccionario de datos</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dgm-footer></dgm-footer>
+        <!-- build:js(.) js/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+    </body>
+</html>
